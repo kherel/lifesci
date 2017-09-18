@@ -1,7 +1,7 @@
 {
-  "name": "platform-website",
+  "name": "lifesci-website",
   "version": "0.0.1",
-  "description": "platform-website",
+  "description": "lifesci-website",
   "main": "index.html",
   "private": true,
   "engines": {
@@ -10,7 +10,7 @@
   "scripts": {
     "build": "NODE_ENV=production node ./initializers/webpack/build.js",
     "start": "NODE_ENV=production node ./initializers/server/index.js",
-    "_postinstall": "npm run build",
+    "postinstall": "npm run build",
     "dev": "NODE_ENV=development nodemon --watch initializers --watch webpack.config.js ./initializers/server/index.js",
     "dev2": "NODE_ENV=development NO_SSR=true nodemon --watch ./initializers --watch webpack.config.js ./initializers/server/index.js",
     "tests": "jest --config jest.config.json"
