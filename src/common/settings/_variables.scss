@@ -1,0 +1,62 @@
+// COLORS
+
+$white: #fff;
+$black-1: #333333;
+$brown-1: #7c0c3d;
+$gold-1: #fecf5c;
+
+$grayblue-1: #5481a4;
+$grayblue-2: #f4f6f8;
+$blue-light: #f1f5f9;
+$gray-1: #e8e8e8;
+$gray-2: #c5c5c5;
+$gray-3: #b3b3b3;
+$gray-4: #e6e6e6;
+$gray-5: #48474c;
+$gray-6: rgb(232, 232, 232);
+$red-1: #ff1744;
+
+$red-1: #ff1744;
+$red-2: #f9d7d7;
+$red-3: #c23d4b;
+
+$green-1: #d4f2e8;
+$green-2: #13b57d;
+
+$text: $black-1; // - text
+$title: $brown-1;// - title
+$brand: $brown-1;//- brand text
+
+$interactive: $brown-1; // itneractive text (links, buttons, ...etc)
+
+
+$shadow-1: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+//_________________________
+
+$background-1: #f8f8fb;
+
+
+
+
+// DIMENSIONS
+
+$w-desktop: 1000px;
+$w-desktop-wide: 1120px;
+$w-tablet: 768px;
+$w-mobile: 288px;
+
+$identation: 2rem;
+$header-height: 12.2rem;
+$control-height: 4rem;
+
+$p-mobile: 1.6rem;
+$p-tablet: 2rem;
+$p-desktop: 2rem;
+
+// MEDIA QUERIES
+
+$desktop: "min-width: #{$w-desktop}";
+$desktop-wide: "min-width: #{$w-desktop-wide}";
+$tablet: "max-width: #{$w-desktop - 1px}";
+$mobile: "max-width: #{$w-tablet - 1px}";
+$mobile-up: "min-width: #{$w-tablet}";

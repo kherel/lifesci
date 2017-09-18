@@ -1,0 +1,23 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.home-about{
+  &__title{
+    width: 800px;
+    margin: 0 auto 6.1rem;
+  }
+  &__list{
+    display: flex;
+    box-sizing: border-box;
+    &-item{
+      flex: 1 1 200px;
+      margin-right: 4.1rem;
+      &:last-child{
+        margin-right: 0;
+      }
+      &-image{
+        margin-bottom: 2.3rem;
+      }
+    }
+  }
+}

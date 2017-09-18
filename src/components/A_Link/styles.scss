@@ -1,0 +1,38 @@
+@import "common/utils";
+@import "common/settings/variables";
+
+.a-link{
+  cursor: pointer;
+  font-weight: 600;
+  vertical-align: top;
+
+  &_type{
+    &_hmq-card {
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      color: $white;
+      white-space: nowrap;
+    }
+    &_button{
+      width: 100%;
+      display: block;
+      padding: .8rem 1.5rem .9rem;
+      color: #57a7ed;
+      font-size: 1.6rem;
+      font-weight: bold;
+      transition: color 1s, box-shadow 0.3s ease-in, background-color 0.7s;
+      border-radius: 4px;
+      &:hover{
+        background-color: #ffffff;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+        color: #3881c0;
+      }
+    }
+  }
+
+
+  &.disabled{
+    pointer-events: none;
+  }
+}

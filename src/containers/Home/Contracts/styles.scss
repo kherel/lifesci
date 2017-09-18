@@ -1,0 +1,19 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.home-contracts{
+  &__root{
+    background-color: $background-1;
+  }
+  &__title{
+    text-align: center;
+  }
+  &__inner{
+    display: flex;
+    align-items: center;
+  }
+  &__code{
+    margin-right: 2.4rem;
+  }
+
+}

@@ -1,0 +1,68 @@
+@import "common/settings/variables";
+@import "common/utils";
+@import 'system-font';
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+  font-size: 62.5%;
+
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: 'Camphor-W01', system-ui;
+  overflow: auto;
+  line-height: 2.6rem;
+  background-color: $white;
+  color: $text;
+}
+
+
+
+body > div {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  object-fit: cover;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.65em;
+
+  &.p_center { text-align: center; }
+  + p { margin-top: 2.5em; }
+  >  a { color: $brown-1; }
+}
+span.bold{
+    font-weight: bold;
+}
+
+// Общий случай модификаторов для скрытия-показа
+// конкретные реализации (например, display:flex) — в контексте
+
+.mobile-show {
+  display: none;
+  @include media($mobile) { display: block; }
+}
+.mobile-hide {
+  @include media($mobile) { display: none; }
+}
+
+
+//::-webkit-scrollbar {
+//  width: 0px;  /* remove scrollbar space */
+//  background: transparent;  /* optional: just make scrollbar invisible */
+//}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
