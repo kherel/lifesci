@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
-import MainLayoutContainer from 'containers/MainLayout'
+import MainLayoutContainer from 'MainLayout/container'
 
 class MainLayoutRoute extends Component {
-
 
   render() {
     return (

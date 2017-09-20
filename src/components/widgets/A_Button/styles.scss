@@ -1,0 +1,125 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+$form-btn-border-radius: 30px;
+
+.a-btn{
+  $this: &;
+  & + &{
+    margin-left: 2.4rem;
+  }
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  border-radius: .4rem;
+  vertical-align: middle;
+
+  &__filled{
+    padding: 1.1rem 1.2rem 1.3rem;
+    color: $white;
+    line-height: 1.9rem ;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: center;
+    background-color: $interactive;
+    border: solid 1px $interactive;
+    &:hover{
+      &:hover{ transform: translateY(-1px);}
+
+      border-color: transparent;
+      background-color: lighten($interactive,5%);
+    }
+    &:active{
+      background-color: darken($interactive, 10%);
+      border-color: darken($interactive, 15%);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+      color: darken(white, 5%);
+      transform: translateY(0);
+      transition: all 0.05s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+  };
+  &__transparent{
+    padding: 1.1rem 1.2rem 1.3rem;
+    color: $interactive;
+    line-height: 1.9rem ;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: center;
+    background-color: rgba(87, 167, 237, 0.1);
+    border: solid 1px $interactive;
+    &:hover{
+      transform: translateY(-1px);
+      border-color: lighten($interactive, 5%);
+      background-color: lighten(rgba(87, 167, 237, 0.1), 5%);
+    }
+    &:active{
+      background-color:  darken(rgba(87, 167, 237, 0.1), 50%);
+      border-color: transparentize($interactive, .3);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+      color: darken($interactive, 5%);
+      transform: translateY(0);
+      transition: all 0.05s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+  };
+  &.disabled{
+    pointer-events: none;
+  }
+  & + & {
+    margin-left: 2.4rem;
+  }
+  &__button{
+    @extend #{$this};
+    &:hover{ transform: translateY(-1px);}
+    @include media($tablet) {
+      width: 100%;
+      margin: 0 auto;
+      & + &{
+        margin-left: 0;
+        margin-top: 1.6rem;
+      }
+    }
+    &_type{
+      &_transparent-button{
+        display: block;
+        @extend #{$this}__transparent;
+      }
+      &_standart-form{
+        text-transform: uppercase;
+        user-select: none;
+        //border-radius: $form-radius;
+        background-color: $interactive;
+        color: $white;
+        padding-left: 2.2rem;
+        padding-right: 2.2rem;
+        font-size: 1.7rem;
+        vertical-align: top;
+        height: 5.3rem;
+      }
+    }
+  }
+  &__link {
+    @extend #{$this};
+
+    @include media($tablet) {
+      width: 100%;
+      margin: 0 auto;
+      & + &{
+        margin-left: 0;
+        margin-top: 1.6rem;
+      }
+    }
+
+    &_type{
+      box-shadow: 0 4px 6px 0 rgba(50, 50, 93, 0.5), 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+
+      &_link-secondary{
+        @extend #{$this}__transparent;
+      }
+      &_link-primary{
+        @extend #{$this}__filled;
+      }
+    }
+  }
+}

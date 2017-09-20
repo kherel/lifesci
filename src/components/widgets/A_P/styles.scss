@@ -1,0 +1,32 @@
+@import "common/utils";
+@import "common/settings/variables";
+
+.a-p{
+  &_type{
+    &_hero {
+      font-size: 1.7rem;
+      line-height: 1.53;
+      color: $white ;
+      margin-bottom: 2.4rem;
+      @include media($tablet) {
+        text-align: center;
+      }
+    }
+    &_item {
+      font-size: 1.7rem;
+      line-height: 1.53;
+      color: rgba(0, 0, 0, 0.65);
+    }
+    &_description{
+      font-size: 24px;
+      line-height: 1.5;
+      color: rgba(0, 0, 0, 0.65);
+    }
+    &_tweet{
+      font-size: 1.6rem;
+      line-height: 1.5;
+      color: rgba(0, 0, 0, 0.65);
+    }
+  }
+}
+

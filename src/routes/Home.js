@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import HomeContainer from 'containers/Home'
+import HomeContainer from 'Home/container'
 
 class HomeRoute extends Component {
 

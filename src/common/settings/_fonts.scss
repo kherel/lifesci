@@ -12,4 +12,10 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: Camphor-W01;
+  src: url("/fonts/camphor-w01-medium.woff2") format('woff2'),
+  url("/fonts/camphor-w01-medium.woff1") format('woff');
+  font-weight: 500;
+}
 

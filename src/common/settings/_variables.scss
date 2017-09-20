@@ -1,39 +1,31 @@
 // COLORS
 
 $white: #fff;
-$black-1: #333333;
-$brown-1: #7c0c3d;
-$gold-1: #fecf5c;
+$black-1: #000000;
+$black-2: rgba 0 0 0, 0.65;
+$blue-1: #57a7ed;
+$blue-2: rgba(87, 167, 237, 0.1);
 
-$grayblue-1: #5481a4;
-$grayblue-2: #f4f6f8;
-$blue-light: #f1f5f9;
-$gray-1: #e8e8e8;
-$gray-2: #c5c5c5;
-$gray-3: #b3b3b3;
-$gray-4: #e6e6e6;
-$gray-5: #48474c;
-$gray-6: rgb(232, 232, 232);
-$red-1: #ff1744;
+$gray-1: #282a35;
+$pink-1: #f8f8fb;
 
-$red-1: #ff1744;
-$red-2: #f9d7d7;
-$red-3: #c23d4b;
+//___________________
+$background-1: $pink-1;
+$background-dark: $gray-1;
 
-$green-1: #d4f2e8;
-$green-2: #13b57d;
+$interactive: #57a7ed; // itneractive text (links, buttons, ...etc)
+$interactive-t: $blue-2;
 
-$text: $black-1; // - text
-$title: $brown-1;// - title
-$brand: $brown-1;//- brand text
-
-$interactive: $brown-1; // itneractive text (links, buttons, ...etc)
+$text: $black-1;
+$text-t: $black-2;
+$title: $black-1;
 
 
-$shadow-1: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+//$shadow-1: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
 //_________________________
 
-$background-1: #f8f8fb;
+
+
 
 
 

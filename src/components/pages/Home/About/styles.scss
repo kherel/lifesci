@@ -1,0 +1,37 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.home-about{
+  &__title{
+    max-width: 800px;
+    margin: 0 auto 6.1rem;
+    @include media ($tablet) {
+      margin: 0 0 3.3rem;
+    }
+  }
+  &__list{
+    display: flex;
+    box-sizing: border-box;
+    @include media ($tablet) {
+      flex-flow: column;
+    }
+    &-item{
+      flex: 1 1 200px;
+      margin-right: 4.1rem;
+      @include media ($tablet) {
+        flex-basis: auto;
+        margin-bottom: 2.4rem;
+        margin-right: 0;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+      &-image{
+        margin-bottom: 2.3rem;
+      }
+    }
+  }
+}
