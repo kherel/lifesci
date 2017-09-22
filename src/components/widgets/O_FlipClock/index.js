@@ -71,7 +71,7 @@ class O_FlipClock extends Component {
 
   render() {
     const {days, hours, minutes, seconds} = this.state
-
+    if(__SERVER__) return null
     return (
       <div className="clock flip-clock-wrapper" >
         <span className="flip-clock-divider days">
