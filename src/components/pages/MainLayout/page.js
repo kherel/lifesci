@@ -9,10 +9,10 @@ const cn = cssClassName('MainLayout')
 class MainLayout extends Component {
 
   render() {
-    const {children} = this.props
+    const {children, ...otherProps} = this.props
     return (
       <div className={cn()}>
-        <Header />
+        <Header {...otherProps}/>
         { children }
         <Footer />
       </div>

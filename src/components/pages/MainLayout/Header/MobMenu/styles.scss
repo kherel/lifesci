@@ -1,0 +1,64 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.mob-menu{
+  $border: rgba(255,255,255,0.4);
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  height: calc(100vh - 65px);;
+  background-color: rgba($background-dark, 0.95);
+  display: none;
+  bottom: 0;
+
+
+  &_show_true{
+    display: block;
+    @include media ($desktop) {
+      display: none;
+    }
+  }
+
+  &__nav{
+    &-list{
+      margin-left: 2rem;
+    }
+    &-link{
+      user-select: none;
+      display: block;
+      padding: 1.6rem 0;
+      //@include botton-line($border);
+      //border-bottom: 1px solid $border;
+      font-weight: bold;
+      position: relative;
+      &:hover{
+        color: darken(white, 20%);
+      }
+      &:active{
+        color: darken(white, 40%);
+      }
+      &_is-open_true{
+        color: darken(white, 40%);
+      }
+
+      &:after{
+        @include  botton-line(white);
+        transform: translateY(1.5rem);
+      }
+      &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        right: 25px;
+        top: 50%;
+        transform: rotate(50grad) translate(-50%);
+        border-right: 1px solid $border;
+        border-top: 1px solid $border;
+
+        z-index: 100;
+      }
+    }
+  }
+}

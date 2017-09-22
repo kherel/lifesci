@@ -4,7 +4,7 @@ import './styles.scss';
 import {Link} from 'react-router'
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_Btn')
-import history from 'history'
+// import history from 'history'
 
 const A_Btn = ({type, children, disabled, btnType, to, onClick, mx, ...props}) =>{
 
@@ -15,7 +15,7 @@ const A_Btn = ({type, children, disabled, btnType, to, onClick, mx, ...props}) =
     case 'link-secondary':
 
       return (
-        <Link className={cn('link', {type}, [disabled])} {...props}>
+        <Link className={cn('link', {type}, [disabled])} to={to} {...props}>
           {children}
         </Link>
       )

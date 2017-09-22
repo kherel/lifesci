@@ -5,10 +5,10 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_Link')
 
-const A_Link = ({children, type, block, disabled, external, to}) => {
+const A_Link = ({children, type, block, disabled, external, to, mx}) => {
 
   let _link
-  const className= cn({block, type, external}, [disabled && 'disabled'])
+  const className= cn({block, type, external}, [disabled && 'disabled', mx])
 
   if (external) {
     _link =(

@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import * as T from "prop-types";
 import './styles.scss';
-import {cssClassName} from 'utils'
-const cn = cssClassName('O_FlipClock')
 import moment from 'moment'
 
 class O_FlipClock extends Component {

@@ -4,7 +4,7 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_H')
 
-const A_H = ({type, icon, children, center, mx}) =>{
+const A_H = ({type, children, center, mx}) =>{
 
   let tagType
   switch(type){
