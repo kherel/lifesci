@@ -1,0 +1,79 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.documents{
+  background-color: $background-pink;
+  &__card{
+    width: 296px;
+    height: 411px;
+    border-radius: 4px;
+    margin-bottom: 5.4rem;
+    padding: 2rem 2.5rem;
+    position: relative;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    background-color: $white;
+    @include media($tablet){
+      width: 237.2px;
+      height: 329px;
+      border-radius: 3.2px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+      margin-right: 2rem;
+
+    }
+    &-list{
+      margin-top: 3.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @include media($tablet){
+        justify-content: space-around;
+
+      }
+      @include media($mobile) {
+        flex-flow: column;
+        align-items: center;
+      }
+    }
+    &-img{
+      width: 244px !important;
+      height: 322px !important;
+      object-fit: contain !important;
+      position: absolute;
+      bottom: 25px;
+      left: -4px;
+      @include media($tablet){
+        width: 195.5px !important;
+        height: 257.8px !important;
+      }
+      &_color{
+        &_orage{
+          .img_color_start{
+            stop-color:"#F2994A"
+          }
+          .img_color_stop{
+            stop-color:"#F2C94C"
+          }
+        }
+        &_blue{
+          .img_color_start{
+            stop-color:red
+          }
+          .img_color_stop{
+            stop-color:blue
+          }
+        }
+        &_green{
+
+        }
+      }
+    }
+    &-name{
+      width: 183px;
+      height: 26px;
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.37;
+    }
+  }
+}

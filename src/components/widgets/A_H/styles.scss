@@ -12,11 +12,8 @@ $icon-size: 20rem;
       font-size: 4rem;
       font-weight: 500;
       line-height: 4.8rem;
-      @include media($tablet) {
-        text-align: center;
-      }
     }
-    &_main-white {
+    &_hero {
       @extend #{$type}_main;
       color: $white;
     }

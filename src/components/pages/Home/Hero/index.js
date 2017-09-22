@@ -7,16 +7,17 @@ import A_H from 'A_H'
 import A_P from 'A_P'
 import O_FlipClock from 'O_FlipClock'
 import A_Button from 'A_Button'
+import M_Hero from 'M_Hero'
 
 class Hero extends Component {
 
   render() {
     return (
-      <div className={cn()}>
+      <M_Hero>
         <A_Container type='hero'>
           <div className={cn('inner')}>
             <div className={cn('info')}>
-              <A_H type="main-white" mx={cn('hero-title')}>Solving life sciences real problems of today</A_H>
+              <A_H type="hero" mx={cn('hero-title')}>Solving life sciences real problems of today</A_H>
               <A_P type="hero">Lifesci is a unique vehicle to offer access to valuable licence fee income and a blockchain AI driven platform <span style={{whiteSpace: 'nowrap'}}>/ exchange /</span> big data intelligence platform that gives investor access to the latest insights, news in the healthcare industry.</A_P>
               <A_Button type='link-secondary'>Subscribe me</A_Button>
               <A_Button type='link-primary'>How to Contribute</A_Button>
@@ -31,7 +32,7 @@ class Hero extends Component {
             </div>
           </div>
         </A_Container>
-      </div>
+      </M_Hero>
     )
   }
 }

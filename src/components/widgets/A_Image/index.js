@@ -26,7 +26,7 @@ class A_Image extends Component {
   }
 
   render() {
-    let {rounded, realSize, link, type, ...preProps} = this.props
+    let {rounded, realSize, link, type, mx, ...preProps} = this.props
     const {onClick, objectFit, ...props} = preProps
     const complete = !!this.node && this.node.complete
     const imgReady = complete || this.state.imgReady
@@ -38,13 +38,13 @@ class A_Image extends Component {
       <span className={cn('root')} >
         <img
           ref={ node => this.node = node }
-          className={cn('img', {onClick: !!onClick, objectFit, type}, [rounded, link, realSize])}
+          className={cn('img', {onClick: !!onClick, objectFit, type}, [rounded, link, realSize, mx])}
           onLoad = {this.handleLoad}
           style={imgReady ? {} : {display: 'none'}}
           onClick={onClick}
           {...props}
         />
-        <div style={imgReady ? {display: 'none'} : {}} className={cn('loader')} >
+        <div style={imgReady ? {display: 'none'} : {}} className={cn('loader', [mx])} >
           {/*loading*/}
         </div>
       </span>

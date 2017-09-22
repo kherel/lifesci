@@ -51,7 +51,7 @@ class O_FlipClock extends Component {
     this.interval = setInterval(() => this.setTime(), 1000)
   }
 
-  componentUnmount(){
+  componentWillUnmount(){
     clearInterval(this.interval);
   }
 

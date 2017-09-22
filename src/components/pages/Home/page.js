@@ -6,7 +6,7 @@ import Hero from './Hero'
 import About from './About'
 import Timeline from './Timeline'
 import Tweets from './Tweets'
-import Companies from './Companies'
+import O_Resources from 'O_Resources'
 import Contracts from './Contracts'
 
 class Home extends Component {
@@ -18,7 +18,7 @@ class Home extends Component {
         <About />
         <Timeline />
         <Tweets />
-        <Companies />
+        <O_Resources />
         <Contracts />
 
       </div>

@@ -2,20 +2,10 @@
 @import "common/utils";
 
 .home-hero{
-  background-image: url("/img/common/background.svg");
-  background-size: cover;
-  background-color: #282a35;
-  background-position: 3% 15%;
-  padding-top: 12.1rem;
-  padding-bottom: 4rem;
-  @include media ($tablet) {
-    padding-top: 3.3rem;
-    padding-bottom: 3.1rem;
-  }
-  @include transparent-back(#282a35, top);
 
   &__hero-title{
     padding-bottom: 2.5rem;
+    text-align: left;
     @include media ($tablet) {
       padding-bottom: 1.6rem;
     }

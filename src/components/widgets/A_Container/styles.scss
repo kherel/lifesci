@@ -28,6 +28,13 @@
       width: auto;
       max-width: 1110px + 40px; //width size + padding, because of border-box
     }
+    &_smart{
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+      & + &{
+        padding-top: 0;
+      }
+    }
   }
 }
 

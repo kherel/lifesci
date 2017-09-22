@@ -3,7 +3,7 @@
 
 .home-timeline{
   &__root{
-    background-color: $background-1;
+    background-color: $background-pink;
   }
   &__period {
     &-list{
@@ -162,7 +162,7 @@
         color: darken($interactive, 15%);
       }
       span{
-        background-color: $background-1;
+        background-color: $background-pink;
         padding: 0 .7rem;
         border-radius: 10rem;
         position: relative;

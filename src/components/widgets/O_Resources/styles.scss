@@ -1,0 +1,10 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.home-companies{
+  &__companies{
+    width: 93.4rem;
+    margin: 0 auto;
+    padding-top: 4rem;
+  }
+}

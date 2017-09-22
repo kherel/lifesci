@@ -4,15 +4,14 @@ import {cssClassName} from 'utils'
 const cn = cssClassName('Header')
 import A_Container from 'A_Container'
 import M_Logo from 'M_Logo'
-import {convert} from 'utils'
 import A_Link from 'A_Link'
 
 class Header extends Component {
 
   getDesktopMenu(){
-    const links = nav.map( name => (
-      <li key={name} className={cn('nav-item')}>
-        <A_Link to={convert.toCleanKebab(name)} type='nav' >{name}</A_Link>
+    const links = nav.map( ({name, url}, i) => (
+      <li key={i} className={cn('nav-item')}>
+        <A_Link to={url} type='nav' >{name}</A_Link>
       </li>
     ))
 
@@ -57,10 +56,10 @@ Header.defaultProps = {
 export default Header;
 
 const nav = [
-  'Contribution',
-  'Whitepaper',
-  'Team',
-  'Roadmap',
-  'Github',
-  'Contact us'
+  {name: 'Contribution',  url: '#'},
+  {name: 'Whitepaper', url: '/doc'},
+  {name: 'Team', url: '/team'},
+  {name: 'Roadmap', url: '#'},
+  {name: 'Github', url: '#'},
+  {name: 'Contact us', url: '#'}
 ]

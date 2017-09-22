@@ -13,7 +13,8 @@ A_Container.propTypes = {
     'normal',
     'wide', // 1100
     'hero', // hero
-    'section' // margin 44 auto
+    'section', // margin 44 auto
+    'smart' //
   ]),
   mx: T.string,
   children: T.node.isRequired

@@ -9,7 +9,7 @@ const A_H = ({type, icon, children, center, mx}) =>{
   let tagType
   switch(type){
     case 'main':
-    case 'main-white':
+    case 'hero':
       tagType = 'h1'
       break;
     case 'timeline':
@@ -45,7 +45,7 @@ const A_H = ({type, icon, children, center, mx}) =>{
 
 A_H.propTypes = {
   type: T.oneOf([
-    'main-white', //white 500/40
+    'hero', //white 500/40
     'main', //black 500/40
     'timer', //black bold 500/16 center
     'about', //black 800/24 center

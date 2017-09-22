@@ -10,8 +10,9 @@ $gray-1: #282a35;
 $pink-1: #f8f8fb;
 
 //___________________
-$background-1: $pink-1;
+$background-pink: $pink-1;
 $background-dark: $gray-1;
+
 
 $interactive: #57a7ed; // itneractive text (links, buttons, ...etc)
 $interactive-t: $blue-2;
@@ -23,6 +24,8 @@ $title: $black-1;
 
 //$shadow-1: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
 //_________________________
+
+$card-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 
 
 
