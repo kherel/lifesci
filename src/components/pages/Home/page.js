@@ -20,7 +20,6 @@ class Home extends Component {
         <Tweets />
         <O_Resources />
         <Contracts />
-
       </div>
     )
   }
