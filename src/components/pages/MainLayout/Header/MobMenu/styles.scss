@@ -6,59 +6,67 @@
   position: fixed;
   z-index: 1;
   width: 100vw;
-  height: calc(100vh - 65px);;
   background-color: $white;
   display: none;
   bottom: 0;
+  background:url('/img/common/mob-menu-bg.svg');
+  background-size: cover;
+  overflow:scroll;
+  height: 100%;
 
 
   &_show_true{
     display: block;
+    #logo {
+      stroke: white;
+    }
+    #logo-text, #mob-menu-btn{
+      fill: white;
+      fill-opacity: 1;
+
+    }
+
     @include media ($desktop) {
       display: none;
     }
   }
 
+  &__container{
+    height: 65px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(#ebebeb, 0.15);
+
+  }
+
   &__nav{
     &-list{
+      margin-top: 14.6%;
       margin-left: 2rem;
     }
     &-link{
       user-select: none;
       display: block;
       padding: 1.6rem 0;
-      //@include botton-line($border);
-      //border-bottom: 1px solid $border;
+      color: $white;
       font-weight: bold;
       position: relative;
-      &:hover{
-        color: darken(white, 20%);
-      }
-      &:active{
-        color: darken(white, 40%);
-      }
-      &_is-open_true{
-        color: darken(white, 40%);
-      }
-
-      &:after{
-        @include  botton-line($black-3);
-        transform: translateY(1.5rem);
-      }
-      &:before{
-        content: '';
-        display: block;
-        position: absolute;
-        width: 5px;
-        height: 5px;
-        right: 25px;
-        top: 50%;
-        transform: rotate(50grad) translate(-50%);
-        border-right: 1px solid $border;
-        border-top: 1px solid $border;
-
-        z-index: 100;
+      &:hover, &:active{
+        color: darken($white, 30%);
       }
     }
+
+    &-menu-btn{
+      @include media ($desktop) {
+        display: none;
+      }
+      position: relative;
+      color: $white;
+      //padding: 0 1.5rem 0 0.5rem;
+    }
   }
+
+
 }

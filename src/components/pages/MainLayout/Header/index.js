@@ -6,7 +6,7 @@ import A_Container from 'A_Container'
 import M_Logo from 'M_Logo'
 import A_Link from 'A_Link'
 import MobMenu from "./MobMenu";
-import A_Image from "../../../widgets/A_Image/index";
+import MenuSvgBtn from "./MenuSvgBtn";
 
 class Header extends Component {
 
@@ -41,11 +41,11 @@ class Header extends Component {
         <A_Container type='normal' mx={cn('nav')}>
           <M_Logo />
           {desktopMenu}
-          <button className={cn('nav-menu-btn', {open: this.props.isMenuOpened})} onClick={toggleMenu}>
-            <A_Image src={'/img/icons/menu.svg'} realSize/>
+          <button className={cn('nav-menu-btn', {open: isMenuOpened})} onClick={toggleMenu}>
+            <MenuSvgBtn color={'#6D6F7B'}/>
           </button>
         </A_Container>
-        <MobMenu {...{openRoute, nav, isMenuOpened}}/>
+        <MobMenu {...{openRoute, nav, isMenuOpened, toggleMenu}}/>
       </div>
     )
   }

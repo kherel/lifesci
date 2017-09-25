@@ -45,29 +45,13 @@
       }
 
       position: relative;
-      height: 30px;
-      font-size: 16px;
-      font-weight: 500;
-      text-align: center;
       color: $white;
-      padding: 0 1.5rem 0 0.5rem;
-      line-height: 16px;
-      &:after{
-        content: '';
-        position: absolute;
-        top: 51%;
-        transform: translate(0,-50%);
-        right: .4rem;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 4px solid $white;
-        transition: transform .3s linear;
-      }
-      &_open_true{
-        &:after{
-          transform: rotate(-180deg) translateY(2px);
-        }
-      }
+      //padding: 0 1.5rem 0 0.5rem;
     }
   }
+
+}
+
+#mob-menu-btn {
+  fill: #6D6F7B;
 }
