@@ -5,6 +5,8 @@ const cn = cssClassName('Home')
 import Hero from './Hero'
 // import Timeline from './Timeline'
 import Tweets from './Tweets'
+import Platform from './Platform'
+
 // import O_Resources from 'O_Resources'
 // import Contracts from './Contracts'
 import Subscribe from './Subscribe'
@@ -16,6 +18,7 @@ class Home extends Component {
       <div className={cn()}>
         <Hero />
         <Subscribe handleSubmit={v => console.log(v)}/>
+        <Platform />
         {/*<Timeline />*/}
         <Tweets />
         {/*<O_Resources />*/}

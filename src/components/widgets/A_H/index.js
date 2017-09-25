@@ -16,6 +16,7 @@ const A_H = ({type, children, center, mx}) =>{
       tagType = 'h2'
       break;
     case 'title':
+    case 'section':
     case 'about':
       tagType = 'h3'
       break;
@@ -51,6 +52,7 @@ A_H.propTypes = {
     'about', //black 800/24 center
     'second', //black 500/19/1.47
     'title', //black 500/40/48
+    'section', //black georgia 40/1.25/ rgba(0, 0, 0, 0.8);
     'subtitle', //black trans bold/12/1.33
     'third', //black 500/19/1.47
     'small', //black trans bold/12/1.33 center

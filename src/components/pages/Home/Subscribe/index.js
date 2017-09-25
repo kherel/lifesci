@@ -27,17 +27,17 @@ const Subscribe = ({fields, formHasErrors, onFieldChange, handleSubmit}) =>{
         <A_H type='second' mx={cn('second')}>Interested in hearing more about Lifesci?</A_H>
         <A_P type='second' mx={cn('text')}>Get a newsletter with all latest news and updates delivered right into your inbox.</A_P>
 
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit} className={cn('form')}>
 
           <A_InputText
             value = {fields[fieldName].value}
             type = 'text'
             placeholder = 'Email'
-            onChange = { e => onFieldChange(fieldName, e.target.value) }
+            handleChange = { text => onFieldChange(fieldName, text) }
             mx={cn('input')}
           />
 
-          <A_Button btnType='submit' type='button-primary'>
+          <A_Button btnType='submit' type='button-primary' mx={cn('btn')}>
             {formHasErrors ? 'Check errors' : 'Subscribe me'}
           </A_Button>
         </form>
