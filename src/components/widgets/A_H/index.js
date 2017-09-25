@@ -25,7 +25,7 @@ const A_H = ({type, children, center, mx}) =>{
       break;
     case 'section-subtitle':
     case 'third':
-    case 'item':
+    case 'second':
       tagType = 'h5'
       break;
     default:
@@ -49,7 +49,7 @@ A_H.propTypes = {
     'main', //black 500/40
     'timer', //black bold 500/16 center
     'about', //black 800/24 center
-    'item', //black 500/19/1.47
+    'second', //black 500/19/1.47
     'title', //black 500/40/48
     'subtitle', //black trans bold/12/1.33
     'third', //black 500/19/1.47

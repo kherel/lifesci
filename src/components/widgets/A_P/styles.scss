@@ -4,13 +4,12 @@
 .a-p{
   &_type{
     &_hero {
-      font-size: 1.7rem;
-      line-height: 1.53;
-      color: $white ;
       margin-bottom: 2.4rem;
       max-width: 82.4rem;
+      font-size: 20px;
+      line-height: 1.4;
     }
-    &_item {
+    &_second {
       font-size: 1.7rem;
       line-height: 1.53;
       color: rgba(0, 0, 0, 0.65);

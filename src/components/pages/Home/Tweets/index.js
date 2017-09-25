@@ -29,11 +29,10 @@ class Tweets extends Component {
     return (
       <div className={cn()}>
         <A_Container type='section'>
-          <A_H type='title' mx={cn('title')}>See what people are saying Tweets Lifesci</A_H>
 
           <ul className={cn('tweet-list')}>
-            <li className={cn('tweet-illustration')}>
-              <A_Image src={`/img/tweets_section.svg`} realSize/>
+            <li className={cn('tweet-title')}>
+              See what people are saying about Lifesci
             </li>
             {list}
           </ul>

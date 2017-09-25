@@ -1,0 +1,25 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.subscribe{
+  padding-top: 6.8rem !important;
+  padding-bottom: 6.8rem !important;
+  background-color: $background-pink;
+  &__inner{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+  }
+  &__title{
+    margin-bottom: .8rem !important;
+    text-align: center;
+  }
+  &__text{
+    margin-bottom: 3.2rem !important;
+  }
+  &__input{
+    margin-right: 1.6rem;
+  }
+}

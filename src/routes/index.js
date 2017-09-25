@@ -1,11 +1,11 @@
 import {Route, IndexRoute} from 'react-router'
 import React from 'react'
-import Documents from './Documents'
-import Home from './Home'
-import Team from './Team'
-import Test from './Test'
-
 import MainLayout from './MainLayout'
+// import Documents from './Documents'
+import Home from './Home'
+// import Team from './Team'
+// import Test from './Test'
+
 
 const getRoutes = () => {
   return (
@@ -17,18 +17,18 @@ const getRoutes = () => {
       <IndexRoute
         component={Home}
       />
-      <Route
-        path="/doc"
-        component={Documents}
-      />
-      <Route
-        path="/team"
-        component={Team}
-      />
-      <Route
-        path="/test"
-        component={Test}
-      />
+      {/*<Route*/}
+        {/*path="/doc"*/}
+        {/*component={Documents}*/}
+      {/*/>*/}
+      {/*<Route*/}
+        {/*path="/team"*/}
+        {/*component={Team}*/}
+      {/*/>*/}
+      {/*<Route*/}
+        {/*path="/test"*/}
+        {/*component={Test}*/}
+      {/*/>*/}
     </Route >
   )
 }

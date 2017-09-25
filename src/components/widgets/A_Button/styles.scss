@@ -13,16 +13,14 @@ $form-btn-border-radius: 30px;
   box-sizing: border-box;
   display: inline-block;
   text-align: center;
-  border-radius: .4rem;
-  vertical-align: middle;
+  border-radius: 100px;
+  height: 3.7rem;
+  padding: .9rem 1.6rem 1.1rem;
+  line-height: 1.7rem;
+  font-size: 1.5rem;
 
   &__filled{
-    padding: 1.1rem 1.2rem 1.3rem;
     color: $white;
-    line-height: 1.9rem ;
-    font-size: 1.6rem;
-    font-weight: 500;
-    text-align: center;
     background-color: $interactive;
     border: solid 1px $interactive;
     &:hover{
@@ -41,13 +39,7 @@ $form-btn-border-radius: 30px;
     }
   };
   &__transparent{
-    padding: 1.1rem 1.2rem 1.3rem;
     color: $interactive;
-    line-height: 1.9rem ;
-    font-size: 1.6rem;
-    font-weight: 500;
-    text-align: center;
-    background-color: rgba(87, 167, 237, 0.1);
     border: solid 1px $interactive;
     &:hover{
       transform: translateY(-1px);
@@ -72,18 +64,10 @@ $form-btn-border-radius: 30px;
   &__button{
     @extend #{$this};
     &:hover{ transform: translateY(-1px);}
-    @include media($tablet) {
-      width: 100%;
-      margin: 0 auto;
-      & + &{
-        margin-left: 0;
-        margin-top: 1.6rem;
-      }
-    }
+
     &_type{
-      &_transparent-button{
-        display: block;
-        @extend #{$this}__transparent;
+      &_button-primary{
+        @extend #{$this}__filled;
       }
       &_standart-form{
         text-transform: uppercase;
@@ -101,15 +85,6 @@ $form-btn-border-radius: 30px;
   }
   &__link {
     @extend #{$this};
-
-    @include media($tablet) {
-      width: 100%;
-      margin: 0 auto;
-      & + &{
-        margin-left: 0;
-        margin-top: 1.6rem;
-      }
-    }
 
     &_type{
       box-shadow: 0 4px 6px 0 rgba(50, 50, 93, 0.5), 0 1px 3px 0 rgba(0, 0, 0, 0.08);

@@ -19,7 +19,7 @@ const A_Btn = ({type, children, disabled, btnType, to, onClick, mx, ...props}) =
           {children}
         </Link>
       )
-    case 'transparent-button':
+    case 'button-primary':
     default:
       return (
         <button className={cn('button', {type}, [disabled, mx])} type={btnType} {...{onClick,...props}}>
@@ -33,14 +33,14 @@ A_Btn.propTypes = {
   type: T.oneOf([
     'link-primary', // solid btn
     'link-secondary', // transparent btn like link
-    'transparent-button', //transparent btn
+    'button-primary', //transparent btn
   ]).isRequired,
   btnType: T.oneOf([ // button tag attribute
     'button',
     'submit',
     'reset'
   ]),
-  to: T.string.isRequired,
+  to: T.string,
   disabled: T.bool
 };
 

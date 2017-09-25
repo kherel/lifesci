@@ -4,15 +4,7 @@
 .home-tweets{
   $this: &;
 
-  &__title{
-    max-width: 800px;
-    margin: 0 auto 4rem;
-    text-align: center;
-    @include media ($desktop) {
-      margin-bottom: 6.1rem;
-    }
-  }
-  &__tweet {
+  &__proto{
     flex: 1 1 240px;
     min-width: 24rem;
     box-sizing: border-box;
@@ -20,6 +12,10 @@
     height: 249px;
     min-height: 249px;
     border-radius: 8px;
+  }
+  &__tweet {
+    @extend #{$this}__proto;
+
     background-color: #ffffff;
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.03);
     margin-bottom: 8px;
@@ -29,9 +25,19 @@
       overflow-y: hidden;
 
     }
-    &-illustration{
-      @extend #{$this}__tweet;
-      overflow: hidden;
+    &-title{
+      @extend #{$this}__proto;
+      padding: 4.4rem 1.6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Georgia;
+      font-size: 32px;
+      line-height: 1.25;
+      text-align: left;
+      background-color: #3f46ad;
+
+      color: #ffffff;
     }
     &-item{
       @extend #{$this}__tweet;

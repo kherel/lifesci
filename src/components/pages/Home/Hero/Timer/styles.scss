@@ -1,0 +1,36 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.timer{
+  display: flex;
+  max-width: 428px;
+  justify-content: space-between;
+
+  @include media ($tablet) {
+    margin: 0 auto;
+  }
+  &__digit{
+    width: 31px;
+    height: 63px;
+    font-size: 54px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+    & + &{
+      margin-left: .4rem;
+    }
+  }
+  &__label{
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 18px;
+    font-size: 16px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  &__digits{
+    flex-basis: 66px;
+    position: relative;
+  }
+}

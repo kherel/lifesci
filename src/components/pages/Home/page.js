@@ -3,11 +3,11 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('Home')
 import Hero from './Hero'
-import About from './About'
-import Timeline from './Timeline'
+// import Timeline from './Timeline'
 import Tweets from './Tweets'
-import O_Resources from 'O_Resources'
-import Contracts from './Contracts'
+// import O_Resources from 'O_Resources'
+// import Contracts from './Contracts'
+import Subscribe from './Subscribe'
 
 class Home extends Component {
   render() {
@@ -15,11 +15,11 @@ class Home extends Component {
     return (
       <div className={cn()}>
         <Hero />
-        <About />
-        <Timeline />
+        <Subscribe handleSubmit={v => console.log(v)}/>
+        {/*<Timeline />*/}
         <Tweets />
-        <O_Resources />
-        <Contracts />
+        {/*<O_Resources />*/}
+        {/*<Contracts />*/}
       </div>
     )
   }

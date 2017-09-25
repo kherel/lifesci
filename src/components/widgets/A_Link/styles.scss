@@ -3,13 +3,18 @@
 
 .a-link{
   cursor: pointer;
-  font-weight: 600;
-  vertical-align: top;
-
+  transition: color .2s;
+  &:hover, &:active{
+    color: $interactive;
+  }
   &_type{
     &_nav{
       font-weight: 500;
       font-size: 16px;
+      color: #6d6f7b;
+      height: 1.9rem;
+      line-height: 1.9rem;
+
     }
     &_button{
       width: 100%;

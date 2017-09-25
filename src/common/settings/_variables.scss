@@ -2,8 +2,11 @@
 
 $white: #fff;
 $black-1: #000000;
-$black-2: rgba 0 0 0, 0.65;
-$blue-1: #57a7ed;
+$black-2: rgba(0, 0, 0, 0.65);
+$black-3: #6d6f7b;
+$black-4: #ebebeb;
+
+$blue-1: #3f46ad;
 $blue-2: rgba(87, 167, 237, 0.1);
 
 $gray-1: #282a35;
@@ -14,8 +17,7 @@ $background-pink: $pink-1;
 $background-dark: $gray-1;
 
 
-$interactive: #57a7ed; // itneractive text (links, buttons, ...etc)
-$interactive-t: $blue-2;
+$interactive: $blue-1; // itneractive text (links, buttons, ...etc)
 
 $text: $black-1;
 $text-t: $black-2;

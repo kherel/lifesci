@@ -2,15 +2,5 @@
 @import "common/utils";
 
 .m-hero{
-  background-image: url("/img/common/background.svg");
-  background-size: cover;
-  background-color: $background-dark;
-  background-position: 3% 15%;
-  padding-top: 8rem;
-  padding-bottom: 4rem;
-  @include media ($tablet) {
-    padding-top: 4rem;
-    padding-bottom: 3.2rem;
-  }
-  @include transparent-back($background-dark, top);
+
 }
