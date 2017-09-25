@@ -32,6 +32,17 @@
       line-height: 1.4;
       color: rgba(0, 0, 0, 0.8);
     }
+    &_name{
+      font-family: Georgia;
+      font-size: 32px;
+      line-height: 1.31;
+      color: $white;
+    }
+    &_title{
+      font-size: 20px;
+      line-height: 1.4;
+      color: $white;
+    }
   }
 }
 

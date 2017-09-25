@@ -14,7 +14,9 @@ A_P.propTypes = {
     'second', // 17/1.53/rgba(0, 0, 0, 0.65)
     'description', // 24/1.5/rgba(0, 0, 0, 0.65)
     'tweet', // 16/1.5/rgba(0, 0, 0, 0.65)
-    'section' //20/1.4/rgba(0, 0, 0, 0.8);
+    'section', //20/1.4/rgba(0, 0, 0, 0.8);
+    'name', // white georgia 32/1.31
+    'title', // white 20/1.4
   ]),
 };
 

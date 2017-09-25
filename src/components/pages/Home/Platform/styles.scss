@@ -10,6 +10,9 @@
   &__title{
     margin-top:4.4rem;
     margin-bottom: 1.6rem;
+    @include media($tablet){
+      margin-top: 0;
+    }
   }
   &__text{
     margin-bottom: 5.6rem;
@@ -30,7 +33,11 @@
   &__section{
     padding-left:7.7rem;
     position: relative;
+    @include media($tablet){
+      padding-left: 0;
+      padding-top:5.7rem;
 
+    }
     & + & {
       margin-top: 5.4rem;
     }

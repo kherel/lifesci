@@ -7,7 +7,6 @@
   &__container{
     padding-top: 5.8rem !important;
     padding-bottom: 5.3rem !important;
-
   }
   &__proto{
     flex: 1 1 240px;
@@ -29,8 +28,11 @@
       display: flex;
       overflow-x: auto;
       overflow-y: hidden;
-
+      margin-left: -2rem;
+      margin-right: -2rem;
+      padding: 0 2rem;
     }
+
     &-title{
       @extend #{$this}__proto;
       padding: 4.4rem 1.6rem;

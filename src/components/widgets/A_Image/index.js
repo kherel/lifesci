@@ -56,7 +56,6 @@ A_Image.propTypes = {
   src: T.string.isRequired,
   alt: T.string.isRequired,
   width: T.number,
-  height: T.number,
   onClick: T.func,
   objectFit: T.oneOf([
     'contain', // increases or decreases the size of the image to fill the box whilst preserving its aspect-ratio.

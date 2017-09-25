@@ -1,0 +1,34 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.press{
+  background-color: $background-pink;
+  &__title{
+    margin-bottom: .8rem !important;
+    text-align: center;
+  }
+  &__sub-title{
+    margin-bottom:4rem;
+    text-align: center;
+
+  }
+  &__link{
+    display: inline-flex !important;
+    margin: 0 2.1rem 3.1rem;
+    align-items: center;
+  }
+  &__logos{
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+  }
+  &__img{
+    vertical-align: middle;
+  }
+  &__section{
+    padding-bottom: 4.9rem;
+    @include media ($tablet) {
+      padding-bottom: 2.3rem;
+    }
+  }
+}
