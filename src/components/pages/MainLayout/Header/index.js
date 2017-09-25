@@ -45,7 +45,8 @@ class Header extends Component {
             <MenuSvgBtn color={'#6D6F7B'}/>
           </button>
         </A_Container>
-        <MobMenu {...{openRoute, nav, isMenuOpened, toggleMenu}}/>
+        {isMenuOpened && <MobMenu {...{openRoute, nav, toggleMenu}}/>}
+
       </div>
     )
   }

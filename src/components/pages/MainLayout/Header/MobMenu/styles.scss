@@ -7,7 +7,6 @@
   z-index: 1;
   width: 100vw;
   background-color: $white;
-  display: none;
   bottom: 0;
   background:url('/img/common/mob-menu-bg.svg');
   background-size: cover;
@@ -15,20 +14,17 @@
   height: 100%;
 
 
-  &_show_true{
-    display: block;
-    #logo {
-      stroke: white;
-    }
-    #logo-text, #mob-menu-btn{
-      fill: white;
-      fill-opacity: 1;
+  #logo {
+    stroke: white;
+  }
+  #logo-text, #mob-menu-btn{
+    fill: white;
+    fill-opacity: 1;
 
-    }
+  }
 
-    @include media ($desktop) {
-      display: none;
-    }
+  @include media ($desktop) {
+    display: none;
   }
 
   &__container{
