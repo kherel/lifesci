@@ -13,7 +13,8 @@ A_P.propTypes = {
     'hero',
     'second', // 17/1.53/rgba(0, 0, 0, 0.65)
     'description', // 24/1.5/rgba(0, 0, 0, 0.65)
-    'tweet' // 16/1.5/rgba(0, 0, 0, 0.65)
+    'tweet', // 16/1.5/rgba(0, 0, 0, 0.65)
+    'section' //20/1.4/rgba(0, 0, 0, 0.8);
   ]),
 };
 

@@ -3,7 +3,12 @@
 
 .home-tweets{
   $this: &;
+  background-color: $background-pink;
+  &__container{
+    padding-top: 5.8rem !important;
+    padding-bottom: 5.3rem !important;
 
+  }
   &__proto{
     flex: 1 1 240px;
     min-width: 24rem;
@@ -12,13 +17,14 @@
     height: 249px;
     min-height: 249px;
     border-radius: 8px;
+    margin-top: .5rem;
+    margin-bottom: 1.2rem;
   }
   &__tweet {
     @extend #{$this}__proto;
-
     background-color: #ffffff;
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.03);
-    margin-bottom: 8px;
+
     &-list{
       display: flex;
       overflow-x: auto;

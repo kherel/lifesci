@@ -2,4 +2,97 @@
 @import "common/utils";
 
 .platform{
+  display: flex;
+  justify-content: space-between;
+  @include media($tablet){
+    flex-flow: column;
+  }
+  &__title{
+    margin-top:4.4rem;
+    margin-bottom: 1.6rem;
+  }
+  &__text{
+    margin-bottom: 5.6rem;
+  }
+
+  &__left, &__right{
+    flex: 0 1 46rem;
+    @include media($tablet){
+      flex-basis: auto;
+    }
+  }
+
+  &__left{
+    @include media($tablet){
+      margin-bottom: 5.4rem;
+    }
+  }
+  &__section{
+    padding-left:7.7rem;
+    position: relative;
+
+    & + & {
+      margin-top: 5.4rem;
+    }
+    &:before{
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    &_icon{
+      &_lines{
+         &:before{
+          content: url('/img/icons/lines.svg');
+        }
+      }
+      &_shield{
+        &:before{
+          content: url('/img/icons/shield.svg');
+        }
+      }
+      &_note{
+        margin-top: 64.1rem;
+        &:before{
+          content: url('/img/icons/note.svg');
+        }
+        @include media($tablet){
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  &__docs{
+    padding: 3rem 3.1rem 2.8rem 2.3rem;
+    background-color: $background-pink;
+    margin-top:4rem;
+    &-item{
+      padding-left: 3.2rem;
+      position: relative;
+      &:before{
+        content: url('/img/icons/doc.svg');
+        top: 0;
+        left: 0;
+        position: absolute;
+        display: block;
+
+      }
+    }
+  }
+  &__illustration{
+    position: absolute;
+    left: -.7rem;
+    top: -.7rem;
+    width: auto;
+    height: 58.9rem !important;
+    @include media($tablet){
+      display: none;
+    }
+  }
+}
+
+.shadow {
+  -webkit-filter: drop-shadow( -5px -5px 5px #000 );
+  filter: drop-shadow( -5px -5px 5px #000 ); /* Same syntax as box-shadow, except
+                                                       for the spread property */
 }

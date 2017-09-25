@@ -24,8 +24,6 @@ $form-btn-border-radius: 30px;
     background-color: $interactive;
     border: solid 1px $interactive;
     &:hover{
-      &:hover{ transform: translateY(-1px);}
-
       border-color: transparent;
       background-color: lighten($interactive,5%);
     }
@@ -42,7 +40,6 @@ $form-btn-border-radius: 30px;
     color: $interactive;
     border: solid 1px $interactive;
     &:hover{
-      transform: translateY(-1px);
       border-color: lighten($interactive, 5%);
       background-color: lighten(rgba(87, 167, 237, 0.1), 5%);
     }
@@ -63,7 +60,10 @@ $form-btn-border-radius: 30px;
   }
   &__button{
     @extend #{$this};
-    &:hover{ transform: translateY(-1px);}
+    &:hover{
+      border-color: lighten($interactive, 5%);
+      background-color: lighten($interactive, 5%);
+    }
 
     &_type{
       &_button-primary{

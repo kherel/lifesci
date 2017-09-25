@@ -28,7 +28,7 @@ class Tweets extends Component {
     const list = this.getList()
     return (
       <div className={cn()}>
-        <A_Container type='section'>
+        <A_Container type='normal' mx={cn('container')}>
 
           <ul className={cn('tweet-list')}>
             <li className={cn('tweet-title')}>
