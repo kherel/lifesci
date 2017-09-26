@@ -4,7 +4,7 @@ import MainLayout from './MainLayout'
 import Documents from './Documents'
 import Home from './Home'
 import ContactUs from './ContactUs'
-// import Team from './Team'
+import Team from './Team'
 // import Test from './Test'
 
 
@@ -26,10 +26,10 @@ const getRoutes = () => {
         path="/contact-us"
         component={ContactUs}
       />
-      {/*<Route*/}
-        {/*path="/test"*/}
-        {/*component={Test}*/}
-      {/*/>*/}
+      <Route
+        path="/team"
+        component={Team}
+      />
     </Route >
   )
 }

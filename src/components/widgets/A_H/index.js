@@ -58,7 +58,7 @@ A_H.propTypes = {
     'third', //black 500/19/1.47
     'small', //black trans bold/12/1.33 center
     'small-section', //black 500/19px/1.47
-    'section-subtitle' //595959 17/1.53 center
+    'section-subtitle' //bold/15/1.73 rgba(0, 0, 0, 0.65)
   ]),
   children: T.any.isRequired,
   mx: T.string

@@ -14,6 +14,7 @@ A_Container.propTypes = {
     'wide', // 1100
     'hero', // hero
     'section', // margin 44 auto
+    'equal', // 64/64
     'smart' //
   ]),
   mx: T.string,

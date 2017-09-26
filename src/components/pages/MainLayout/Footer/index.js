@@ -25,7 +25,7 @@ class Footer extends Component {
   getNavigation(){
     const links = nav.map( ({name, url}) => (
       <li key={name} className={cn('nav-item')}>
-        <A_Link to={`${url}`} type='nav' >{name}</A_Link>
+        <A_Link to={url} type='nav' >{name}</A_Link>
       </li>
     ))
 
@@ -40,7 +40,7 @@ class Footer extends Component {
     return(
       extra.map( ({name, url}) => (
         <div key={name} className={cn('footer-nav-item')}>
-          <A_Link to={`${url}`} type='nav' >{name}</A_Link>
+          <A_Link to={url} type='nav' >{name}</A_Link>
         </div>
       ))
     )
@@ -107,7 +107,7 @@ const social = [
 const nav = [
   {name: 'Contribution',  url: '/#'},
   {name: 'Whitepaper', url: '/doc'},
-  {name: 'Team', url: 'team'},
+  {name: 'Team', url: '/team'},
   {name: 'Roadmap', url: '/#'},
   {name: 'Github', url: '/#'}
 ]

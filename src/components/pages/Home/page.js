@@ -8,8 +8,6 @@ import Tweets from './Tweets'
 import Platform from './Platform'
 import Global from './Global'
 import Press from './Press'
-// import O_Resources from 'O_Resources'
-// import Contracts from './Contracts'
 import Subscribe from './Subscribe'
 
 class Home extends Component {
@@ -20,12 +18,9 @@ class Home extends Component {
         <Hero />
         <Subscribe handleSubmit={v => console.log(v)}/>
         <Platform />
-        {/*<Timeline />*/}
         <Tweets />
         <Global />
         <Press />
-        {/*<O_Resources />*/}
-        {/*<Contracts />*/}
       </div>
     )
   }

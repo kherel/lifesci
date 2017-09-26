@@ -2,7 +2,10 @@
 @import "common/utils";
 
 .team{
-  background-color: $background-pink;
+  &__hero{
+    @include hl;
+  }
+
   &__card{
     width: 302px;
     height: 118px;
@@ -72,6 +75,30 @@
       position: absolute;
       bottom: 1.5rem;
       left: 1.8rem;
+    }
+  }
+
+  &__founder{
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    margin-top: 6.4rem;
+
+    & + & {
+      flex-flow: row-reverse;
+    }
+    &-photo{
+      flex: 0 0 37.6rem;
+      height: 37.6rem;
+    }
+    &-info{
+      flex: 1 1 auto;
+      padding: 3.2rem 3.2rem 3.2rem;
+    }
+    &-name{
+      margin-bottom: 1.6rem;
+      margin-top: 1.6rem;
     }
   }
 }

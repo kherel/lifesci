@@ -2,5 +2,34 @@
 @import "common/utils";
 
 .contact-us{
+  background-color: $background-pink;
+  &__inner{
+    display: flex;
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+    justify-content: space-between;
+    @include media($mobile){
+      flex-flow: column;
+    }
+  }
+  &__icon{
+    margin-bottom: 4.8rem;
+  }
+  &__right, &__left{
+    flex: 0 0 38rem;
+    text-align: center;
+    @include media($mobile){
+      flex-basis: auto;
+    }
+  }
 
+  &__left{
+    @include media($mobile){
+      margin-bottom: 6.4rem;
+    }
+  }
+  &__title, &__text{
+    text-align: center;
+    margin-bottom: 1.6rem;
+  }
 }

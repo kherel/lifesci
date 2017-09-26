@@ -25,7 +25,7 @@ class MobMenu extends Component {
         return (
           <li key={i} className={cn('nav-item')}>
             <A_Link
-              to={`/${url}`}
+              to={url}
               disabled={isOpen}
               mx={cn('nav-link', {'is-open': isOpen})}
             >{name}</A_Link>

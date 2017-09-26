@@ -16,7 +16,7 @@ class Header extends Component {
       return(
         <li key={i} className={cn('nav-item')}>
           <A_Link
-            to={`/${url}`}
+            to={url}
             type='nav'
             disabled={isOpen}
             mx={cn('nav-link', {'is-open': isOpen})}
@@ -62,7 +62,7 @@ export default Header;
 
 const nav = [
   {name: 'Contribution',  url: '#'},
-  {name: 'Whitepaper', url: 'doc'},
-  {name: 'Team', url: '#'},
+  {name: 'Whitepaper', url: '/doc'},
+  {name: 'Team', url: '/team'},
   {name: 'Roadmap', url: '#'}
 ]
