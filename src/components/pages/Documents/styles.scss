@@ -43,13 +43,6 @@
     line-height: 1.4;
     color: rgba(0, 0, 0, 0.8);
     position: relative ;
-    padding-right: 10.3rem;
-    @include media($tablet){
-      padding-right: 5.7rem;
-    }
-    @include media($mobile){
-      padding-bottom: 1.6rem;
-    }
     &:before{
       content: url('/img/icons/doc.svg');
       top: 0;
@@ -58,10 +51,10 @@
       display: block;
     }
     &:after{
-      position: absolute;
-      right: 0;
-      top: 1.4rem;
+      margin-left: 10.3rem;
       transform: translateY(-50%);
+      position: relative;
+      bottom: 1px;
       font-size: 12px;
       line-height: 1.5;
       padding: 2px 6px 2px 7px;
@@ -69,10 +62,15 @@
       text-align: center;
       color: #ffffff;
       content: 'PDF';
-      display: inline-block;
       width: 39px;
       border-radius: 100px;
-      background-color: #3f46ad;
+      background-color: $interactive;
+      @include media($tablet){
+        margin-left: 5.7rem;
+      }
+      @include media($mobile){
+        margin-left: 1.6rem;
+      }
     }
   }
 }
