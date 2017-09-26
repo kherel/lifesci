@@ -25,7 +25,7 @@ const Global = () =>{
         </section>
       </div>
       <div className={cn('right')}>
-        <A_Image src={'/img/photos/sir-martin-evans.jpg'} alt='Sir Martin Evans' objectFit='contain' mx={cn('photo')}/>
+        <A_Image src={'/img/photo/sir-martin-evans.jpg'} alt='Sir Martin Evans' objectFit='contain' mx={cn('photo')}/>
         <div className={cn('label')}>
           <A_P type='name'>Sir Martin Evans</A_P>
           <A_P type='title'>Lifesci’s chief advisor</A_P>

@@ -7,7 +7,7 @@ import Hero from './Hero'
 import Tweets from './Tweets'
 import Platform from './Platform'
 import Global from './Global'
-import Press from './Press'
+import Press from 'O_Press'
 import Subscribe from './Subscribe'
 
 class Home extends Component {

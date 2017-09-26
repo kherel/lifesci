@@ -2,13 +2,14 @@ import React from 'react';
 // import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('Press')
+const cn = cssClassName('O_Press')
 import A_Container from 'A_Container'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_Image from 'A_Image'
 import A_Link from 'A_Link'
-const Press = () =>{
+
+const O_Press = () =>{
   return(
     <div className={cn()}>
       <A_Container type='section' mx={cn('section')}>
@@ -26,12 +27,12 @@ const Press = () =>{
   )
 }
 
-Press.propTypes = {
+O_Press.propTypes = {
 };
 
-Press.defaultProps = {
+O_Press.defaultProps = {
 }
-export default Press
+export default O_Press
 
 const logos = [
   {name: 'logo-google', ulr: '#'},

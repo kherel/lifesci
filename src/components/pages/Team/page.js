@@ -5,8 +5,8 @@ const cn = cssClassName('Team')
 import A_Container from 'A_Container'
 import A_H from 'A_H'
 import A_Image from 'A_Image'
-import O_Resources from 'O_Resources'
 import A_P from 'A_P'
+import Press from 'O_Press'
 
 class Team extends Component {
 
@@ -76,7 +76,7 @@ class Team extends Component {
           <A_H type='main'>The Advisors</A_H>
           {advisorsList}
         </A_Container>
-        <O_Resources />
+        <Press />
       </div>
     )
   }
