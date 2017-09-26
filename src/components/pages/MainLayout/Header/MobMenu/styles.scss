@@ -35,7 +35,7 @@
       color: $white;
       font-weight: bold;
       position: relative;
-      &:hover, &:active{
+      &:hover, &:active, &_is-open_true{
         color: darken($white, 30%);
       }
     }
