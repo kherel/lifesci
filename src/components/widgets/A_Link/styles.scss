@@ -4,9 +4,7 @@
 .a-link{
   cursor: pointer;
   transition: color .2s;
-  &:hover, &:active{
-    color: $interactive;
-  }
+
   &_type{
     &_nav{
       font-weight: 500;
