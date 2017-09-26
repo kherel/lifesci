@@ -5,19 +5,19 @@ import {Link} from 'react-router'
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_Btn')
 // import history from 'history'
+import A_Link from 'A_Link'
 
-const A_Btn = ({type, children, disabled, btnType, to, onClick, mx, ...props}) =>{
+const A_Btn = ({type, children, disabled, btnType, to, onClick, mx, external, ...props}) =>{
 
   disabled = disabled && 'disabled'
 
   switch(type){
     case 'link-primary':
     case 'link-secondary':
-
       return (
-        <Link className={cn('link', {type}, [disabled])} to={to} {...props}>
+        <A_Link mx={cn('link', {type})} disabled={disabled} to={to} external={external}{...props}>
           {children}
-        </Link>
+        </A_Link>
       )
     case 'button-primary':
     default:

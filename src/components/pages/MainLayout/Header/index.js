@@ -62,7 +62,7 @@ export default Header;
 
 const nav = [
   {name: 'Contribution',  url: '#'},
-  {name: 'Whitepaper', url: '#'},
+  {name: 'Whitepaper', url: 'doc'},
   {name: 'Team', url: '#'},
   {name: 'Roadmap', url: '#'}
 ]

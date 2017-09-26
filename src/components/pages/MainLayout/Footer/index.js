@@ -11,7 +11,7 @@ class Footer extends Component {
   getSocial(){
     const socialButtons = social.map(({name}) => (
       <li className={cn('social-icon')} key={name}>
-        <A_Image src={`/img/icons/${name}.svg`} realSize/>
+        <A_Image src={`img/icons/${name}.svg`} realSize/>
       </li>
       )
     )
@@ -25,7 +25,7 @@ class Footer extends Component {
   getNavigation(){
     const links = nav.map( ({name, url}) => (
       <li key={name} className={cn('nav-item')}>
-        <A_Link to={`/${url}`} type='nav' >{name}</A_Link>
+        <A_Link to={`${url}`} type='nav' >{name}</A_Link>
       </li>
     ))
 
@@ -40,7 +40,7 @@ class Footer extends Component {
     return(
       extra.map( ({name, url}) => (
         <div key={name} className={cn('footer-nav-item')}>
-          <A_Link to={`/${url}`} type='nav' >{name}</A_Link>
+          <A_Link to={`${url}`} type='nav' >{name}</A_Link>
         </div>
       ))
     )
@@ -97,22 +97,22 @@ Footer.defaultProps = {
 export default Footer;
 
 const social = [
-  {name: 'telegram',  url: '#'},
-  {name: 'slack', url: '#'},
-  {name: 'fb', url: '#'},
-  {name: 'twitter', url: '#'},
-  {name: 'bitcoin', url: '#'}
+  {name: 'telegram',  url: '/#'},
+  {name: 'slack', url: '/#'},
+  {name: 'fb', url: '/#'},
+  {name: 'twitter', url: '/#'},
+  {name: 'bitcoin', url: '/#'}
 ]
 
 const nav = [
-  {name: 'Contribution',  url: '#'},
-  {name: 'Whitepaper', url: 'doc'},
+  {name: 'Contribution',  url: '/#'},
+  {name: 'Whitepaper', url: '/doc'},
   {name: 'Team', url: 'team'},
-  {name: 'Roadmap', url: '#'},
-  {name: 'Github', url: '#'}
+  {name: 'Roadmap', url: '/#'},
+  {name: 'Github', url: '/#'}
 ]
 
 const extra = [
-  {name: 'Privacy & Terms',  url: '#'},
-  {name: 'Contact Us', url: 'doc'}
+  {name: 'Privacy & Terms',  url: '/#'},
+  {name: 'Contact Us', url: '/contact-us'}
 ]

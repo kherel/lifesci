@@ -2,78 +2,77 @@
 @import "common/utils";
 
 .documents{
-  background-color: $background-pink;
-  &__card{
-    width: 296px;
-    height: 411px;
-    border-radius: 4px;
-    margin-bottom: 5.4rem;
-    padding: 2rem 2.5rem;
-    position: relative;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
-    background-color: $white;
+  border-bottom: $line;
+  &__main{
+    padding-top: 7.7rem;
+    padding-bottom: 6.4rem;
     @include media($tablet){
-      width: 237.2px;
-      height: 329px;
-      border-radius: 3.2px;
-      background-color: #ffffff;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-      margin-right: 2rem;
+      padding-top: 3.5rem;
+    }
+  }
+  &__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.6rem;
+    border-bottom: $line;
+    @include media($mobile){
+      flex-flow: column;
+      align-items: flex-start;
+      padding-bottom: 3.2rem;
 
     }
-    &-list{
-      margin-top: 3.6rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      @include media($tablet){
-        justify-content: space-around;
-
-      }
-      @include media($mobile) {
-        flex-flow: column;
-        align-items: center;
-      }
+    & + &{
+      margin-top: 3.2rem;
     }
-    &-img{
-      width: 244px !important;
-      height: 322px !important;
-      object-fit: contain !important;
+    &-buttons{
+      flex: 0 0 auto;
+    }
+  }
+
+  &__download{
+    .a-btn + .a-btn{
+      margin-left: 3.2rem !important;
+    }
+  }
+
+  &__file{
+    padding-left: 3rem  ;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.8);
+    position: relative ;
+    padding-right: 10.3rem;
+    @include media($tablet){
+      padding-right: 5.7rem;
+    }
+    @include media($mobile){
+      padding-bottom: 1.6rem;
+    }
+    &:before{
+      content: url('/img/icons/doc.svg');
+      top: 0;
+      left: 0;
       position: absolute;
-      bottom: 25px;
-      left: -4px;
-      @include media($tablet){
-        width: 195.5px !important;
-        height: 257.8px !important;
-      }
-      &_color{
-        &_orage{
-          .img_color_start{
-            stop-color:"#F2994A"
-          }
-          .img_color_stop{
-            stop-color:"#F2C94C"
-          }
-        }
-        &_blue{
-          .img_color_start{
-            stop-color:red
-          }
-          .img_color_stop{
-            stop-color:blue
-          }
-        }
-        &_green{
-
-        }
-      }
+      display: block;
     }
-    &-name{
-      width: 183px;
-      height: 26px;
-      font-size: 19px;
-      font-weight: 500;
-      line-height: 1.37;
+    &:after{
+      position: absolute;
+      right: 0;
+      top: 1.4rem;
+      transform: translateY(-50%);
+      font-size: 12px;
+      line-height: 1.5;
+      padding: 2px 6px 2px 7px;
+      font-weight: bold;
+      text-align: center;
+      color: #ffffff;
+      content: 'PDF';
+      display: inline-block;
+      width: 39px;
+      border-radius: 100px;
+      background-color: #3f46ad;
     }
   }
 }

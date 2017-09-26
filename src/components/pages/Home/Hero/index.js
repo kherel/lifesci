@@ -13,7 +13,7 @@ class Hero extends Component {
 
   render() {
     return (
-      <A_Container type='hero'>
+      <A_Container type='hero' mx={cn()}>
         <div className={cn('inner')}>
           <div className={cn('info')}>
             <A_H type="hero" >Solving life sciences real problems of today.</A_H>

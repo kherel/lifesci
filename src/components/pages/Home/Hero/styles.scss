@@ -3,6 +3,11 @@
 
 .home-hero{
 
+  padding-bottom: 2rem;
+  @include media ($tablet) {
+    padding-bottom: 3.2rem;
+  }
+
   &__hero-title{
     padding-bottom: 2.5rem;
     text-align: left;
@@ -12,7 +17,6 @@
   }
   &__inner{
     display: flex;
-    align-items: center;
     justify-content: space-between;
     @include media ($tablet) {
       flex-flow: column;
@@ -34,6 +38,7 @@
     border-radius: 4px;
     background-color: #ffffff;
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.03);
+    margin-top: -2rem;
     padding: 3.6rem 3.7rem 4.4rem;
     &-date{
       color: $interactive;

@@ -8,6 +8,11 @@
       max-width: 82.4rem;
       font-size: 20px;
       line-height: 1.4;
+      color: rgba(0, 0, 0, 0.8);
+
+      .a-h+&{
+        margin-top: 3.1rem;
+      }
     }
     &_second {
       font-size: 1.7rem;

@@ -1,8 +1,9 @@
 import {Route, IndexRoute} from 'react-router'
 import React from 'react'
 import MainLayout from './MainLayout'
-// import Documents from './Documents'
+import Documents from './Documents'
 import Home from './Home'
+import ContactUs from './ContactUs'
 // import Team from './Team'
 // import Test from './Test'
 
@@ -17,14 +18,14 @@ const getRoutes = () => {
       <IndexRoute
         component={Home}
       />
-      {/*<Route*/}
-        {/*path="/doc"*/}
-        {/*component={Documents}*/}
-      {/*/>*/}
-      {/*<Route*/}
-        {/*path="/team"*/}
-        {/*component={Team}*/}
-      {/*/>*/}
+      <Route
+        path="/doc"
+        component={Documents}
+      />
+      <Route
+        path="/contact-us"
+        component={ContactUs}
+      />
       {/*<Route*/}
         {/*path="/test"*/}
         {/*component={Test}*/}

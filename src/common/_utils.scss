@@ -1,3 +1,5 @@
+@import "./settings/variables";
+
 @function top-shadow($depth) {
   $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
   $blur: nth(1.5 3 10 14 19, $depth) * 4px;
@@ -5,6 +7,7 @@
 
   @return 0 $primary-offset $blur $color;
 }
+
 
 /// Computes a bottom-shadow for a card effect.
 /// @param {Number} $depth - depth level
@@ -53,6 +56,18 @@
   white-space: nowrap;
 }
 
+@mixin hl{
+  &:after{
+    content: '';
+    height: 1px;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: $line;
+  }
+}
 
 @function makelongshadow() {
   $val: 0px 0px #c3c3c3;
@@ -115,3 +130,4 @@
   position: relative;
   top: .2rem;
 }
+

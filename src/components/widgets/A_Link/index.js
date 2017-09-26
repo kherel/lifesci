@@ -5,14 +5,14 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_Link')
 
-const A_Link = ({children, type, block, disabled, external, to, mx}) => {
+const A_Link = ({children, type, block, disabled, external, download, to, mx}) => {
 
   let _link
   const className= cn({block, type, external}, [disabled && 'disabled', mx])
 
   if (external) {
     _link =(
-      <a className={className} href={to} target="_blank">{children}</a>
+      <a className={className} href={to} download={download} target="_blank">{children}</a>
     )
   } else {
     _link =(
