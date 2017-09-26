@@ -5,13 +5,13 @@
   position: relative;
   cursor: pointer;
   user-select: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   padding-right: 45px;
 
-  &:hover{
-    #logo{
-
+  &__logo{
+    path{
+        transition: all .6s ease;
     }
   }
 }

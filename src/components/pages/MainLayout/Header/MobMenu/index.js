@@ -41,12 +41,7 @@ class MobMenu extends Component {
     const links = this.getLinks(nav, openRoute)
     return (
       <div className={cn({show: isMenuOpened})}>
-        <A_Container type='normal' mx={cn('container')} >
-          <M_Logo color={isMenuOpened ? 'white' : 'black'} />
-          <button className={cn('nav-menu-btn', {open: isMenuOpened})} onClick={toggleMenu}>
-            <MenuSvgBtn color={'white'}/>
-          </button>
-        </A_Container>
+        <div className={cn('container')} />
 
         <ul className={cn('nav-list')}>
           {links}

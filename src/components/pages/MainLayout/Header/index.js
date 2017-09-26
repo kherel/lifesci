@@ -39,13 +39,13 @@ class Header extends Component {
     return (
       <div className={cn()}>
         <A_Container type='normal' mx={cn('nav')}>
-          <M_Logo />
+          <M_Logo mx={cn('logo')} color={isMenuOpened && 'white'}/>
           {desktopMenu}
           <button className={cn('nav-menu-btn', {open: isMenuOpened})} onClick={toggleMenu}>
-            <MenuSvgBtn color={'#6D6F7B'}/>
+            <MenuSvgBtn color={isMenuOpened ? 'white' : '#6D6F7B'}/>
           </button>
+          {isMenuOpened && <MobMenu {...{openRoute, nav, toggleMenu}}/>}
         </A_Container>
-        {isMenuOpened && <MobMenu {...{openRoute, nav, toggleMenu}}/>}
 
       </div>
     )
@@ -62,7 +62,7 @@ export default Header;
 
 const nav = [
   {name: 'Contribution',  url: '#'},
-  {name: 'Whitepaper', url: 'doc'},
-  {name: 'Team', url: 'team'},
+  {name: 'Whitepaper', url: '#'},
+  {name: 'Team', url: '#'},
   {name: 'Roadmap', url: '#'}
 ]

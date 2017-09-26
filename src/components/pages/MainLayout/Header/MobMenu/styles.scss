@@ -8,20 +8,10 @@
   width: 100vw;
   background-color: $white;
   bottom: 0;
+  left: 0;
   background:url('/img/common/mob-menu-bg.svg');
   background-size: cover;
-  overflow:scroll;
   height: 100%;
-
-
-  #logo {
-    stroke: white;
-  }
-  #logo-text, #mob-menu-btn{
-    fill: white;
-    fill-opacity: 1;
-
-  }
 
   @include media ($desktop) {
     display: none;
@@ -29,10 +19,6 @@
 
   &__container{
     height: 65px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
     border-bottom: 1px solid rgba(#ebebeb, 0.15);
 
   }
@@ -54,14 +40,6 @@
       }
     }
 
-    &-menu-btn{
-      @include media ($desktop) {
-        display: none;
-      }
-      position: relative;
-      color: $white;
-      //padding: 0 1.5rem 0 0.5rem;
-    }
   }
 
 

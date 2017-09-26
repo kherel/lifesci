@@ -14,11 +14,23 @@
     z-index: 99;
     top: 0;
   }
+  &__logo{
+    z-index: 100;
+    position: absolute !important;
+    left: 2rem;
+    @include media($tablet) {
+      left: $p-tablet;
+    }
+    @include media($mobile) {
+      left: $p-mobile;
+    }
+  }
   &__nav{
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     &-list{
       @include media ($tablet) {
         display: none;
@@ -44,14 +56,16 @@
         display: none;
       }
 
-      position: relative;
+      position: absolute;
       color: $white;
-      //padding: 0 1.5rem 0 0.5rem;
+      z-index: 100;
+      right: 2rem;
+      @include media($tablet) {
+        right: $p-tablet;
+      }
+      @include media($mobile) {
+        right: $p-mobile;
+      }
     }
   }
-
-}
-
-#mob-menu-btn {
-  fill: #6D6F7B;
 }
