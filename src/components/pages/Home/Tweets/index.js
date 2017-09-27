@@ -35,6 +35,7 @@ class Tweets extends Component {
               See what people are saying about Lifesci
             </li>
             {list}
+            <li className={cn('helper')}/>
           </ul>
         </A_Container>
       </div>

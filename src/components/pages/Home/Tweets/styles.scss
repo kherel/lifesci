@@ -30,7 +30,7 @@
       overflow-y: hidden;
       margin-left: -2rem;
       margin-right: -2rem;
-      padding: 0 2rem;
+      padding: 0 0 0 2rem;
     }
 
     &-title{
@@ -88,6 +88,16 @@
     &-nick{
       @extend #{$this}__user;
       color: rgba(0, 0, 0, 0.4);
+    }
+  }
+  &__helper{
+    width: 20px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    visibility: hidden;
+    height: 100%;
+    display: none;
+    @include media($tablet){
+      display: block;
     }
   }
 }
