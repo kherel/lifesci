@@ -6,15 +6,39 @@
     @include hl;
   }
 
+  &__team{
+    background-color: $background-pink;
+    &-title{
+      margin-bottom: 2.2rem;
+    }
+  }
+
   &__card{
+    $this: &;
     width: 302px;
-    height: 118px;
     border-radius: 4px;
     margin-bottom: 5.4rem;
     padding: 1.6rem 1.8rem;
     position: relative;
     box-shadow: $card-shadow;
     background-color: $white;
+
+    &_type{
+      &_team{
+        height: 118px;
+      }
+      &_advisors{
+        height: 296px;
+        #{$this}-text{
+          font-size: 16px;
+          line-height: 1.5;
+          color: rgba(0, 0, 0, 0.65);
+          position: absolute;
+          bottom: 1.5rem;
+          left: 1.8rem;
+        }
+      }
+    }
 
     @include media($tablet) {
       justify-content: space-around;
@@ -37,7 +61,7 @@
     }
 
     &-list{
-      margin-top: 3.6rem;
+      margin-top: 6.4rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -68,18 +92,15 @@
       line-height: 1.5;
       color: rgba(0, 0, 0, 0.4);
     }
-    &-position{
+    &-text{
       font-size: 16px;
       line-height: 1.5;
       color: rgba(0, 0, 0, 0.65);
-      position: absolute;
-      bottom: 1.5rem;
-      left: 1.8rem;
     }
   }
 
   &__founder{
-    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: $card-shadow;
     border-radius: 4px;
     overflow: hidden;
     display: flex;

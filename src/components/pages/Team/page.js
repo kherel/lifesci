@@ -10,15 +10,14 @@ import Press from 'O_Press'
 
 class Team extends Component {
 
-  getCards(entities){
-    const cards = entities.map(({name, avatar, twitter, position}, i) => (
-      <div key={i} className={cn('card')}>
+  getCards(entities, type){
+    const cards = entities.map(({name, avatar, twitter, text}, i) => (
+      <div key={i} className={cn('card', {type})}>
         <div className={cn('card-name')}>{name}</div>
         <div className={cn('card-twitter')}>{twitter}</div>
-        <div className={cn('card-position')}>{position}</div>
+        <div className={cn('card-text')}>{text}</div>
         <A_Image mx={cn('card-avatar')} rounded src={`/img/team/${avatar}`}/>
       </div>
-
     ))
     return(
       <ul className={cn('card-list')}>
@@ -54,13 +53,12 @@ class Team extends Component {
         <A_H type="section" mx={cn('founder-name')}>{name}</A_H>
         <A_P type="article-text">{text}</A_P>
       </div>
-
     </div>
   )
 
   render() {
-    const teamList = this.getCards(team)
-    const advisorsList = this.getCards(advisors)
+    const teamList = this.getCards(team, 'team')
+    const advisorsList = this.getCards(advisors, 'advisors')
     const hero = this.renderHero()
     const founders = this.renderFounders()
 
@@ -68,12 +66,17 @@ class Team extends Component {
       <div className={cn()}>
         {hero}
         {founders}
+        <div className={cn('team')}>
+          <A_Container type={'smart'}>
+            <A_H type='section' mx={cn('team-title')}>The Lifesci team</A_H>
+            <A_P type="section">We’re here for those who refuse to settle. Who never stop moving forwards. Who continue to search for new ideas and better experiences in everything they do.</A_P>
+            {teamList}
+          </A_Container>
+        </div>
+
         <A_Container type={'smart'}>
-          <A_H type='main' >The Lifesci team</A_H>
-          {teamList}
-        </A_Container>
-        <A_Container type={'smart'}>
-          <A_H type='main'>The Advisors</A_H>
+          <A_H type='section'>The Advisors</A_H>
+          <A_P type="section">We’re here for those who refuse to settle. Who never stop moving forwards. Who continue to search for new ideas and better experiences in everything they do.</A_P>
           {advisorsList}
         </A_Container>
         <Press />
@@ -91,21 +94,22 @@ Team.defaultProps = {
 export default Team;
 
 const team = [
-  {name: 'Dinis Guarda', twitter: '@GR36', position:'CEO', avatar: 'dinis_guarda.jpg'},
-  {name: 'Ajan Reginald', twitter: '@GR36', position:'CFO', avatar: 'no_avatar.png'},
-  {name: 'Anton Mozgovoy', twitter: '@anton_mozgovoy', position:'CTO', avatar: 'anton_mozgovoy.jpg'},
-  {name: 'Anca Petre', twitter: '@twitter', position:'subtitle', avatar: 'no_avatar.png'},
-  {name: 'Zeeshan Malick', twitter: '@twitter', position:'subtitle', avatar: 'zeeshan_mallick.jpg'},
-  {name: 'Derin Cag', twitter: '@twitter', position:'subtitle', avatar: 'derin_cag.jpg'},
+  {name: 'Anton Mozgovoy', twitter: '@anton_mozgovoy', text:'CTO', avatar: 'anton_mozgovoy.jpg'},
+  {name: 'Kherel Kechil', twitter: '@GR36', text:'VP Technology', avatar: 'no_avatar.png'},
+  {name: 'Anca Petre', twitter: '@twitter', text:'subtitle', avatar: 'no_avatar.png'},
+  {name: 'Zeeshan Malick', twitter: '@twitter', text:'subtitle', avatar: 'zeeshan_mallick.jpg'},
+  {name: 'Derin Cag', twitter: '@twitter', text:'subtitle', avatar: 'derin_cag.jpg'},
+  {name: 'Derin Cag', twitter: '@twitter', text:'subtitle', avatar: 'no_avatar.png'},
+
 ]
 
 const advisors = [
-  {name: 'Sir Martin Evans', twitter: '@GR36', position:'Noble of Medicine', avatar: 'sir_martin_evans.png'},
-  {name: 'Ajan Reginald', twitter: '@GR36', position:'CFO', avatar: 'no_avatar.png'},
-  {name: 'Anton Mozgovoy', twitter: '@anton_mozgovoy', position:'CTO', avatar: 'no_avatar.png'},
-  {name: 'Anca Petre', twitter: '@twitter', position:'subtitle', avatar: 'no_avatar.png'},
-  {name: 'Zeeshan Malick', twitter: '@twitter', position:'subtitle', avatar: 'no_avatar.png'},
-  {name: 'Derin Cag', twitter: '@twitter', position:'subtitle', avatar: 'no_avatar.png'}
+  {name: 'Anton Mozgovoy', twitter: '@anton_mozgovoy', avatar: 'anton_mozgovoy.jpg', text:'In 1981 he isolated the first embryonic stem cells. Over his career Sir Martin has published more than 120 scientific papers and received numerous awards for his ground-breaking research. Alongside his 2007 Nobel Prize, Sir Martin has also been awarded the prestigious Albert'},
+  {name: 'Kherel Kechil', twitter: '@GR36', avatar: 'no_avatar.png', text:'In 1981 he isolated the first embryonic stem cells. Over his career Sir Martin has published more than 120 scientific papers and received numerous awards for his ground-breaking research. Alongside his 2007 Nobel Prize, Sir Martin has also been awarded the prestigious Albert'},
+  {name: 'Anca Petre', twitter: '@twitter', avatar: 'no_avatar.png', text:'In 1981 he isolated the first embryonic stem cells. Over his career Sir Martin has published more than 120 scientific papers and received numerous awards for his ground-breaking research. Alongside his 2007 Nobel Prize, Sir Martin has also been awarded the prestigious Albert'},
+  {name: 'Zeeshan Malick', twitter: '@twitter', avatar: 'zeeshan_mallick.jpg', text:'In 1981 he isolated the first embryonic stem cells. Over his career Sir Martin has published more than 120 scientific papers and received numerous awards for his ground-breaking research. Alongside his 2007 Nobel Prize, Sir Martin has also been awarded the prestigious Albert'},
+  {name: 'Derin Cag', twitter: '@twitter', avatar: 'derin_cag.jpg', text:'In 1981 he isolated the first embryonic stem cells. Over his career Sir Martin has published more than 120 scientific papers and received numerous awards for his ground-breaking research. Alongside his 2007 Nobel Prize, Sir Martin has also been awarded the prestigious Albert'},
+  {name: 'Derin Cag', twitter: '@twitter', avatar: 'no_avatar.png', text:'In 1981 he isolated the first embryonic stem cells. Over his career Sir Martin has published more than 120 scientific papers and received numerous awards for his ground-breaking research. Alongside his 2007 Nobel Prize, Sir Martin has also been awarded the prestigious Albert'},
 ]
 
 const founders = [

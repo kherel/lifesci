@@ -1,0 +1,72 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.team-card{
+  width: 302px;
+  border-radius: 4px;
+  margin-bottom: 5.4rem;
+  padding: 1.6rem 1.8rem;
+  position: relative;
+  box-shadow: $card-shadow;
+  background-color: $white;
+
+  &_type{
+    &_team{
+      height: 118px;
+    }
+    &_advisors{
+      height: 296px;
+      #{$this}-text{
+        font-size: 16px;
+        line-height: 1.5;
+        color: rgba(0, 0, 0, 0.65);
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.8rem;
+      }
+    }
+  }
+
+  @include media($tablet) {
+    justify-content: space-around;
+  }
+  @include media($mobile) {
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      left: 1.6rem;
+      border-bottom: solid 1px rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  &-avatar{
+    top: 1.6rem;
+    right: 1.7rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    position: absolute;
+  }
+  &-name{
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: $text-t;
+  }
+  &-twitter{
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  &-text{
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.65);
+  }
+}

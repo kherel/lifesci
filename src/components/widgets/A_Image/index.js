@@ -7,11 +7,11 @@ import isInitialLoad from 'utils/initialLoad'
 
 class A_Image extends Component {
 
-  state = {imgReady: false}
-
-  handleLoad = () => {
-    this.setState({imgReady: true})
-  }
+  // state = {imgReady: false}
+  //
+  // handleLoad = () => {
+  //   this.setState({imgReady: true})
+  // }
 
   componentWillReceiveProps(nextProps){
     if(this.props.src !== nextProps.src){
@@ -28,8 +28,8 @@ class A_Image extends Component {
   render() {
     let {rounded, realSize, link, type, mx, ...preProps} = this.props
     const {onClick, objectFit, ...props} = preProps
-    const complete = !!this.node && this.node.complete
-    const imgReady = complete || this.state.imgReady
+    // const complete = !!this.node && this.node.complete
+    // const imgReady = complete || this.state.imgReady
     rounded = rounded && 'rounded'
     link = link && 'link'
     realSize = realSize && 'real-size'
@@ -37,16 +37,12 @@ class A_Image extends Component {
     return (
       <span className={cn('root')} >
         <img
-          ref={ node => this.node = node }
+          // ref={ node => this.node = node }
           className={cn('img', {onClick: !!onClick, objectFit, type}, [rounded, link, realSize, mx])}
-          onLoad = {this.handleLoad}
-          style={imgReady ? {} : {display: 'none'}}
+          // onLoad = {this.handleLoad}
           onClick={onClick}
           {...props}
         />
-        <div style={imgReady ? {display: 'none'} : {}} className={cn('loader', [mx])} >
-          {/*loading*/}
-        </div>
       </span>
     )
   }
