@@ -4,35 +4,23 @@ import {cssClassName} from 'utils'
 const cn = cssClassName('Documents')
 import A_Container from 'A_Container'
 import Hero from './Hero'
-import A_P from 'A_P'
 import A_Button from 'A_Button'
-import A_Link from 'A_Link'
+import O_File from 'src/components/widgets/O_File'
 
 class Documents extends Component {
 
   getCards(entities){
-    const cards = entities.map(({name, type, url}, i) => (
-      <div key={i} className={cn('item')}>
-        <span className={cn('file', {type})}>{name}</span>
-        <div className={cn('item-buttons')}>
-          <A_Button external type='link-secondary' to={url} >View in browser</A_Button>
-          <A_Button external download={name} type='link-primary' to={url} mx={cn('download')}>Download</A_Button>
-        </div>
-      </div>
-
-    ))
-    return(cards)
+    return entities.map((props, i) => <O_File key={i} {...props}/>)
   }
 
-
   render() {
-    const documentList = this.getCards(docs)
 
+    const cards = this.getCards(files)
     return (
       <div className={cn()}>
         <Hero />
         <A_Container type="normal" mx={cn('main')}>
-          {documentList}
+          {cards}
         </A_Container>
       </div>
     )
@@ -48,7 +36,7 @@ Documents.defaultProps = {
 export default Documents;
 
 
-const docs = [
+const files = [
   {
     name: 'Whitepaper',
     type: 'pdf',

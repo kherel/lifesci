@@ -3,7 +3,7 @@
 
 .a-container{
   margin: 0 auto;
-  width: $w-desktop + 40px; //width size + padding, because of border-box
+  width: $w-desktop; //width size + padding, because of border-box
   padding: 0 $p-desktop;
   @include media($tablet) {
     width: 100%;

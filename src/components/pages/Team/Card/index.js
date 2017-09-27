@@ -6,11 +6,11 @@ const cn = cssClassName('TeamCard')
 import A_Image from 'A_Image'
 
 const TeamCard = ({name, avatar, twitter, text, type}) =>(
-  <div className={cn('card', {type})}>
-    <div className={cn('card-name')}>{name}</div>
-    <div className={cn('card-twitter')}>{twitter}</div>
-    <div className={cn('card-text')}>{text}</div>
-    <A_Image mx={cn('card-avatar')} rounded src={`/img/team/${avatar}`}/>
+  <div className={cn({type})}>
+    <div className={cn('name')}>{name}</div>
+    <div className={cn('twitter')}>{twitter}</div>
+    <div className={cn('text')}>{text}</div>
+    <A_Image mx={cn('avatar')} rounded src={`/img/team/${avatar}`}/>
   </div>
 )
 

@@ -7,17 +7,14 @@ import A_H from 'A_H'
 import A_Image from 'A_Image'
 import A_P from 'A_P'
 import Press from 'O_Press'
+import Card from './Card'
+import O_File from 'O_File'
 
 class Team extends Component {
 
   getCards(entities, type){
-    const cards = entities.map(({name, avatar, twitter, text}, i) => (
-      <div key={i} className={cn('card', {type})}>
-        <div className={cn('card-name')}>{name}</div>
-        <div className={cn('card-twitter')}>{twitter}</div>
-        <div className={cn('card-text')}>{text}</div>
-        <A_Image mx={cn('card-avatar')} rounded src={`/img/team/${avatar}`}/>
-      </div>
+    const cards = entities.map((props, i) => (
+      <Card {...props} type={type} key={i} />
     ))
     return(
       <ul className={cn('card-list')}>
@@ -34,8 +31,8 @@ class Team extends Component {
   )
 
   renderFounders = () => (
-    <A_Container type='equal'>
-      <A_H type="section">Lifesci founders</A_H>
+    <A_Container type='equal' mx={cn('founder-list')}>
+      <A_H type="section"  mx={cn('founder-title')}>Lifesci founders</A_H>
       <A_P type="section">We’re here for those who refuse to settle. Who never stop moving forwards. Who continue to search for new ideas and better experiences in everything they do.</A_P>
       {
         founders.map((obj,i) => this.renderFounder(obj, i))
@@ -56,30 +53,44 @@ class Team extends Component {
     </div>
   )
 
+  renderPressKit = () => (
+    <A_Container type='equal'>
+      <A_H type="section" mx={cn('mx-margin')}>Lifesci presskit</A_H>
+      <A_P type="section" mx={cn('presskit-text')}>We’re here for those who refuse to settle. Who never stop moving forwards. Who continue to search for new ideas and better experiences in everything they do.</A_P>
+      <O_File {...{
+        name: 'Presskit',
+        type: 'zip',
+        url: '/zip/presskit.zip'
+      }}/>
+    </A_Container>
+  )
+
   render() {
     const teamList = this.getCards(team, 'team')
     const advisorsList = this.getCards(advisors, 'advisors')
     const hero = this.renderHero()
     const founders = this.renderFounders()
+    const pressKit = this.renderPressKit()
 
     return (
       <div className={cn()}>
         {hero}
         {founders}
         <div className={cn('team')}>
-          <A_Container type={'smart'}>
-            <A_H type='section' mx={cn('team-title')}>The Lifesci team</A_H>
+          <A_Container type='smart'>
+            <A_H type='section' mx={cn('mx-margin')}>The Lifesci team</A_H>
             <A_P type="section">We’re here for those who refuse to settle. Who never stop moving forwards. Who continue to search for new ideas and better experiences in everything they do.</A_P>
             {teamList}
           </A_Container>
         </div>
 
-        <A_Container type={'smart'}>
-          <A_H type='section'>The Advisors</A_H>
+        <A_Container type='smart'>
+          <A_H type='section' mx={cn('mx-margin')}>The Advisors</A_H>
           <A_P type="section">We’re here for those who refuse to settle. Who never stop moving forwards. Who continue to search for new ideas and better experiences in everything they do.</A_P>
           {advisorsList}
         </A_Container>
         <Press />
+        {pressKit}
       </div>
     )
   }
@@ -105,8 +116,8 @@ const team = [
 
 const advisors = [
   {name: 'Anton Mozgovoy', twitter: '@anton_mozgovoy', avatar: 'anton_mozgovoy.jpg', text:'In 1981 he isolated the first embryonic stem cells. Over his career Sir Martin has published more than 120 scientific papers and received numerous awards for his ground-breaking research. Alongside his 2007 Nobel Prize, Sir Martin has also been awarded the prestigious Albert'},
-  {name: 'Kherel Kechil', twitter: '@GR36', avatar: 'no_avatar.png', text:'In 1981 he isolated the first embryonic stem cells. Over his career Sir Martin has published more than 120 scientific papers and received numerous awards for his ground-breaking research. Alongside his 2007 Nobel Prize, Sir Martin has also been awarded the prestigious Albert'},
-  {name: 'Anca Petre', twitter: '@twitter', avatar: 'no_avatar.png', text:'In 1981 he isolated the first embryonic stem cells. Over his career Sir Martin has published more than 120 scientific papers and received numerous awards for his ground-breaking research. Alongside his 2007 Nobel Prize, Sir Martin has also been awarded the prestigious Albert'},
+  {name: 'Kherel Kechil', twitter: '@GR36', avatar: 'no_avatar.png', text:'In 1981 he isolated the first embryonic stem cells. Over his career Sir Martin has published more than 120 scientific papers and received numerous awards for his ground-breaking research.'},
+  {name: 'Anca Petre', twitter: '@twitter', avatar: 'no_avatar.png', text:'In 1981 he isolated the first embryonic stem cells. '},
   {name: 'Zeeshan Malick', twitter: '@twitter', avatar: 'zeeshan_mallick.jpg', text:'In 1981 he isolated the first embryonic stem cells. Over his career Sir Martin has published more than 120 scientific papers and received numerous awards for his ground-breaking research. Alongside his 2007 Nobel Prize, Sir Martin has also been awarded the prestigious Albert'},
   {name: 'Derin Cag', twitter: '@twitter', avatar: 'derin_cag.jpg', text:'In 1981 he isolated the first embryonic stem cells. Over his career Sir Martin has published more than 120 scientific papers and received numerous awards for his ground-breaking research. Alongside his 2007 Nobel Prize, Sir Martin has also been awarded the prestigious Albert'},
   {name: 'Derin Cag', twitter: '@twitter', avatar: 'no_avatar.png', text:'In 1981 he isolated the first embryonic stem cells. Over his career Sir Martin has published more than 120 scientific papers and received numerous awards for his ground-breaking research. Alongside his 2007 Nobel Prize, Sir Martin has also been awarded the prestigious Albert'},

@@ -2,100 +2,30 @@
 @import "common/utils";
 
 .team{
+
+  &__mx-margin{
+    margin-bottom: 2.2rem;
+  }
   &__hero{
     @include hl;
   }
 
   &__team{
     background-color: $background-pink;
-    &-title{
-      margin-bottom: 2.2rem;
-    }
   }
 
-  &__card{
-    $this: &;
-    width: 302px;
-    border-radius: 4px;
-    margin-bottom: 5.4rem;
-    padding: 1.6rem 1.8rem;
-    position: relative;
-    box-shadow: $card-shadow;
-    background-color: $white;
-
-    &_type{
-      &_team{
-        height: 118px;
-      }
-      &_advisors{
-        height: 296px;
-        #{$this}-text{
-          font-size: 16px;
-          line-height: 1.5;
-          color: rgba(0, 0, 0, 0.65);
-          position: absolute;
-          bottom: 1.5rem;
-          left: 1.8rem;
-        }
-      }
-    }
-
+  &__card-list{
+    margin-top: 6.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     @include media($tablet) {
       justify-content: space-around;
     }
     @include media($mobile) {
-      width: 100%;
-      border-radius: 0;
-      margin-bottom: 0;
-      box-shadow: none;
-      &:after{
-        content: '';
-        display: block;
-        position: absolute;
-        bottom: 0;
-        height: 2px;
-        width: 100%;
-        left: 1.6rem;
-        border-bottom: solid 1px rgba(0, 0, 0, 0.06);
-      }
-    }
-
-    &-list{
-      margin-top: 6.4rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      @include media($tablet) {
-        justify-content: space-around;
-      }
-      @include media($mobile) {
-        margin-left: -2rem;
-        margin-right: -2rem;
-        border: solid 1px rgba(0, 0, 0, 0.06);
-      }
-    }
-
-    &-avatar{
-      top: 1.6rem;
-      right: 1.7rem;
-      width: 4.8rem;
-      height: 4.8rem;
-      position: absolute;
-    }
-    &-name{
-      font-size: 1.6rem;
-      line-height: 1.5;
-      color: $text-t;
-    }
-    &-twitter{
-      font-size: 16px;
-      line-height: 1.5;
-      color: rgba(0, 0, 0, 0.4);
-    }
-    &-text{
-      font-size: 16px;
-      line-height: 1.5;
-      color: rgba(0, 0, 0, 0.65);
+      margin-left: -2rem;
+      margin-right: -2rem;
+      border: solid 1px rgba(0, 0, 0, 0.06);
     }
   }
 
@@ -105,9 +35,19 @@
     overflow: hidden;
     display: flex;
     margin-top: 6.4rem;
+    @include media($tablet){
+      flex-flow: column;
+      max-width: 37.6rem;
+      box-shadow: none;
+
+    }
 
     & + & {
       flex-flow: row-reverse;
+      @include media($tablet){
+        flex-flow: column;
+        max-width: 37.6rem;
+      }
     }
     &-photo{
       flex: 0 0 37.6rem;
@@ -120,6 +60,20 @@
     &-name{
       margin-bottom: 1.6rem;
       margin-top: 1.6rem;
+    }
+    &-list{
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-around;
+    }
+    &-title{
+      flex-basis: 100%;
+      padding-bottom: 1.6rem;
+    }
+  }
+  &__presskit{
+    &-text{
+      margin-bottom: 6.4rem;
     }
   }
 }

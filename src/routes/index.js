@@ -5,7 +5,7 @@ import Documents from './Documents'
 import Home from './Home'
 import ContactUs from './ContactUs'
 import Team from './Team'
-// import Test from './Test'
+import Test from './test2'
 
 
 const getRoutes = () => {
@@ -29,6 +29,10 @@ const getRoutes = () => {
       <Route
         path="/team"
         component={Team}
+      />
+      <Route
+        path="/test"
+        component={Test}
       />
     </Route >
   )
