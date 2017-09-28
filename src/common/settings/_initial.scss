@@ -3,7 +3,7 @@
 @import 'system-font';
 
 html {
-  overflow: auto;
+  overflow: hidden;
   font-size: 62.5%;
 }
 
@@ -11,6 +11,7 @@ body {
   font-size: 1.7rem;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
   overflow: auto;
+  -webkit-overflow-scrolling:touch;
   line-height: 1.54;
   background-color: $white;
   color: $text;
