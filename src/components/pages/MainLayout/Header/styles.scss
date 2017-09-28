@@ -18,6 +18,8 @@
     z-index: 100;
     position: absolute !important;
     left: 2rem;
+    bottom: 50%;
+    transform: translate3d(0, 50%, 0);
     @include media($tablet) {
       left: $p-tablet;
     }
@@ -47,6 +49,7 @@
 
     }
     &-link{
+
       &_is-open_true{
         color: darken(white, 40%);
       }
@@ -55,8 +58,9 @@
       @include media ($desktop) {
         display: none;
       }
-
       position: absolute;
+      bottom: 50%;
+      transform: translate3d(0, 50%, 0);
       color: $white;
       z-index: 100;
       right: 2rem;
