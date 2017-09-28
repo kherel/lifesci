@@ -17,14 +17,12 @@
   }
   &__buttons{
     flex: 0 0 auto;
-  }
-
-  &__download{
-    .a-btn + .a-btn{
-      margin-left: 3.2rem !important;
+    &-download{
+      .a-btn + .a-btn{
+        margin-left: 3.2rem !important;
+      }
     }
   }
-
 
   &__file{
     font-size: 20px;

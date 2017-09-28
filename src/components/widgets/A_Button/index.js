@@ -14,12 +14,22 @@ const A_Btn = ({type, children, disabled, btnType, to, onClick, mx, external, ..
   switch(type){
     case 'link-primary':
     case 'link-secondary':
-      return (
-        <A_Link mx={cn('link', {type})} disabled={disabled} to={to} external={external}{...props}>
-          {children}
-        </A_Link>
-      )
+      if(external){
+        return (
+          <Link className={cn('link', {type}, [mx])} disabled={disabled} to={to} {...props}>
+            {children}
+          </Link>
+        )
+      } else {
+        return(
+          <a href={to} className={cn('link', {type}, [mx, 'link-external'])}>
+            {children}
+          </a>
+        )
+      }
+
     case 'button-primary':
+    case 'button-secondary':
     default:
       return (
         <button className={cn('button', {type}, [disabled, mx])} type={btnType} {...{onClick,...props}}>
@@ -31,9 +41,10 @@ const A_Btn = ({type, children, disabled, btnType, to, onClick, mx, external, ..
 
 A_Btn.propTypes = {
   type: T.oneOf([
-    'link-primary', // solid btn
-    'link-secondary', // transparent btn like link
-    'button-primary', //transparent btn
+    'link-primary', // solid link
+    'link-secondary', // transparent link
+    'button-primary', //solid btn
+    'button-secondary', //transparent btn
   ]).isRequired,
   btnType: T.oneOf([ // button tag attribute
     'button',

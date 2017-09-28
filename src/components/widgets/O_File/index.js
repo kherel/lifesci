@@ -18,8 +18,8 @@ const O_File = ({name, type, url}) =>{
         {name}
       </span>
       <div className={cn('buttons')}>
-        {view && <A_Button external type='link-secondary' to={url} >View in browser</A_Button>}
-        <A_Button external download={name} type='link-primary' to={url} mx={cn('download')}>Download</A_Button>
+        {view && <A_Button external type='link-secondary' to={url} mx={cn('buttons-view')}>View in browser</A_Button>}
+        <A_Button external download={name} type='link-primary' to={url} mx={cn('buttons-download')}>Download</A_Button>
       </div>
     </section>
   )

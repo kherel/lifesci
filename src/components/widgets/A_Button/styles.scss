@@ -60,26 +60,13 @@ $form-btn-border-radius: 30px;
   }
   &__button{
     @extend #{$this};
-    &:hover{
-      border-color: lighten($interactive, 5%);
-      background-color: lighten($interactive, 5%);
-    }
 
     &_type{
       &_button-primary{
         @extend #{$this}__filled;
       }
-      &_standart-form{
-        text-transform: uppercase;
-        user-select: none;
-        //border-radius: $form-radius;
-        background-color: $interactive;
-        color: $white;
-        padding-left: 2.2rem;
-        padding-right: 2.2rem;
-        font-size: 1.7rem;
-        vertical-align: top;
-        height: 5.3rem;
+      &_button-secondary{
+        @extend #{$this}__transparent;
       }
     }
   }

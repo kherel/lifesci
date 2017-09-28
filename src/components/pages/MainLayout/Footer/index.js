@@ -108,7 +108,7 @@ const nav = [
   {name: 'Contribution',  url: '/#'},
   {name: 'Whitepaper', url: '/doc'},
   {name: 'Team', url: '/team'},
-  {name: 'Roadmap', url: '/#'},
+  {name: 'Roadmap', url: '/roadmap'},
   {name: 'Github', url: '/#'}
 ]
 

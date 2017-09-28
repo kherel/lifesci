@@ -5,6 +5,8 @@ import Documents from './Documents'
 import Home from './Home'
 import ContactUs from './ContactUs'
 import Team from './Team'
+import Roadmap from './Roadmap'
+
 import Test from './test2'
 
 
@@ -33,6 +35,10 @@ const getRoutes = () => {
       <Route
         path="/test"
         component={Test}
+      />
+      <Route
+        path="/roadmap"
+        component={Roadmap}
       />
     </Route >
   )
