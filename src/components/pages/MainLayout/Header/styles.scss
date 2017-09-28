@@ -15,11 +15,10 @@
     top: 0;
   }
   &__logo{
-    z-index: 100;
-    position: absolute !important;
+    position: absolute;
     left: 2rem;
     bottom: 50%;
-    transform: translate3d(0, 50%, 0);
+    z-index: 201;
     @include media($tablet) {
       left: $p-tablet;
     }
@@ -60,9 +59,10 @@
       }
       position: absolute;
       bottom: 50%;
+      z-index: 201;
+
       transform: translate3d(0, 50%, 0);
       color: $white;
-      z-index: 100;
       right: 2rem;
       @include media($tablet) {
         right: $p-tablet;

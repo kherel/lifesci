@@ -4,29 +4,35 @@
 .mob-menu{
   $border: rgba(255,255,255,0.4);
   position: fixed;
-  z-index: 1;
-  width: 100vw;
   background-color: $white;
   bottom: 0;
   left: 0;
+  width: 100%;
+  height: 100vh;
   background:url('/img/common/mob-menu-bg.svg');
   background-size: cover;
-  height: 100%;
-
+  z-index: 200;
   @include media ($desktop) {
     display: none;
   }
 
-  &__container{
-    height: 65px;
+  &:before{
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    transform: translate3d(0, 65px, 0);
+    color: red;
     border-bottom: 1px solid rgba(#ebebeb, 0.15);
-
   }
 
   &__nav{
     &-list{
-      margin-top: 14.6%;
+      padding-top: 14.6%;
       margin-left: 2rem;
+      height: 100vh;
+      width: 100%;
+      overflow: scroll;
     }
     &-link{
       user-select: none;
