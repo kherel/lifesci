@@ -6,7 +6,8 @@ const Test = () =>{
 
   return(
     <div>
-      <a href="/pdf/sample.pdf" target="_blank">ABC PDF file</a>
+
+      <a href="https://drive.google.com/viewerng/viewer?embedded=true&url=https:lifesci.herokuapp.com‌/pdf/sample.pdf" target="_blank">ABC PDF file</a>
     </div>
 
   )
