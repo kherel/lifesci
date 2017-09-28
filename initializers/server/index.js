@@ -5,7 +5,6 @@ const compression = require('compression')
 const mime = require('mime');
 // const serveStatic = require('serve-static')
 // const fs = require('fs.extra');
-var cors = require('cors')
 
 require('babel-core/register');
 ['.css', '.less', '.sass', '.ttf', '.woff', '.woff2', '.scss'].forEach((ext) => require.extensions[ext] = () => {
@@ -15,8 +14,6 @@ const port = process.env.PORT || 8080;
 
 const express = require('express')
 const application = express()
-
-application.use(cors());
 application.use(compression());
 
 
@@ -25,6 +22,8 @@ application.use(express.static('static', {
     let cType = mime.lookup(path)
     res.set({
       "Content-Type": cType,
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
     })
   } }
 ));
