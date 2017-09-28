@@ -1,0 +1,1 @@
+export const host = __DEVELOPMENT__ ? 'http://localhost:8080' : 'https://lifesci.herokuapp.com'

@@ -8,9 +8,9 @@ import A_Image from 'A_Image'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_Button from 'A_Button'
+import A_Link from 'A_Link'
 
 class ContactUs extends Component {
-
 
   render() {
     return (
@@ -21,7 +21,7 @@ class ContactUs extends Component {
             <section className={cn('left')}>
               <A_Image src={'/img/icons/letter.svg'} mx={cn('icon')} realSize/>
               <A_H type='section' mx={cn('title')}>General Inquires</A_H>
-              <A_P type='section' mx={cn('text')}>For general queries, including partnership opportunities and investment relations please email <span className='email'>info@lifesci.io</span></A_P>
+              <A_P type='section' mx={cn('text')}>For general queries, including partnership opportunities and investment relations please email <A_Link to='mailto:info@lifesci.io' external>info@lifesci.io</A_Link></A_P>
             </section>
             <section className={cn('right')}>
               <A_Image src={'/img/icons/chat.svg'} mx={cn('icon')} realSize/>
