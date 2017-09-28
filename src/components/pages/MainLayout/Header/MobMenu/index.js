@@ -11,6 +11,13 @@ import {Motion, spring, presets} from 'react-motion'
 
 class MobMenu extends Component {
 
+  componentDidMount(){
+    window.onscroll = window.ontouchmove = window.onwheel = (e) => { e.preventDefault(); }
+  }
+  componentWillUnmount(){
+    window.onscroll = window.ontouchmove = window.onwheel = () => true
+  }
+
   getLinks(nav, openRoute){
     return(
       nav.map( ({name, url}, i) => {
