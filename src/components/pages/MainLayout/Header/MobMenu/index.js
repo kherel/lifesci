@@ -7,7 +7,7 @@ import A_Container from 'A_Container'
 import M_Logo from 'M_Logo'
 import A_Image from 'A_Image'
 const cn = cssClassName('MobMenu')
-import {Motion, spring} from 'react-motion'
+import {Motion, spring, presets} from 'react-motion'
 
 class MobMenu extends Component {
 
@@ -40,7 +40,7 @@ class MobMenu extends Component {
 
     const links = this.getLinks(nav, openRoute)
     return (
-      <Motion defaultStyle={{x: 100}} style={{x: spring(isMenuOpened ? 100 : 0, {stiffness: 210, damping: 20})}}>
+      <Motion defaultStyle={{x: 100}} style={{x: spring(isMenuOpened ? 100 : 0, presets.stiff)}}>
         {({x}) =>
           <div className={cn({show: isMenuOpened})} style={{transform: `translate3d(${x}%, 0, 0)`}}>
             <div className={cn('container')}/>

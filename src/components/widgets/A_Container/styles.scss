@@ -14,6 +14,11 @@
     padding: 0 $p-mobile;
   }
 
+  @include media($sm-mobile) {
+    width: 100%;
+    padding: 0 5px;
+  }
+
   &_type{
     &_normal{
       
