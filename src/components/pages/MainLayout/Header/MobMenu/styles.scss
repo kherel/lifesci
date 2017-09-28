@@ -9,10 +9,6 @@
   left: 0;
   width: 100%;
   height: calc(100vh + 8rem);
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-flow: wrap;
   background:url('/img/common/mob-menu-bg.svg');
   background-size: 100% 100%;
   @include media ($desktop) {
@@ -31,7 +27,7 @@
 
   &__nav{
     &-list{
-      margin-top: 1rem;
+      margin-top: calc(3vh);
       margin-left: 2rem;
     }
     &-link{
