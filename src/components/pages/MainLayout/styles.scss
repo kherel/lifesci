@@ -2,9 +2,6 @@
 @import "common/utils";
 
 .main-layout{
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
   @include media($tablet){
     &:before{
       display: block;
