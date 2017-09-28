@@ -8,13 +8,15 @@
     <% }%>
     <meta charSet="utf-8"/>
     <title>Lifesci</title>
+    <meta name="mobile-web-app-capable" content="yes">
+
     <link rel="shortcut icon" href="/favicon.ico?v=2"/>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <% if(!__DEVELOPMENT__){ %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+      <% if(!__DEVELOPMENT__){ %>
       <link rel="stylesheet" type="text/css" href="/<%- webpackAssets('bundle', 'css') %>" />
     <% }%>
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <script src='https://embed.runkit.com'></script>
     <link
       rel="stylesheet"
