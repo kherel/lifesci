@@ -11,13 +11,6 @@ import {Motion, spring, presets} from 'react-motion'
 
 class MobMenu extends Component {
 
-  componentDidMount(){
-    window.onscroll = window.ontouchmove = window.onwheel = (e) => { e.preventDefault(); }
-  }
-  componentWillUnmount(){
-    window.onscroll = window.ontouchmove = window.onwheel = () => true
-  }
-
   getLinks(nav, openRoute){
     return(
       nav.map( ({name, url}, i) => {
@@ -42,7 +35,7 @@ class MobMenu extends Component {
     return (
       <Motion defaultStyle={{x: 100}} style={{x: spring(isMenuOpened ? 100 : 0, presets.stiff)}}>
         {({x}) =>
-          <div className={cn({show: isMenuOpened})} style={{transform: `translate3d(${x}%, 0, 0)`}}>
+          <div className={cn()} style={{transform: `translate3d(${x}%, 0, 0)`}}>
             <ul className={cn('nav-list')}>
               {links}
             </ul>

@@ -8,31 +8,30 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100vh + 8rem);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-flow: wrap;
   background:url('/img/common/mob-menu-bg.svg');
-  background-size: cover;
+  background-size: 100% 100%;
   @include media ($desktop) {
     display: none;
   }
 
   &:before{
     content: '';
-    position: absolute;
+
     display: block;
     width: 100%;
     height: 65px;
     color: red;
-    top: 0;
     border-bottom: 1px solid rgba(#ebebeb, 0.15);
   }
 
   &__nav{
     &-list{
-      margin-top: 7.5rem;
+      margin-top: 1rem;
       margin-left: 2rem;
     }
     &-link{
