@@ -3,24 +3,22 @@
 @import 'system-font';
 
 html {
+  overflow: auto;
   font-size: 62.5%;
-  height: 100%;
 }
 
 body {
   font-size: 1.7rem;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
-  height: 100%;
+  overflow: auto;
   line-height: 1.54;
   background-color: $white;
   color: $text;
-  overflow-y: hidden;
-
 }
 
 
 body > div {
-  overflow-y: auto;
+  overflow: hidden;
   box-sizing: border-box;
 }
 
