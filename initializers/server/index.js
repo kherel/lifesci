@@ -20,7 +20,9 @@ application.use(express.static('static', {
   setHeaders: function (res, path) {
     let cType = mime.lookup(path)
     res.set({
-      "Content-Type": cType
+      "Content-Type": cType,
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
     })
   } }
 ));
@@ -49,9 +51,9 @@ if (__DEVELOPMENT__) {
 }
 
 if(process.env.NO_SSR){
-  application.use(require('./noSSR').default)
+  application.get('*', require('./noSSR').default)
 }else{
-  application.use(require('./render').default)
+  application.get('*', require('./render').default)
 }
 
 
