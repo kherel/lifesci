@@ -22,8 +22,8 @@ application.use(express.static('static', {
     let cType = mime.lookup(path)
     res.set({
       "Content-Type": cType,
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+      // "Access-Control-Allow-Origin": "*",
+      // "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
     })
   } }
 ));
