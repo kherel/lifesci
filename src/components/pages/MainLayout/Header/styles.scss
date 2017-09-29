@@ -50,21 +50,8 @@
       @include media ($desktop) {
         display: none;
       }
-      position: absolute;
-      bottom: 50%;
       z-index: 50;
-      transform: translate3d(0, 50%, 0);
       color: $white;
-      right: 0;
-      //@include media($tablet) {
-      //  right: $p-tablet;
-      //}
-      //@include media($mobile) {
-      //  right: $p-mobile;
-      //}
-      //@include media($mobile) {
-      //  right: $p-mobile;
-      //}
     }
   }
 }

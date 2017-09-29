@@ -8,15 +8,8 @@ import M_Logo from 'M_Logo'
 import A_Image from 'A_Image'
 const cn = cssClassName('MobMenu')
 import {Motion, spring, presets} from 'react-motion'
-
+import Helmet from 'react-helmet'
 class MobMenu extends Component {
-
-  componentDidMount(){
-    window.onscroll = window.ontouchmove = window.onwheel = (e) => { e.preventDefault(); }
-  }
-  componentWillUnmount(){
-    window.onscroll = window.ontouchmove = window.onwheel = () => true
-  }
 
   getLinks(nav, openRoute){
     return(
@@ -40,16 +33,19 @@ class MobMenu extends Component {
 
     const links = this.getLinks(nav, openRoute)
     return (
-      <Motion defaultStyle={{x: 100}} style={{x: spring(isMenuOpened ? 100 : 0, presets.stiff)}}>
-        {({x}) =>
-          <div className={cn()} style={{transform: `translate3d(${x}%, 0, 0)`}}>
-            <ul className={cn('nav-list')}>
-              {links}
-            </ul>
-            <A_Image src={'/img/common/mob-menu-bg.svg'} mx={cn('bg')}/>
-          </div>
-        }
-      </Motion>
+        <Motion defaultStyle={{x: 100}} style={{x: spring(isMenuOpened ? 100 : 0, presets.stiff)}}>
+          {({x}) =>
+            <div className={cn()} style={{transform: `translate3d(${x}%, 0, 0)`}}>
+              <Helmet>
+                <style type="text/css">{`html {overflow: hidden !important;}`}</style>
+              </Helmet>
+              <ul className={cn('nav-list')}>
+                {links}
+              </ul>
+              <A_Image src={'/img/common/mob-menu-bg.svg'} mx={cn('bg')}/>
+            </div>
+          }
+        </Motion>
     )
   }
 }
