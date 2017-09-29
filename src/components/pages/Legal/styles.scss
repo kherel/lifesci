@@ -24,7 +24,7 @@
     flex: 0 0 23.1rem;
     padding-right: 1.6rem;
     border-right: $line;
-    #{c}__nav{
+    @at-root #{$c}__nav{
       margin-top: 1.6rem;
       &-link{
         font-size: 17px;
@@ -41,21 +41,57 @@
   }
 
   &__content{
-    flex: 0 0 23.1rem;
-    padding-right: 1.6rem;
-    border-right: $line;
-    #{c}__nav{
-      margin-top: 1.6rem;
-      &-link{
-        font-size: 17px;
-        line-height: 1.53;
-        color: $black-2;
-        padding-bottom: .8rem;
-        &_is-open_true{
-          font-weight: 500;
-          color: $black-1;
+    flex: 0 1 auto;
+    padding-left: 3.6rem;
+    h2{
+      font-family: Georgia;
+      font-size: 4rem;
+      line-height: 1.25;
+      text-align: left;
+      color: rgba(0, 0, 0, 0.8);
+      margin-bottom: 1.6rem;
+    }
+    strong{
+      display: block;
+      margin-bottom: 3.2rem;
+    }
+    h4{
+      margin-bottom: 3.2rem;
+      margin-top: 6.4rem;
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.47;
+    }
+    p + p{
+      margin-top: 2.6rem;
+    }
+    ol li{
+      list-style-type: upper-alpha;
+      margin: 1rem 0 1rem 5rem;
+      padding-left: .6rem;
+    }
 
-        }
+    ul{
+      margin-bottom: 2rem;
+      margin-left: .75rem;
+    }
+    ul li{
+      position: relative;
+      margin: 1rem 0 0 1.5rem;
+      strong{
+        margin-bottom: 1rem;
+      }
+
+      &:before{
+        content: '';
+        position: absolute;
+        height: .7rem;
+        width: .7rem;
+        border-radius: 50%;
+        background-color: $black-1;
+        top: 1rem;
+        left: -1.4rem;
+        display: block;
       }
     }
   }
