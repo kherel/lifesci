@@ -11,6 +11,13 @@ import {Motion, spring, presets} from 'react-motion'
 
 class MobMenu extends Component {
 
+  componentDidMount(){
+    window.onscroll = window.ontouchmove = window.onwheel = (e) => { e.preventDefault(); }
+  }
+  componentWillUnmount(){
+    window.onscroll = window.ontouchmove = window.onwheel = () => true
+  }
+
   getLinks(nav, openRoute){
     return(
       nav.map( ({name, url}, i) => {
@@ -39,6 +46,7 @@ class MobMenu extends Component {
             <ul className={cn('nav-list')}>
               {links}
             </ul>
+            <A_Image src={'/img/common/mob-menu-bg.svg'} mx={cn('bg')}/>
           </div>
         }
       </Motion>

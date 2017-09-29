@@ -21,7 +21,7 @@ const getRoutes = () => {
         component={Home}
       />
       <Route
-        path="/doc"
+        path="/whitepaper"
         component={Documents}
       />
       <Route

@@ -55,13 +55,16 @@
       z-index: 50;
       transform: translate3d(0, 50%, 0);
       color: $white;
-      right: 2rem;
-      @include media($tablet) {
-        right: $p-tablet;
-      }
-      @include media($mobile) {
-        right: $p-mobile;
-      }
+      right: 0;
+      //@include media($tablet) {
+      //  right: $p-tablet;
+      //}
+      //@include media($mobile) {
+      //  right: $p-mobile;
+      //}
+      //@include media($mobile) {
+      //  right: $p-mobile;
+      //}
     }
   }
 }
