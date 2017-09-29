@@ -11,7 +11,7 @@ const A_P = ({children, type, mx}) =>(
 A_P.propTypes = {
   type: T.oneOf([
     'hero',
-    'section', //20/1.4/rgba(0, 0, 0, 0.8);
+    'section', //20/1.4/;
     'second', // 17/1.53/rgba(0, 0, 0, 0.65)
     'description', // 24/1.5/rgba(0, 0, 0, 0.65)
     'tweet', // 16/1.5/rgba(0, 0, 0, 0.65)

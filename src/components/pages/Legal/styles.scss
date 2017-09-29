@@ -1,0 +1,62 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.legal{
+  $c: &;
+  border-bottom:$line;
+
+  &__hero{
+    @include hl;
+  }
+  &__main{
+    display: flex;
+  }
+
+  &__menu, &__content{
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+    @include media($mobile){
+      padding-top: 4.24rem;
+      padding-bottom: 6.4rem;
+    }
+  }
+  &__menu{
+    flex: 0 0 23.1rem;
+    padding-right: 1.6rem;
+    border-right: $line;
+    #{c}__nav{
+      margin-top: 1.6rem;
+      &-link{
+        font-size: 17px;
+        line-height: 1.53;
+        color: $black-2;
+        padding-bottom: .8rem;
+        &_is-open_true{
+          font-weight: 500;
+          color: $black-1;
+
+        }
+      }
+    }
+  }
+
+  &__content{
+    flex: 0 0 23.1rem;
+    padding-right: 1.6rem;
+    border-right: $line;
+    #{c}__nav{
+      margin-top: 1.6rem;
+      &-link{
+        font-size: 17px;
+        line-height: 1.53;
+        color: $black-2;
+        padding-bottom: .8rem;
+        &_is-open_true{
+          font-weight: 500;
+          color: $black-1;
+
+        }
+      }
+    }
+  }
+}

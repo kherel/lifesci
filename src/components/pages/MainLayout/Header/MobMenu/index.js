@@ -14,7 +14,7 @@ class MobMenu extends Component {
   getLinks(nav, openRoute){
     return(
       nav.map( ({name, url}, i) => {
-        const isOpen = openRoute[openRoute.length - 1] === url
+        const isOpen = openRoute[openRoute.length - 1] === url.substr(1)
         return (
           <li key={i} className={cn('nav-item')}>
             <A_Link

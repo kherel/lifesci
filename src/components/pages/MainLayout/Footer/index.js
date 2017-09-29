@@ -113,6 +113,6 @@ const nav = [
 ]
 
 const extra = [
-  {name: 'Privacy & Terms',  url: '/#'},
+  {name: 'Privacy & Terms',  url: '/legal'},
   {name: 'Contact Us', url: '/contact-us'}
 ]

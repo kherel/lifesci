@@ -18,14 +18,15 @@ $icon-size: 20rem;
       font-size: 54px;
       line-height: 1.19;
       text-align: left;
-      color: rgba(0, 0, 0, 0.8);
+      @include media($mobile){
+        font-size: 14vw;
+      }
     }
     &_section {
       font-family: Georgia;
       font-size: 40px;
       line-height: 1.25;
       text-align: left;
-      color: rgba(0, 0, 0, 0.8);
     }
     &_small-section{
       font-size: 19px;
