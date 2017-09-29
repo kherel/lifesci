@@ -43,5 +43,4 @@ history.listen(historyCb)
 
 historyCb(window.location)
 
-
 export default App
