@@ -5,7 +5,6 @@ import {Link} from 'react-router'
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_Btn')
 // import history from 'history'
-import A_Link from 'A_Link'
 
 const A_Btn = ({type, children, disabled, btnType, to, onClick, mx, external, download, ...props}) =>{
 

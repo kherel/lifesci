@@ -28,6 +28,8 @@
       }
     }
 
+
+
     &-item{
       display: flex;
       justify-content:center;
@@ -40,6 +42,7 @@
 
       @include media ($tablet) {
         flex-flow: column;
+
       }
     }
   }
@@ -101,7 +104,8 @@
     @include media ($tablet) {
       flex-basis: auto;
       align-self: stretch;
-      padding-top: 0;
+      padding-top: 0rem;
+
     }
     &-title{
       padding-left: 1.5rem;

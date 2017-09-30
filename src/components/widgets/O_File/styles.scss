@@ -45,13 +45,6 @@
     @include media($mobile){
       margin-bottom: 1.6rem;
     }
-    //&:before{
-    //  content: url('/img/icons/doc.svg');
-    //  top: 0;
-    //  left: 0;
-    //  position: absolute;
-    //  display: block;
-    //}
     &:after{
       margin-left: 10.3rem;
       position: relative;

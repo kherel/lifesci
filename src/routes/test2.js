@@ -1,6 +1,5 @@
 import React from 'react';
-import Card from 'Team/Card'
-import A_Container from 'A_Container'
+
 
 const Test = () =>{
 

@@ -8,6 +8,8 @@ import A_P from 'A_P'
 import A_Link from 'A_Link'
 const cn = cssClassName('Legal')
 import O_Fixed from 'O_Fixed'
+import M_Select from 'M_Select'
+import history from 'history'
 
 const Legal = ({openRoute}) =>{
 
@@ -28,23 +30,36 @@ const Legal = ({openRoute}) =>{
     )
   })
 
+  const options = nav.map(({name, url}) => ({label:name, value: url.substr(1)}))
   return(
     <div className={cn()}>
       <A_Container type='hero' mx={cn('hero')}>
         <A_H type="hero">Legal Agreements</A_H>
         <A_P type="hero">Lifesci offers access to valuable licence fee income and a blockchain AI driven platform that gives investor access to the latest insights, news in the healthcare industry.</A_P>
+        <M_Select
+          options={options}
+          mx={cn('dropdown')}
+          onChange={opt => history.push(`/legal/${opt}`)}
+          value = {openRoute}
+        />
       </A_Container>
       <A_Container type='normal' mx={cn('main')}>
-        <aside className={cn('menu')}>
-          <O_Fixed >
-            <div>
-              <A_H type='third'>Content</A_H>
-              <ul className={cn('nav')} >
-                {links}
-              </ul>
-            </div>
-          </O_Fixed>
-        </aside>
+        <O_Fixed mx={cn('menu', {media: 'desktop'})}>
+          <div className={cn('fixed')}>
+            <A_H type='third'>Content</A_H>
+            <ul className={cn('nav')} >
+              {links}
+            </ul>
+          </div>
+        </O_Fixed>
+        <O_Fixed mx={cn('menu', {media: 'tablet'})} top={65}>
+          <div className={cn('fixed')}>
+            <A_H type='third'>Content</A_H>
+            <ul className={cn('nav')} >
+              {links}
+            </ul>
+          </div>
+        </O_Fixed>
         <section className={cn('content')} dangerouslySetInnerHTML={{__html: content[openRoute]}} />
       </A_Container>
     </div>

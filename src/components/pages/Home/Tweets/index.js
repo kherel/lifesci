@@ -3,9 +3,7 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('HomeTweets')
 import A_Container from 'A_Container'
-import A_H from 'A_H'
 import A_P from 'A_P'
-import A_Image from 'A_Image'
 
 class Tweets extends Component {
 

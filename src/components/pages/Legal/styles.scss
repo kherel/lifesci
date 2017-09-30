@@ -7,23 +7,29 @@
 
   &__hero{
     @include hl;
+    @at-root #{$c}__dropdown{
+      @include media ($mobile-up) {
+        display: none;
+      }
+    }
+    @include media ($mobile) {
+      padding-bottom: 3.2rem !important;
+    }
   }
   &__main{
     display: flex;
   }
 
-  &__menu, &__content{
+  &__content, &__fixed{
     padding-top: 6.4rem;
     padding-bottom: 6.4rem;
-    @include media($mobile){
-      padding-top: 4.24rem;
-      padding-bottom: 6.4rem;
-    }
   }
+
   &__menu{
     flex: 0 0 23.1rem;
     padding-right: 1.6rem;
     border-right: $line;
+    display: none;
     @at-root #{$c}__nav{
       margin-top: 1.6rem;
       &-link{
@@ -38,11 +44,35 @@
         }
       }
     }
+    &_media{
+      @include media ($desktop) {
+        &_desktop{
+          display: block;
+        }
+      }
+      @include media ($tablet) {
+        &_tablet{
+          display: block;
+          &>.o-fixed_sticky_true{
+            padding-top: 12.5rem !important;
+          }
+        }
+      }
+      @include media ($mobile) {
+        &_tablet{
+          display: none;
+        }
+      }
+    }
   }
 
   &__content{
     flex: 0 1 auto;
-    padding-left: 3.6rem;
+
+    @include media($mobile){
+      padding: 4.24rem 0 6.4rem;
+    }
+
     h2{
       font-family: Georgia;
       font-size: 4rem;
@@ -95,4 +125,6 @@
       }
     }
   }
+
+
 }

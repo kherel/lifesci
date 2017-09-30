@@ -4,7 +4,6 @@ import {cssClassName} from 'utils'
 const cn = cssClassName('Documents')
 import A_Container from 'A_Container'
 import Hero from './Hero'
-import A_Button from 'A_Button'
 import O_File from 'src/components/widgets/O_File'
 
 class Documents extends Component {

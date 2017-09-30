@@ -44,7 +44,7 @@ class Header extends Component {
           <button className={cn('nav-menu-btn', {open: isMenuOpened})} onClick={toggleMenu}>
             <MenuSvgBtn color={isMenuOpened ? 'white' : '#6D6F7B'}/>
           </button>
-          {isMenuOpened && <MobMenu {...{openRoute, nav, toggleMenu}}/>}
+          {isMenuOpened && <MobMenu {...{openRoute, nav}}/>}
         </A_Container>
 
       </div>

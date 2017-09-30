@@ -1,4 +1,5 @@
 import React, { Component, cloneElement } from 'react';
+import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_Fixed')
@@ -7,44 +8,37 @@ import {universalChildrenOnly} from 'utils/reactApiHelpers.js'
 
 class O_Fixed extends Component {
   state = {
-    sticky: false,
-    componentWidth: undefined,
-    componentHeight: undefined
+    sticky: false
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-    const {width: componentWidth, height: componentHeight} = this.stickyNode.getBoundingClientRect()
-    this.setState({componentWidth, componentHeight})
+    window.addEventListener('resize', this.handleScroll);
+
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.handleScroll);
   }
 
   handleScroll = () => {
-    if (this.state.sticky && (this.root.getBoundingClientRect().top > 0)) {
+    if (this.state.sticky && (this.root.getBoundingClientRect().top > this.props.top)) {
       this.setState({sticky: false})
-    } else if (!this.state.sticky && (this.root.getBoundingClientRect().top < 0)) {
+    } else if (!this.state.sticky && (this.root.getBoundingClientRect().top < this.props.top)) {
       this.setState({sticky: true})
     }
   }
 
   render() {
-    const {sticky, componentWidth, componentHeight} = this.state
-    const {children, quite} = this.props
-    const newProps = quite ? undefined : {sticky}
-    const _newChild = cloneElement(universalChildrenOnly(children), newProps)
-
-    const style = sticky ?
-      { height: componentHeight, width: componentWidth}
-      : { height: 'auto', width: 'auto'}
+    const {sticky} = this.state
+    const {children, mx} = this.props
+    const newClassName = cn({sticky}, [children.props.className])
+    const _newChild = cloneElement(universalChildrenOnly(children), {className: newClassName})
 
     return (
-      <div ref={node => this.root = node} style={style} >
-        <div className={cn({sticky})} ref={node => this.stickyNode = node}>
+      <div ref={node => this.root = node} className={mx}>
           {_newChild}
-        </div>
       </div>
     )
   }
@@ -52,9 +46,11 @@ class O_Fixed extends Component {
 
 O_Fixed.propTypes = {
   children: oneChild.isRequired, // should be only one element array or a node(string, jsx, ...etc)
+  top: T.number // top offset
 };
 
 O_Fixed.defaultProps = {
+  top: 0
 }
 
 export default O_Fixed
