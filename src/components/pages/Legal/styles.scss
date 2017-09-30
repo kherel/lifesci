@@ -68,6 +68,7 @@
 
   &__content{
     flex: 0 1 auto;
+    padding-left: 3.6rem;
 
     @include media($mobile){
       padding: 4.24rem 0 6.4rem;
