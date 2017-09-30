@@ -16,8 +16,10 @@ A_P.propTypes = {
     'description', // 24/1.5/rgba(0, 0, 0, 0.65)
     'tweet', // 16/1.5/rgba(0, 0, 0, 0.65)
     'name', // white georgia 32/1.31 :global
+    'micro', // 13px :contribution
     'title', // white 20/1.4
-    'article-text' //rgba(0, 0, 0, 0.65) 17/1.53
+    'article-text', //rgba(0, 0, 0, 0.65) 17/1.53
+    'info', //black  20/1.4/500
   ]),
 };
 

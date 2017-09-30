@@ -50,6 +50,14 @@
       line-height: 1.53;
       color: rgba(0, 0, 0, 0.65);
     }
+    &_micro{
+      font-size: 13px;
+    }
+    &_info{
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
   }
 }
 

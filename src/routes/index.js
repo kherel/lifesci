@@ -7,7 +7,7 @@ import ContactUs from './ContactUs'
 import Team from './Team'
 import Roadmap from './Roadmap'
 import Legal from './Legal'
-
+import Contribution from './Contribution'
 import Test from './test2'
 
 
@@ -34,27 +34,10 @@ const getRoutes = () => {
         component={Team}
       />
       <Route
-        path="/legal"
-      >
-        <IndexRedirect to="business-terms-of-service" />
-
-        <Route
-          path="business-terms-of-service"
-          component={Legal}
-        />
-        <Route
-          path="supplements"
-          component={Legal}
-        />
-        <Route
-          path="complaints-policy"
-          component={Legal}
-        />
-        <Route
-          path="cookies-policy"
-          component={Legal}
-        />
-      </Route>
+        path="contribution"
+        component={Contribution}
+      />
+      {getLegal()}
       <Route
         path="/test"
         component={Test}
@@ -69,3 +52,30 @@ const getRoutes = () => {
 
 
 export default getRoutes
+
+
+
+const getLegal = () => (
+  <Route
+    path="/legal"
+  >
+    <IndexRedirect to="business-terms-of-service" />
+
+    <Route
+      path="business-terms-of-service"
+      component={Legal}
+    />
+    <Route
+      path="supplements"
+      component={Legal}
+    />
+    <Route
+      path="complaints-policy"
+      component={Legal}
+    />
+    <Route
+      path="cookies-policy"
+      component={Legal}
+    />
+  </Route>
+)

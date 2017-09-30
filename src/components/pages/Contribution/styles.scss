@@ -1,0 +1,90 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.contribution{
+  &__hero{
+    @include media ($mobile-up) {
+      @include hl();
+    }
+    @include media ($mobile) {
+      padding-top: 4.4rem;
+
+    }
+  }
+  &__contribute{
+    @include media ($mobile) {
+      width: 100%;
+    }
+  }
+  &__hero-footer{
+    display: flex;
+    @include media ($mobile) {
+      flex-flow: column;
+    }
+    &-text{
+      padding-left: 3.2rem;
+      max-width: 53.5rem;
+      @include media ($mobile) {
+        padding-left:0;
+        text-align: center;
+        padding-top:1.6rem;
+        margin: 0 auto;
+      }
+    }
+  }
+  &__ico{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem 0;
+    max-width: 86rem;
+    border-bottom: $line;
+    margin: 0 auto;
+    &-container{
+      padding-top: 4.4rem;
+      padding-bottom: 6.4rem;
+      @include media ($mobile) {
+        padding-top: 0;
+      }
+    }
+  }
+  &__allocation{
+    display: flex;
+    &-title, &-subtile{
+      margin-bottom: 2.4rem;
+    }
+    @include media ($mobile) {
+      flex-flow: column;
+    }
+    &-info{
+      flex: 1 1 auto;
+      @include media ($mobile) {
+        margin-bottom: 6.4rem;
+      }
+    }
+    &-pie{
+      flex: 0 0 35rem;
+      height: 35rem;
+    }
+    &-color{
+      height: 2rem;
+      width: 2rem;
+      display: inline-block;
+      margin-right: 1.6rem;
+      transform: translate3d(0, 2px, 0);
+    }
+    &-text{
+      display: inline-block;
+      span{
+        margin-right: 3.2rem;
+      }
+    }
+    &-line{
+      margin-bottom: 1.6rem;
+    }
+    &-wrapper{
+      background-color: $background-pink;
+
+    }
+  }
+}

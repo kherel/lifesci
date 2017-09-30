@@ -105,7 +105,7 @@ const social = [
 ]
 
 const nav = [
-  {name: 'Contribution',  url: '/#'},
+  {name: 'Contribution',  url: '/contribution'},
   {name: 'Whitepaper', url: '/whitepaper'},
   {name: 'Team', url: '/team'},
   {name: 'Roadmap', url: '/roadmap'},

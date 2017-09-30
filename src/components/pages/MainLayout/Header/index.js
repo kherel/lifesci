@@ -46,7 +46,6 @@ class Header extends Component {
           </button>
           {isMenuOpened && <MobMenu {...{openRoute, nav}}/>}
         </A_Container>
-
       </div>
     )
   }
@@ -61,7 +60,7 @@ Header.defaultProps = {
 export default Header;
 
 const nav = [
-  {name: 'Contribution',  url: '#'},
+  {name: 'Contribution',  url: '/contribution'},
   {name: 'Whitepaper', url: '/whitepaper'},
   {name: 'Team', url: '/team'},
   {name: 'Roadmap', url: '/roadmap'}
