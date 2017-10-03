@@ -5,6 +5,7 @@ const cn = cssClassName('HomeAbout')
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_Image from 'A_Image'
+import A_Container from 'A_Container'
 
 class About extends Component {
 
@@ -29,11 +30,11 @@ class About extends Component {
   render() {
     const list = this.getList()
     return (
-      <div className={cn()}>
+      <A_Container type='normal' mx={cn()}>
         <div className={cn('list-wrapper')}>
           {list}
         </div>
-      </div>
+      </A_Container>
     )
   }
 }

@@ -68,18 +68,23 @@
     }
     &-color{
       height: 2rem;
-      width: 2rem;
+      flex: 0 0 2rem;
       display: inline-block;
       margin-right: 1.6rem;
       transform: translate3d(0, 2px, 0);
     }
     &-text{
-      display: inline-block;
-      span{
-        margin-right: 3.2rem;
+      flex: 0 1 auto;
+      display: block;
+      & + &{
+        margin-left: 3.2rem;
+
       }
     }
     &-line{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
       margin-bottom: 1.6rem;
     }
     &-wrapper{

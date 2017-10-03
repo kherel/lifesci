@@ -8,52 +8,63 @@
     padding-bottom: 3.2rem;
   }
 
-  &__hero-title{
-    padding-bottom: 2.5rem;
-    text-align: left;
-    @include media ($tablet) {
-      padding-bottom: 1.6rem;
-    }
+  &__title{
+    max-width: 82.6rem;
   }
-  &__inner{
-    display: flex;
-    justify-content: space-between;
-    @include media ($tablet) {
-      flex-flow: column;
-      justify-content: center;
-    }
-    margin-bottom: 4rem;
-  }
-  &__info{
-    flex: 0 1 auto;
-    padding-right: 2.4rem;
-    @include media ($tablet) {
-      padding-right: 0;
-    }
-  }
+
   &__timer{
-    flex: 1 0 50.6rem;
-    color: black;
-    border-radius: 4px;
-    background-color: #ffffff;
-    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.03);
-    margin-top: -2rem;
-    padding: 3.6rem 3.7rem 4.4rem;
-    &-date{
-      color: $interactive;
-    }
-    @include media ($tablet) {
-      flex-basis: auto;
+    &-mobile{
       margin-top: 2.5rem;
-      width: calc(100% + 40px);
-      text-align: center;
-      margin-left: -20px;
-      padding-left: $p-tablet;
-      padding-right: $p-tablet;
+      @include media ($desktop) {
+        display: none;
+      }
+
+      @include media ($tablet) {
+        margin-top: 2.5rem;
+        width: calc(100% + 40px);
+        text-align: center;
+        margin-left: -20px;
+        padding-left: $p-tablet;
+        padding-right: $p-tablet;
+      }
+
+      @include media($mobile){
+        padding-left: $p-mobile;
+        padding-right: $p-mobile;
+      }
     }
-    @include media($mobile){
-      padding-left: $p-mobile;
-      padding-right: $p-mobile;
+    &-desktop{
+      @include media ($tablet) {
+        display: none;
+        .circles{
+          display: none;
+        }
+
+      }
+      text-align: center;
+      margin-top:8.2rem;
+    }
+  }
+
+  &__text{
+    margin-top: 3.2rem;
+
+  }
+  &__circles{
+    transform: translate3d(-50%, -1rem, 0);
+    left: 50%;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    @include media ($tablet) {
+      display: none;
+    }
+  }
+  &__container{
+    padding-bottom: 27.5rem;
+    @include media ($tablet) {
+      padding-bottom: 6.4rem;
+
     }
   }
 }

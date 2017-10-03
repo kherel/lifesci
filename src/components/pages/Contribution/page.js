@@ -8,8 +8,7 @@ import A_H from 'A_H'
 import A_P from 'A_P'
 import A_Button from 'A_Button'
 import Donut from './Donut'
-
-
+import Calculator from './Calculator'
 
 class Contribution extends Component {
 
@@ -50,30 +49,24 @@ class Contribution extends Component {
               <A_P type='section' mx={cn('allocation-subtile')}>We’re here for those who refuse to settle. Who never stop moving forwards. Who continue to search for new ideas.</A_P>
               <div className={cn('allocation-line')}>
                 <div className={cn('allocation-color')} style={{backgroundColor: color[2]}}/>
-                <A_P type='section' mx={cn('allocation-text')}>
-                  <span>{dataArray[2]}%</span>
-                  <span>Allocated to public</span>
-                </A_P>
+                  <A_P type='section' mx={cn('allocation-text')}>{dataArray[2]}%</A_P>
+                  <A_P type='section' mx={cn('allocation-text')}>Allocated to public</A_P>
               </div>
               <div className={cn('allocation-line')}>
                 <div className={cn('allocation-color')} style={{backgroundColor: color[1]}}/>
-                <A_P type='section' mx={cn('allocation-text')}>
-                  <span>{dataArray[1]}%</span>
-                  <span>Allocated to Lifesci team</span>
-                </A_P>
+                <A_P type='section' mx={cn('allocation-text')}>{dataArray[1]}%</A_P>
+                <A_P type='section' mx={cn('allocation-text')}>Allocated to Lifesci team </A_P>
               </div>
               <div className={cn('allocation-line')}>
                 <div className={cn('allocation-color')} style={{backgroundColor: color[0]}}/>
-                <A_P type='section' mx={cn('allocation-text')}>
-                  <span>{dataArray[0]}%</span>
-                  <span>Reserve fund</span>
-                </A_P>
+                <A_P type='section' mx={cn('allocation-text')}>{dataArray[0]}%</A_P>
+                <A_P type='section' mx={cn('allocation-text')}>Reserve fund</A_P>
               </div>
             </aside>
             <Donut data={dataArray} color={color} mx={cn('allocation-pie')}/>
           </A_Container>
         </div>
-
+        <Calculator />
       </div>
     )
   }

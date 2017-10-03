@@ -1,6 +1,8 @@
 @import "common/settings/variables";
 @import "common/utils";
 
-.home-timeline{
-
+.faq{
+  &__hero{
+    @include hl();
+  }
 }

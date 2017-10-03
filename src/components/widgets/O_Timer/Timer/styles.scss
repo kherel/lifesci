@@ -5,10 +5,8 @@
   display: flex;
   max-width: 428px;
   justify-content: space-between;
+  margin: 0 auto;
 
-  @include media ($tablet) {
-    margin: 0 auto;
-  }
   &__digit{
     width: 31px;
     height: 63px;

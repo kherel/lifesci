@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
+// import * as T from "prop-types";
+// import './styles.scss';
+// import {cssClassName} from 'utils'
+// const cn = cssClassName('Test')
+import A_RadioBtn from 'A_RadioBtn'
 
+class Test extends Component {
 
-const Test = () =>{
+  state = {
+    checked: 'STANDARD'
+  }
 
-  return(
-    <div>
-      <a href="https://drive.google.com/viewerng/viewer?embedded=true&url=https://lifesci.herokuapp.com‌/pdf/sample.pdf" target="_blank">ABC PDF file</a>
-    </div>
+  render() {
 
-  )
+ //   const {} = this.props
+ //   const {} = this.state
+    const onChange = value => this.setState({checked: value})
+
+    return (
+      <div>
+        <A_RadioBtn type='calc' checked={this.state.checked} onChange={onChange} >STANDARD</A_RadioBtn>
+        <A_RadioBtn type='calc' checked={this.state.checked}  onChange={onChange} >text</A_RadioBtn>
+      </div>
+    )
+  }
 }
 
 Test.propTypes = {
@@ -16,4 +31,5 @@ Test.propTypes = {
 
 Test.defaultProps = {
 }
+
 export default Test

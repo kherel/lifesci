@@ -8,8 +8,8 @@ import Team from './Team'
 import Roadmap from './Roadmap'
 import Legal from './Legal'
 import Contribution from './Contribution'
+import Faq from './Faq'
 import Test from './test2'
-
 
 const getRoutes = () => {
   return (
@@ -36,6 +36,10 @@ const getRoutes = () => {
       <Route
         path="contribution"
         component={Contribution}
+      />
+      <Route
+        path="faq"
+        component={Faq}
       />
       {getLegal()}
       <Route

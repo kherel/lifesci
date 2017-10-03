@@ -1,0 +1,79 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.contribution-calculator{
+  &__section{
+    text-align: center;
+    margin-bottom: 1.6rem;
+  }
+  &__header{
+    margin-bottom: 0;
+  }
+  &__nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6.4rem;
+    @include media ($mobile) {
+      margin-bottom: 3.2rem;
+      padding: 0 !important;
+    }
+    &-btn{
+      flex: 0 1 48rem;
+      & + &{
+        margin-left: 8rem;
+      }
+    }
+  }
+  &__calc{
+    display: flex;
+    margin-bottom: 6.4rem;
+    @include media ($mobile) {
+      flex-flow: column;
+      padding: 0;
+    }
+
+    &-side{
+      flex: 0 1 48rem;
+      & + &{
+        margin-left: 8rem;
+      }
+      @include media ($mobile) {
+        flex-basis: auto;
+        & + &{
+          margin-left: 0;
+        }
+      }
+    }
+    &-label{
+      display: inline-block;
+      font-size: 12px;
+      line-height: 2.17;
+      text-align: left;
+      color: rgba(0, 0, 0, 0.4);
+      @include media ($mobile) {
+        margin-left: $p-mobile;
+      }
+    }
+  }
+  &__results{
+    @include media ($mobile) {
+      display: none;
+    }
+    &-text{
+      margin-bottom: 6.4rem;
+    }
+  }
+  &__table{
+    display: flex;
+    &-area{
+      flex-basis: 40%;
+    }
+    &-potential{
+      flex-basis: 30%;
+    }
+    &-estimate{
+      flex-basis: 30%;
+      text-align: right;
+    }
+  }
+}

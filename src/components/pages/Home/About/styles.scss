@@ -2,10 +2,8 @@
 @import "common/utils";
 
 .home-about{
-  padding-top: 8rem;
-  @include media ($tablet) {
-    padding-top: 6.4rem;
-  }
+  margin-bottom:6.4rem !important;
+
   &__title{
     max-width: 800px;
     margin: 0 auto 6.1rem;

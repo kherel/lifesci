@@ -1,0 +1,69 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+/* Search Section
+/* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
+
+.o-search {
+  &__search {
+    width: 90rem;
+    margin: 0 auto;
+    position: relative;
+    @include media($tablet) {
+      width: 70rem;
+    }
+    @include media($mobile) {
+      width: 100%;
+    }
+
+  }
+  &__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2;
+    border-radius: 100px;
+    color: $black-1;
+    padding: 1.2rem 3rem 1.2rem 6.6rem;
+    box-sizing: border-box;
+    transition: all .5s ease;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
+
+  }
+  &__submit {
+    background: red;
+    width: 5rem;
+    height: 5rem;
+    border: none;
+    outline: none;
+    position: absolute;
+    left: .6rem;
+    cursor: pointer;
+    top: .6rem;
+    //border: 1px solid red;
+  }
+  &__search-icon {
+    position: relative;
+    display: block;
+    width: 2.2rem;
+    height: 2.2rem;
+    //transform: translate(0,-50%);
+    .o-search__icon-path {
+      stroke: $black-1;
+      fill: $black-1;
+      .o-search__search_in-active_true &{
+        stroke: $black-1;
+        fill: $black-1;
+      }
+    }
+    .o-search__icon-circle {
+      stroke: $black-1;
+      .o-search__search_in-active_true &{
+        stroke: $black-1;
+      }
+    }
+  }
+
+}

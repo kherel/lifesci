@@ -1,0 +1,60 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
+.a-radio-btn{
+  $c:&;
+  position: relative;
+  width: 100px;
+  height: 40px;
+  display: inline-block;
+  &_type{
+    &_calc{
+      height: 6.2rem;
+      width: 100%;
+      max-width: 46rem;
+      text-transform: uppercase;
+
+      #{$c}__inner{
+        font-size: 20px;
+        line-height: 1.4;
+        color: rgb(160, 166, 173);
+        &:hover, &:active{
+          color: $text
+        }
+
+      }
+      #{$c}__radio:checked + #{$c}__inner {
+        height: 6.4rem;
+        border-bottom: solid 2px $interactive;
+        color: $text
+      }
+    }
+  }
+
+  &__radio:checked + &__inner {
+    transition: all .3s ease;
+  }
+
+  &__radio{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+    z-index: 1;
+    outline: none;
+
+  }
+
+  &__inner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+}
