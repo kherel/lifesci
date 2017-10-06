@@ -28,11 +28,9 @@ function getFontSize(value, maxSize, minSize, maxLength = 11){
 class A_InputNumber extends Component {
 
   onChange = (e) => {
-    const {handleChange, max} = this.props
-    let value = cleanNumber(e.target.value)
-    if (max) {
-      value = value.substr(0, max)
-    }
+    const {handleChange, max, afterComma} = this.props
+    let value = cleanNumber(e.target.value, afterComma)
+    value = value.substr(0, max)
     handleChange(value)
   }
 
@@ -57,12 +55,15 @@ A_InputNumber.propTypes = {
   value: T.string.isRequired,
   placeHolder: T.string,
   prefix: T.string,
-  max: T.number
+  max: T.number,
+  afterComma: T.number.isRequired
+
 };
 
 A_InputNumber.defaultProps = {
   max: 11,
-  value: 0
+  value: 0,
+  afterComma: 2
 }
 
 export default A_InputNumber

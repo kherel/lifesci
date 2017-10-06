@@ -11,7 +11,6 @@ class M_CurrencySelect extends Component {
     isOpened: false
   }
 
-
   handleClickOutside = () => {
     this.closeMenu()
   }
@@ -74,7 +73,7 @@ class M_CurrencySelect extends Component {
 M_CurrencySelect.propTypes = {
   value: T.string.isRequired,
   mx: T.string,
-  options: T.array.isRequired
+  options: T.array.isRequired,
 };
 
 M_CurrencySelect.defaultProps = {

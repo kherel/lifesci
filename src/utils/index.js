@@ -119,15 +119,20 @@ export const numberFormat = function(n, dp){
 
 
 export function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  if(x.includes('.')){
+    x = x.split('.')
+    return x.shift().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '.' + x.join('').substr(0, 8)
+  }else{
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  }
 }
 
-export function cleanNumber(value){
+export function cleanNumber(value, afterComma){
   let res = value.replace(/[^0-9.]/g, '')
   if(res === '') res = '0'
   if(res.includes('.')){
     res = res.split('.')
-    res = res.shift() + '.' + res.join('')
+    res = res.shift() + '.' + res.join('').substr(0, afterComma)
   }
   if(res.substr(res.length - 1) !== '.') res = (+res).toString()
   return res

@@ -16,26 +16,56 @@ class ContributionCalculator extends Component {
     mode: 'standard',
     currency: 'gbp',
     token: 'lsci',
-    value: 0
+    tokenValue: 0,
+    moneyValue: 0,
   }
 
-  onRadionChange = (mode) => {
-    this.setState({mode})
+
+  onChangeMoneyInput = (moneyValue) => {
+    const {currencies} = this.props
+    const {currency, mode} = this.state
+    const turbo = mode === turbo
+    const usdValue = moneyValue / currencies[currency]
+    const tokenValue = Math.floor(usdValue / 5000 * 100000000) / 100000000 * (turbo ? 1.1 : 1)
+    this.setState({moneyValue, tokenValue})
+  }
+
+  onChangeTokenInput = (tokenValue) => {
+    const {currencies} = this.props
+    const {currency, mode} = this.state
+    const turbo = mode === 'turbo'
+    const usdValue = Math.floor(tokenValue * 5000 * 100) / 100 / (turbo ? 1.1 : 1)
+    const moneyValue = usdValue * currencies[currency]
+    this.setState({moneyValue, tokenValue})
+  }
+
+  onCurrencyChange = (currency) => {
+    const {currencies} = this.props
+    const {tokenValue} = this.state
+    const moneyValue = tokenValue * 5000 * currencies[currency]
+    this.setState({currency, moneyValue})
+  }
+
+  onChangeMode = (mode) => {
+    const {currencies} = this.props
+    const {currency, tokenValue} = this.state
+    const turbo = mode === 'turbo'
+    const usdValue = Math.floor(tokenValue * 5000 * 100) / 100 / (turbo ? 1.1 : 1)
+    const moneyValue = usdValue * currencies[currency]
+    this.setState({moneyValue, mode})
   }
 
   render() {
-
- //   const {} = this.props
-
-    const {mode, currency, token} = this.state
+    const {mode, currency, token, tokenValue, moneyValue} = this.state
+    const {loaded} = this.props
+    if(!loaded) return null
 
     const navBtnProps ={
       type: 'calc',
       checked: mode,
-      onChange: this.onRadionChange,
+      onChange: mode => this.onChangeMode(mode),
       mx:cn('nav-btn')
     }
-
 
     return (
       <div>
@@ -53,12 +83,13 @@ class ContributionCalculator extends Component {
             <M_IconSelect
               options={currencyOptions}
               mx={cn('dropdown')}
-              onChange={currency => this.setState({currency})}
+              onChange={this.onCurrencyChange}
               value = {currency}
               />
             <A_InputNumber
-              handleChange={value => this.setState({value})}
-              value = {this.state.value.toString()}
+              handleChange={this.onChangeMoneyInput}
+              value = {moneyValue.toString()}
+              afterComma = {2}
             />
           </div>
 
@@ -69,6 +100,11 @@ class ContributionCalculator extends Component {
               mx={cn('dropdown')}
               onChange={token => this.setState({token})}
               value = {token}
+            />
+            <A_InputNumber
+              handleChange={this.onChangeTokenInput}
+              value = {tokenValue.toString()}
+              afterComma = {8}
             />
           </div>
         </A_Container>

@@ -8,7 +8,10 @@
   border: none;
   border-radius: 0;
   box-shadow: none;
-  font-size: 20rem;
+  line-height: 10rem;
   outline: none;
-  cursor: text
+  cursor: text;
+  @include media ($mobile) {
+    line-height: 1;
+  }
 }

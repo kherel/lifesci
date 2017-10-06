@@ -29,6 +29,7 @@ class Contribution extends Component {
     const dataArray = [25, 20, 55 ]
     const color = ['#cacdff', '#888ee8', '#3f46ad']
     const renderInfo = this.getInfo()
+    const {currencies, loaded} = this.props
     return (
       <div>
         <A_Container type='hero' mx={cn('hero')}>
@@ -66,7 +67,7 @@ class Contribution extends Component {
             <Donut data={dataArray} color={color} mx={cn('allocation-pie')}/>
           </A_Container>
         </div>
-        <Calculator />
+        <Calculator {...{currencies, loaded}}/>
       </div>
     )
   }
