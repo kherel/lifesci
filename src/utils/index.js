@@ -132,8 +132,9 @@ export function cleanNumber(value, afterComma){
   if(res === '') res = '0'
   if(res.includes('.')){
     res = res.split('.')
-    res = res.shift() + '.' + res.join('').substr(0, afterComma)
+    res = (+res.shift()).toString() + '.' + res.join('').substr(0, afterComma)
+  }else{
+    res = (+res).toString()
   }
-  if(res.substr(res.length - 1) !== '.') res = (+res).toString()
   return res
 }
