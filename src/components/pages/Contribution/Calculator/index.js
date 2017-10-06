@@ -48,11 +48,11 @@ class ContributionCalculator extends Component {
 
   onChangeMode = (mode) => {
     const {currencies} = this.props
-    const {currency, tokenValue} = this.state
+    const {currency, moneyValue} = this.state
     const turbo = mode === 'turbo'
-    const usdValue = Math.floor(tokenValue * 5000 * 100) / 100 / (turbo ? 1.1 : 1)
-    const moneyValue = usdValue * currencies[currency]
-    this.setState({moneyValue, mode})
+    const usdValue = moneyValue / currencies[currency]
+    const tokenValue = Math.floor(usdValue / 5000 * 100000000) / 100000000 * (turbo ? 1.1 : 1)
+    this.setState({tokenValue, mode})
   }
 
   render() {
