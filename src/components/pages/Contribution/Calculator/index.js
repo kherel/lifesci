@@ -20,13 +20,12 @@ class ContributionCalculator extends Component {
     moneyValue: 0,
   }
 
-
   onChangeMoneyInput = (moneyValue) => {
     const {currencies} = this.props
     const {currency, mode} = this.state
     const turbo = mode === turbo
     const usdValue = moneyValue / currencies[currency]
-    const tokenValue = Math.floor(usdValue / 5000 * 100000000) / 100000000 * (turbo ? 1.1 : 1)
+    const tokenValue = Math.floor(usdValue / 5000 * (turbo ? 1.1 : 1) * 100000000) / 100000000
     this.setState({moneyValue, tokenValue})
   }
 
@@ -34,15 +33,15 @@ class ContributionCalculator extends Component {
     const {currencies} = this.props
     const {currency, mode} = this.state
     const turbo = mode === 'turbo'
-    const usdValue = Math.floor(tokenValue * 5000 * 100) / 100 / (turbo ? 1.1 : 1)
-    const moneyValue = usdValue * currencies[currency]
+    const usdValue = tokenValue * 5000 * 100 * (turbo ? 1.1 : 1)
+    const moneyValue =  Math.floor(usdValue * currencies[currency] * 100) / 100
     this.setState({moneyValue, tokenValue})
   }
 
   onCurrencyChange = (currency) => {
     const {currencies} = this.props
     const {tokenValue} = this.state
-    const moneyValue = tokenValue * 5000 * currencies[currency]
+    const moneyValue = Math.floor(tokenValue * 5000 * currencies[currency] * 100) / 100
     this.setState({currency, moneyValue})
   }
 
@@ -51,7 +50,7 @@ class ContributionCalculator extends Component {
     const {currency, moneyValue} = this.state
     const turbo = mode === 'turbo'
     const usdValue = moneyValue / currencies[currency]
-    const tokenValue = Math.floor(usdValue / 5000 * 100000000) / 100000000 * (turbo ? 1.1 : 1)
+    const tokenValue = Math.floor(usdValue / 5000 * 100000000 * (turbo ? 1.1 : 1)) / 100000000
     this.setState({tokenValue, mode})
   }
 
