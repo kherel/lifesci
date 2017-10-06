@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('M_IconSelect')
+const cn = cssClassName('M_CurrencySelect')
 import onClickOutside from 'react-onclickoutside'
 
-class M_IconSelect extends Component {
+class M_CurrencySelect extends Component {
   state = {
     value: this.props.value || this.props.options[0].value,
     isOpened: false
@@ -39,7 +39,10 @@ class M_IconSelect extends Component {
           className={cn('options-item', {selected})}
           onClick={() => this.handleChange(opt.value)}
         >
-          {opt.label}
+          <div>
+            {opt.label}
+          </div>
+          <div className={cn('mark', {icon: opt.value})}/>
         </ol>
       )
     })
@@ -57,21 +60,25 @@ class M_IconSelect extends Component {
     const { label } = options.find( option => option.value === value)
     return (
       <div className={cn({isOpened}, [mx])} onClick={this.handleClick} >
-        <div className={cn('label')}>{label}</div>
+        <div className={cn('label', {currency: value})}>
+          {label}
+          <div className={cn('mark', {icon: value})}/>
+        </div>
         {this.getListOptions(options, isOpened, value)}
+        <hr className={cn('hr', {isOpened})} />
       </div>
     )
   }
 }
 
-M_IconSelect.propTypes = {
+M_CurrencySelect.propTypes = {
   value: T.string.isRequired,
   mx: T.string,
   options: T.array.isRequired
 };
 
-M_IconSelect.defaultProps = {
+M_CurrencySelect.defaultProps = {
   options: [{value: '', label: ''}]
 }
 
-export default onClickOutside(M_IconSelect)
+export default onClickOutside(M_CurrencySelect)

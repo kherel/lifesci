@@ -4,11 +4,10 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_InputText')
 
-const A_InputText = ({value, handleChange, placeholder, error, mx}) =>{
+const A_InputText = ({value, handleChange, error, mx}) =>{
   return(
     <div className={cn([mx])}>
       <input
-        placeholder={placeholder}
         type="text"
         value={value}
         onChange={e => handleChange(e.target.value)}

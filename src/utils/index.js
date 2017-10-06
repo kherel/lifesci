@@ -115,3 +115,20 @@ export const numberFormat = function(n, dp){
     (dp ? '.' + d + ( d.length < dp ?
       ('00000').substr(0, dp - d.length):e):e);
 };
+
+
+
+export function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+export function cleanNumber(value){
+  let res = value.replace(/[^0-9.]/g, '')
+  if(res === '') res = '0'
+  if(res.includes('.')){
+    res = res.split('.')
+    res = res.shift() + '.' + res.join('')
+  }
+  if(res.substr(res.length - 1) !== '.') res = (+res).toString()
+  return res
+}

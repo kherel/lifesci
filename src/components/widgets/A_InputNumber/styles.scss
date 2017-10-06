@@ -1,0 +1,14 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.a-input-text{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 0 8px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 20rem;
+  outline: none;
+  cursor: text
+}

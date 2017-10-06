@@ -7,14 +7,16 @@ import A_H from 'A_H'
 import A_P from 'A_P'
 import A_Container from 'A_Container'
 import A_RadioBtn from "A_RadioBtn";
-import M_IconSelect from 'M_IconSelect'
+import M_IconSelect from 'src/components/widgets/M_CurrencySelect'
+import A_InputNumber from 'A_InputNumber'
 
 class ContributionCalculator extends Component {
 
   state = {
     mode: 'standard',
     currency: 'gbp',
-    token: 'lsci'
+    token: 'lsci',
+    value: 0
   }
 
   onRadionChange = (mode) => {
@@ -47,17 +49,21 @@ class ContributionCalculator extends Component {
         </A_Container>
         <A_Container type='normal' mx={cn('calc')}>
           <div className={cn('calc-side')}>
-            <span className={cn('calc-label')}>from</span>
+            <span className={cn('calc-label')}>From</span>
             <M_IconSelect
-                          options={currencyOptions}
-                          mx={cn('dropdown')}
-                          onChange={currency => this.setState({currency})}
-                          value = {currency}
-                          />
+              options={currencyOptions}
+              mx={cn('dropdown')}
+              onChange={currency => this.setState({currency})}
+              value = {currency}
+              />
+            <A_InputNumber
+              handleChange={value => this.setState({value})}
+              value = {this.state.value.toString()}
+            />
           </div>
 
           <div className={cn('calc-side')}>
-            <span className={cn('calc-label')}>to</span>
+            <span className={cn('calc-label')}>To</span>
             <M_IconSelect
               options={tokensOptions}
               mx={cn('dropdown')}
@@ -92,7 +98,8 @@ export default ContributionCalculator
 const currencyOptions = [
   {label:'GBP - British Pound', value: 'gbp'},
   {label:'USD - Unites States Dollar', value: 'usd'},
-  {label:'EUR - EURO', value: 'eur'}
+  {label:'EUR - Euro', value: 'eur'},
+  {label:'CHF - Swiss Franc', value: 'chf'}
 ]
 
 const tokensOptions = [
