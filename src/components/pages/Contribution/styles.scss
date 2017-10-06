@@ -56,6 +56,7 @@
     }
     @include media ($mobile) {
       flex-flow: column;
+      align-items: center;
     }
     &-info{
       padding-top: 2rem;
@@ -70,6 +71,13 @@
     &-pie{
       flex: 0 0 35rem;
       height: 35rem;
+      @include media ($mobile) {
+        flex-basis: auto;
+        height: 100%;
+        width: 100%;
+        max-height: 35rem;
+        max-width: 35rem;
+      }
     }
     &-color{
       height: 2rem;

@@ -26,7 +26,7 @@ class Contribution extends Component {
   }
 
   render(){
-    const dataArray = [25, 20, 55]
+    const dataArray = [25, 20, 55 ]
     const color = ['#cacdff', '#888ee8', '#3f46ad']
     const renderInfo = this.getInfo()
     return (

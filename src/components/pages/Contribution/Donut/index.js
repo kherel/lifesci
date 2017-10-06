@@ -5,6 +5,7 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('Donut')
 import {Motion, spring, presets} from 'react-motion'
+import {isMobile} from 'utils/isMobile'
 
 const color = ['#cacdff', '#888ee8', '#3f46ad']
 
@@ -53,6 +54,7 @@ class Donut extends Component {
           d={path}
           key={`hover ${i}`}
           fill='rgba(0,0,0,0)'
+          className={cn('hoverLines')}
           onMouseEnter={() => this.setState({hover:i})}
           onMouseLeave={() => this.setState({hover: null})}
         />
@@ -73,6 +75,7 @@ class Donut extends Component {
     const {data, mx, colors} = this.props
     const dataArr = this.dataMapper(data)
     const {hover} = this.state
+    const show = !isMobile.any
     const labels = [
       'All',
       'Allocated to public',
@@ -87,13 +90,17 @@ class Donut extends Component {
 
     return(
       <div className={cn([mx])}>
-        <div className={cn('label')}>
-          <p className={cn('pct')}>{labelPct}</p>
-          <p className={cn('text')}>{labelTxt}</p>
-        </div>
+        {
+          show &&
+            <div className={cn('label')}>
+              <p className={cn('pct')}>{labelPct}</p>
+              <p className={cn('text')}>{labelTxt}</p>
+            </div>
+        }
+
         <svg  viewBox='-180 -180 360 360'>
           {paths}
-          {hoverPaths}
+          {show && hoverPaths}
         </svg>
       </div>
 
