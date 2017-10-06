@@ -188,7 +188,7 @@
 
       }
       &:after{
-        @include  botton-line($interactive);
+        @include botton-line($interactive);
 
       }
       @include media ($tablet) {

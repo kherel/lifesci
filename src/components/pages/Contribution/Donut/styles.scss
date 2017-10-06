@@ -1,3 +1,18 @@
 .donut{
-
+  position: relative;
+  &__pct{
+    font-size: 6rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+  &__text{
+    font-size: 1.4rem;
+  }
+  &__label{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    text-align: center;
+  }
 }

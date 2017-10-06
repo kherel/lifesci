@@ -4,42 +4,99 @@ import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('Donut')
+import {Motion, spring, presets} from 'react-motion'
 
 const color = ['#cacdff', '#888ee8', '#3f46ad']
 
 class Donut extends Component {
 
-  getLine(start, end){
+  state = {
+    hover: null
+  }
+
+  getArc(start, end, outerRadius, innerRadius = 0){
     const pct = Math.PI / 50
-    const
-      line = arc()
-        .innerRadius(160)
-        .outerRadius(100)
-        .startAngle(start * pct)
-        .endAngle(end * pct);
     return(
-      line()
-    )
+      arc()
+        .innerRadius(innerRadius)
+        .outerRadius(outerRadius)
+        .startAngle(start * pct)
+        .endAngle(end * pct)
+    )();
+  }
+
+  getLines(dataArr, colors, hover){
+    return dataArr.map( ({start, end}, i) => {
+      return(
+        <Motion defaultStyle={{x: 100, y: 160}} style={{
+          x: spring(i === hover ? 117 : 100, presets.stiff),
+          y: spring(i === hover ? 180 : 160, presets.stiff)
+
+        }} key={i}>
+          {({x, y}) =>
+            <path
+              d={this.getArc(start, end, x, y)}
+              fill={colors[i]}
+            />
+          }
+        </Motion>
+      )
+    })
+  }
+
+
+  renderHoverLine = (dataArr) => {
+    return dataArr.map(({start, end}, i) => {
+      const path = this.getArc(start, end, 180)
+      return(
+        <path
+          d={path}
+          key={`hover ${i}`}
+          fill='rgba(0,0,0,0)'
+          onMouseEnter={() => this.setState({hover:i})}
+          onMouseLeave={() => this.setState({hover: null})}
+        />
+      )
+    })
+  }
+
+  dataMapper(data){
+    let end = 0;
+    return data.map(pct =>{
+      const start = end
+      end = end + pct
+      return({ start, end })
+    })
   }
 
   render(){
     const {data, mx, colors} = this.props
-    let end = 0;
-    const _paths = data.map( (pct, i) => {
-      const start = end
-      end = end + pct
-      const path = this.getLine(start, end)
+    const dataArr = this.dataMapper(data)
+    const {hover} = this.state
+    const labels = [
+      'All',
+      'Allocated to public',
+      'Allocated to Lifesci team',
+      'Reserve fund'
+    ]
 
-      return(
-        <path d={path} key={pct} fill={colors[i]}/>
-      )
-    })
+    const hoverPaths = this.renderHoverLine(dataArr, colors)
+    const paths = this.getLines(dataArr, colors, hover)
+    const labelPct = `${hover === null ?100 : data[hover]}%`
+    const labelTxt = `${hover === null ? labels[0] : labels[hover + 1]}`
 
     return(
-      <svg className={cn([mx])} viewBox='-160 -160 320 320'>
+      <div className={cn([mx])}>
+        <div className={cn('label')}>
+          <p className={cn('pct')}>{labelPct}</p>
+          <p className={cn('text')}>{labelTxt}</p>
+        </div>
+        <svg  viewBox='-180 -180 360 360'>
+          {paths}
+          {hoverPaths}
+        </svg>
+      </div>
 
-        {_paths}
-      </svg>
     )
   }
 }

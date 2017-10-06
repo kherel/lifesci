@@ -9,62 +9,40 @@
   }
 
   &__title{
-    max-width: 82.6rem;
+    max-width: 64rem;
   }
 
-  &__timer{
-    &-mobile{
-      margin-top: 2.5rem;
-      @include media ($desktop) {
-        display: none;
-      }
-
-      @include media ($tablet) {
-        margin-top: 2.5rem;
-        width: calc(100% + 40px);
-        text-align: center;
-        margin-left: -20px;
-        padding-left: $p-tablet;
-        padding-right: $p-tablet;
-      }
-
-      @include media($mobile){
-        padding-left: $p-mobile;
-        padding-right: $p-mobile;
-      }
-    }
-    &-desktop{
-      @include media ($tablet) {
-        display: none;
-        .circles{
-          display: none;
-        }
-
-      }
-      text-align: center;
-      margin-top:8.2rem;
-    }
-  }
 
   &__text{
     margin-top: 3.2rem;
-
+    max-width: 82rem;
+    z-index: -1;
+    box-shadow: 0 0 5em white, 0 0 5em white, 0 0 5em white, 0 0 10em white;
+    background-color: white;
   }
   &__circles{
-    transform: translate3d(-50%, -1rem, 0);
+    transform: translate3d(0, -28%, 0);
     left: 50%;
-    position: absolute;
-    bottom: 0;
-    z-index: -1;
-    @include media ($tablet) {
-      display: none;
-    }
+    width: 100%;
+    height: auto;
+    //position: absolute;
+    //bottom: 0;
+    z-index: -2;
   }
   &__container{
-    padding-bottom: 27.5rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-bottom: 0;
+    margin-bottom: -3%;
     @include media ($tablet) {
-      padding-bottom: 6.4rem;
+      //padding-bottom: 6.4rem;
 
+    }
+  }
+  &__buttons{
+    @include media ($mobile) {
+      width: 100%;
     }
   }
 }

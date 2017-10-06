@@ -50,6 +50,7 @@
   }
   &__allocation{
     display: flex;
+    padding-top: 4.4rem;
     &-title, &-subtile{
       margin-bottom: 2.4rem;
     }
@@ -57,9 +58,13 @@
       flex-flow: column;
     }
     &-info{
+      padding-top: 2rem;
+
       flex: 1 1 auto;
       @include media ($mobile) {
         margin-bottom: 6.4rem;
+        padding-top: 0rem;
+
       }
     }
     &-pie{

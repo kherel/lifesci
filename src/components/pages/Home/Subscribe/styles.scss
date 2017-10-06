@@ -22,11 +22,19 @@
   &__input{
     flex: 1 1 28.8rem;
     margin-right: 1.6rem;
+    @include media ($mobile) {
+      flex-basis:auto;
+      margin-right:0;
+      margin-bottom:3.2rem;
+    }
   }
   &__form{
     display: flex;
     width: 100%;
     max-width: 42.4rem;
+    @include media ($mobile) {
+      flex-flow: column;
+    }
   }
   &__btn{
     flex: 0 0 auto;
