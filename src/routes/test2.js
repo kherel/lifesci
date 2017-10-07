@@ -11,9 +11,11 @@ const Test = () =>{
   return(
     <div style={{paddingTop: 20, display: 'flex'}}>
       <div style={{flex: 1, width: '100%', flexDirection: 'column'}}>
-        <SyntaxHighlighter showLineNumbers
-                           wrapLines={true}
-                           style={docco}>{value}</SyntaxHighlighter>
+        <SyntaxHighlighter
+          showLineNumbers
+           wrapLines={true}
+           style={docco}
+        >{value}</SyntaxHighlighter>
       </div>
     </div>
   )

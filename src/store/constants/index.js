@@ -9,7 +9,7 @@ export const OPEN_ROUTE = 'OPEN_ROUTE'
 export const ERROR = 'ERROR'
 export const MENU = 'MENU'
 export const CURRENCIES = 'CURRENCIES'
-
+export const CONTRACTS = 'CONTRACTS'
 
 export const START = '_START'
 export const SUCCESS = '_SUCCESS'

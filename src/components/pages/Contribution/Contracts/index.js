@@ -7,6 +7,13 @@ import A_H from 'A_H'
 import A_Button from 'A_Button'
 import A_Link from 'A_Link'
 
+
+import SyntaxHighlighter, { registerLanguage } from "react-syntax-highlighter/dist/light"
+import js from 'react-syntax-highlighter/dist/languages/javascript';
+import codeStyle from './code-style.js';
+
+registerLanguage('javascript', js);
+
 class Contracts extends Component {
 
   state={
@@ -32,7 +39,7 @@ class Contracts extends Component {
           <div className={cn('line')} />
         </li>
         <li>
-          <A_Link type='simple' external>Check our Github</A_Link>
+          <A_Link type='simple' external to={'https://github.com/amozgov'}>Check our Github</A_Link>
         </li>
       </ul>
     )
@@ -40,11 +47,18 @@ class Contracts extends Component {
 
   render() {
     const {slug} = this.state
+    const {contracts, loaded} = this.props
+    const code = contracts[slug]
     return (
       <div className={cn('wrapper')}>
         <A_Container type='equal' mx={cn()}>
             <div className={cn('code')} >
-              code
+
+              <SyntaxHighlighter
+                showLineNumbers
+                wrapLines={true}
+                style={codeStyle}
+              >{!loaded ? 'loading..' : code}</SyntaxHighlighter>
             </div>
             <div className={cn('menu')}>
               <A_H type='second' mx={cn('title')}>Smart Contracts</A_H>
@@ -67,6 +81,6 @@ export default Contracts;
 const buttons = [
   {name:'LSCI token contract', slug: 'contract'},
   {name:'Lifesci placeholder', slug: 'placeholder'},
-  {name:'Token implementation', slug: 'token-implementation'},
+  {name:'Token implementation', slug: 'implementation'},
   {name:'ConsenSys multisig', slug: 'multisig'}
 ]

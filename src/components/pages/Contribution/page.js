@@ -30,7 +30,7 @@ class Contribution extends Component {
     const dataArray = [25, 20, 55 ]
     const color = ['#cacdff', '#888ee8', '#3f46ad']
     const renderInfo = this.getInfo()
-    const {currencies, loaded} = this.props
+    const {currencies, loaded, contracts} = this.props
     return (
       <div>
         <A_Container type='hero' mx={cn('hero')}>
@@ -69,7 +69,7 @@ class Contribution extends Component {
           </A_Container>
         </div>
         <Calculator {...{currencies, loaded}}/>
-        <Contracts />
+        <Contracts {...contracts}/>
       </div>
     )
   }

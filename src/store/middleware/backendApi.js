@@ -20,9 +20,12 @@ export default () => next => action => {
 
   promise
     .then(
-    response => (
-      next(nextAction(action, {data: {...response, initdata: data}, type: successType}))
-    ),
+    response => {
+      console.log(response)
+      return(
+        next(nextAction(action, {data: {...response, initdata: data}, type: successType}))
+      )
+    },
     error => {
       next(nextAction(action, {type: failureType}))
       next({type: ERROR, data: error})
@@ -31,7 +34,7 @@ export default () => next => action => {
   return promise;
 }
 
-function APICall({endpoint, method, query, payload, headers, type}) {
+function APICall({endpoint, method, query, payload, headers, type, text}) {
   return new Promise((resolve, reject) => {
     let r = request[method.toLowerCase()](`${endpoint}`)
 
@@ -48,7 +51,7 @@ function APICall({endpoint, method, query, payload, headers, type}) {
       r = r.type(type)
 
     r.then(
-      data => resolve(data.body),
+      data => resolve(text ? {text: data.text} : data.body),
       error => reject(error)
     )
   })
