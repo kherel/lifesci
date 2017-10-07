@@ -13,21 +13,19 @@
       height: 1.9rem;
       line-height: 1.9rem;
     }
-
-    &_button{
+    &_simple{
       width: 100%;
       display: block;
-      padding: .8rem 1.5rem .9rem;
-      color: #57a7ed;
-      font-size: 1.6rem;
-      font-weight: bold;
-      transition: color 1s, box-shadow 0.3s ease-in, background-color 0.7s;
-      border-radius: 4px;
+      padding: .8rem 0;
+      will-change: font-weight;
+      transition: all ease-in;
+      font-size: 17px;
+      line-height: 1.53;
+      text-align: left;
+      color: $interactive;
 
       &:hover{
-        background-color: #ffffff;
-        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
-        color: #3881c0;
+        font-weight: 500;
       }
     }
   }
@@ -36,4 +34,5 @@
   &.disabled{
     pointer-events: none;
   }
+
 }

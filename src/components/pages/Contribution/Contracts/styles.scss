@@ -1,0 +1,48 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.home-contracts {
+  &__wrapper {
+    background-color: $background-pink;
+  }
+
+  display: flex;
+  align-items: center;
+  @include media ($tablet) {
+    flex-flow: column-reverse;
+  }
+
+  &__code {
+    position: relative;
+    width: 600px;
+    height: 32rem;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    @include media ($tablet) {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+  }
+  &__menu{
+    align-self: stretch;
+    padding-left: 8rem;
+
+  }
+  &__list {
+
+  }
+
+  &__title{
+    margin-bottom: .8rem!important;
+  }
+  &__line{
+    height: 1.6rem;
+    border-bottom: solid 2px $black-4;
+    width: 200px;
+    margin-bottom: 1.6rem;
+  }
+}

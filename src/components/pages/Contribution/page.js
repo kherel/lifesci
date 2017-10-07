@@ -9,6 +9,7 @@ import A_P from 'A_P'
 import A_Button from 'A_Button'
 import Donut from './Donut'
 import Calculator from './Calculator'
+import Contracts from './Contracts'
 
 class Contribution extends Component {
 
@@ -68,6 +69,7 @@ class Contribution extends Component {
           </A_Container>
         </div>
         <Calculator {...{currencies, loaded}}/>
+        <Contracts />
       </div>
     )
   }

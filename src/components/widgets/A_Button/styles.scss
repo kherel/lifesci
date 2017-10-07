@@ -75,6 +75,20 @@ $form-btn-border-radius: 30px;
       &_button-secondary{
         @extend #{$this}__transparent;
       }
+      &_button-interface{
+        width: 100%;
+        display: block;
+        padding: .8rem 0;
+        transition: color 1s, box-shadow 0.3s ease-in, background-color 0.7s;
+        font-size: 17px;
+        line-height: 1.53;
+        text-align: left;
+        color: rgba(0, 0, 0, 0.65);
+
+        &:hover{
+          font-weight: 500;
+        }
+      }
     }
   }
   &__link {

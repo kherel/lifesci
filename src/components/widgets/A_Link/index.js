@@ -26,7 +26,7 @@ const A_Link = ({children, type, block, disabled, external, download, to, mx}) =
 A_Link.propTypes = {
   type: T.oneOf([
     'nav',
-    'button'
+    'simple'
   ]),
   external: T.bool, // for external links
   disabled: T.bool,
