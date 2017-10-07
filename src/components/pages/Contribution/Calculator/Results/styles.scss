@@ -11,19 +11,54 @@
 
   &__table{
     display: flex;
-    margin-bottom: 3.2rem;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 3.2rem;
+
     &-area{
-      flex: 0 0 24rem;
-      margin-right: 18.5rem;
+      flex: 0 0 43%;
     }
     &-potential{
-      flex: 1 1 auto;
+      flex: 0 0 37%;
     }
     &-estimate{
-      flex: 1 1 16rem;
+      flex: 0 0 20%;
       text-align: right;
+      position: relative;
+    }
+    &-text{
+      width: 24rem;
+    }
+    &-legend{
+      font-size: 1.5rem;
+      line-height: 1.73;
+      margin-top:1rem;
+      & + &{
+        margin-left:2.4rem;
+      }
+      &_type{
+        &_standart{
+          color: rgba(0, 0, 0, 0.65);
+        }
+        &_lsci{
+          color: $interactive;
+        }
+      }
+    }
+  }
+
+  &__line{
+    height: 16px;
+    min-width: .3rem;
+    will-change: width;
+    transition: all 200ms ease-out;
+    &_type{
+      &_standart {
+        background-color: #e8ebee;
+      }
+      &_lsci{
+        background-image: linear-gradient(to right, #888ee8, #3f46ad);
+      }
     }
   }
 }

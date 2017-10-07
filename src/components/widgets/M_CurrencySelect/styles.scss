@@ -146,11 +146,11 @@
     bottom: 0;
     margin: 0;
     padding: 0;
-    width: 0;
     height: .2rem;
     border: none;
     background: $interactive;
     font-size: 1px;
+    width: 0;
     will-change: width;
     transition: all 200ms ease-out;
     &_is-opened_true{

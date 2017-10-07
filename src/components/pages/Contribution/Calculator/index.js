@@ -108,7 +108,7 @@ class ContributionCalculator extends Component {
             />
           </div>
         </A_Container>
-        <Results text = {infoText[mode]} tokenAmount={tokenValue}/>
+        <Results text = {infoText[mode]} tokenAmount={+ tokenValue}/>
       </div>
 
     )

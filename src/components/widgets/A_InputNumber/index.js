@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('A_InputText')
+const cn = cssClassName('A_InputNumber')
 import {numberWithCommas, cleanNumber} from 'utils'
 
 function getFontSize(value, maxSize, minSize, maxLength = 11){
