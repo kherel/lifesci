@@ -1,0 +1,29 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.contribution-calculator-results{
+  @include media ($mobile) {
+    display: none;
+  }
+  &__text{
+    margin-bottom: 6.4rem;
+  }
+
+  &__table{
+    display: flex;
+    margin-bottom: 3.2rem;
+    justify-content: space-between;
+    width: 100%;
+    &-area{
+      flex: 0 0 24rem;
+      margin-right: 18.5rem;
+    }
+    &-potential{
+      flex: 1 1 auto;
+    }
+    &-estimate{
+      flex: 1 1 16rem;
+      text-align: right;
+    }
+  }
+}

@@ -86,9 +86,17 @@ $icon-size: 20rem;
       line-height: 1.33;
     }
     &_thead{
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 1.73;
+      color: rgba(0, 0, 0, 0.65);
+
+    }
+    &_tbody{
       font-size: 20px;
       font-weight: 500;
       line-height: 1.4;
+      padding-left: .7rem;
     }
   }
 

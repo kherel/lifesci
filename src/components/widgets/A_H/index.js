@@ -60,7 +60,9 @@ A_H.propTypes = {
     'small', //black trans bold/12/1.33 center
     'small-section', //black 500/19px/1.47
     'section-subtitle', //bold/15/1.73 rgba(0, 0, 0, 0.65)
-    'thead' // 500/20/1.4
+    'thead', // bold/15/1.73
+    'tbody' // 500/20/1.4
+
   ]),
   children: T.any.isRequired,
   mx: T.string

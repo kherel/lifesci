@@ -9,6 +9,7 @@ import A_Container from 'A_Container'
 import A_RadioBtn from "A_RadioBtn";
 import M_IconSelect from 'src/components/widgets/M_CurrencySelect'
 import A_InputNumber from 'A_InputNumber'
+import Results from './Results'
 
 class ContributionCalculator extends Component {
 
@@ -33,7 +34,7 @@ class ContributionCalculator extends Component {
     const {currencies} = this.props
     const {currency, mode} = this.state
     const turbo = mode === 'turbo'
-    const usdValue = tokenValue * 5000 * 100 * (turbo ? 1.1 : 1)
+    const usdValue = tokenValue * 5000 * (turbo ? 1.1 : 1)
     const moneyValue =  Math.floor(usdValue * currencies[currency] * 100) / 100
     this.setState({moneyValue, tokenValue})
   }
@@ -107,15 +108,7 @@ class ContributionCalculator extends Component {
             />
           </div>
         </A_Container>
-        <A_Container type='equal' mx={cn('results')}>
-          <A_P type='section' mx={cn('results-text')}>{infoText[mode]}</A_P>
-          <div className={cn('table')}>
-            <A_H type='thead' mx={cn('table-area')}>AREA</A_H>
-            <A_H type='thead' mx={cn('table-potential')}>POTENTIAL</A_H>
-            <A_H type='thead' mx={cn('table-estimate')}>ESTIMATE</A_H>
-          </div>
-
-        </A_Container>
+        <Results text = {infoText[mode]} tokenAmount={tokenValue}/>
       </div>
 
     )

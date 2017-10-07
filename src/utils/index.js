@@ -118,10 +118,10 @@ export const numberFormat = function(n, dp){
 
 
 
-export function numberWithCommas(x) {
+export function numberWithCommas(x, afterComma = 8) {
   if(x.includes('.')){
     x = x.split('.')
-    return x.shift().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '.' + x.join('').substr(0, 8)
+    return x.shift().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '.' + x.join('').substr(0, afterComma)
   }else{
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   }
