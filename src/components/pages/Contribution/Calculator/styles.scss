@@ -31,6 +31,10 @@
       padding: 0;
     }
 
+    &-input{
+      padding-bottom: 6.4rem !important;
+    }
+
     &-side{
       flex: 0 1 48rem;
       & + &{
@@ -42,6 +46,7 @@
           margin-left: 0;
         }
       }
+
     }
     &-label{
       display: inline-block;

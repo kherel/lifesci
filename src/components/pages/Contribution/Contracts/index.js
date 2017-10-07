@@ -10,14 +10,18 @@ import A_Link from 'A_Link'
 class Contracts extends Component {
 
   state={
-    open: true
+    slug: 'contract'
   }
 
-  getDesktopMenu(){
+  handleOpen = (slug) => {
+    this.setState({slug})
+  }
+
+  getDesktopMenu(openedSlug){
     const renderedButtons = (
-      buttons.map(({name}, i) => (
+      buttons.map(({name, slug}, i) => (
         <li key={i} >
-          <A_Button type='button-interface' >{name}</A_Button>
+          <A_Button onClick={() => this.handleOpen(slug)} type='button-interface' mx={cn('link', {opened: slug === openedSlug})}>{name}</A_Button>
         </li>
       )
     ))
@@ -35,6 +39,7 @@ class Contracts extends Component {
   }
 
   render() {
+    const {slug} = this.state
     return (
       <div className={cn('wrapper')}>
         <A_Container type='equal' mx={cn()}>
@@ -43,7 +48,7 @@ class Contracts extends Component {
             </div>
             <div className={cn('menu')}>
               <A_H type='second' mx={cn('title')}>Smart Contracts</A_H>
-              {this.getDesktopMenu()}
+              {this.getDesktopMenu(slug)}
             </div>
         </A_Container>
       </div>

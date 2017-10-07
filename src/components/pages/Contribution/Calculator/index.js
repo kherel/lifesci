@@ -89,6 +89,7 @@ class ContributionCalculator extends Component {
             <A_InputNumber
               handleChange={this.onChangeMoneyInput}
               value = {moneyValue.toString()}
+              mx={cn('calc-input')}
               afterComma = {2}
             />
           </div>
@@ -105,6 +106,8 @@ class ContributionCalculator extends Component {
               handleChange={this.onChangeTokenInput}
               value = {tokenValue.toString()}
               afterComma = {8}
+              mx={cn('calc-input')}
+
             />
           </div>
         </A_Container>

@@ -35,12 +35,12 @@ class A_InputNumber extends Component {
   }
 
   render() {
-    const {value, max} = this.props
+    const {value, max, mx} = this.props
     const fontSize = getFontSize(value, 10, 4, max)
 
     return (
       <input
-        className={cn()}
+        className={cn([mx])}
         type="text"
         value={numberWithCommas(value)}
         onChange={this.onChange}
