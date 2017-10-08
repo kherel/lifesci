@@ -3,10 +3,10 @@ import {validateEmail, validateWebsiteName, validateMaxLength} from 'utils/valid
 import update from 'immutability-helper';
 
 const defaultError = {
-  email: 'Looks like an invalid email address',
+  email: 'Invalid email format',
   url: 'Looks like an invalid url address',
   maxLengh: max => `Maximum length is ${max} characters.`,
-  required: 'Please fill this field'
+  required: 'Required field'
 }
 
 const _valFuncObj = {

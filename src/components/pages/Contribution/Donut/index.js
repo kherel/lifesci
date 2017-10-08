@@ -7,8 +7,6 @@ const cn = cssClassName('Donut')
 import {Motion, spring, presets} from 'react-motion'
 import {isMobile} from 'utils/isMobile'
 
-const color = ['#cacdff', '#888ee8', '#3f46ad']
-
 class Donut extends Component {
 
   state = {

@@ -20,7 +20,7 @@ const config = {
 const Subscribe = ({fields, formHasErrors, onFieldChange, handleSubmit}) =>{
 
   const fieldName = config.fieldNames[0]
-
+  console.log(fields[fieldName])
   return(
     <section className={cn()}>
       <A_Container type='normal' mx={cn('inner')} >
@@ -32,14 +32,13 @@ const Subscribe = ({fields, formHasErrors, onFieldChange, handleSubmit}) =>{
           <A_InputText
             value = {fields[fieldName].value}
             type = 'text'
-            placeholder = 'Email'
+            label = 'Email'
             handleChange = { text => onFieldChange(fieldName, text) }
             mx={cn('input')}
+            error={fields[fieldName].error}
           />
 
-          <A_Button btnType='submit' type='button-primary' mx={cn('btn')}>
-            {formHasErrors ? 'Check errors' : 'Subscribe me'}
-          </A_Button>
+          <A_Button btnType='submit' type='button-primary' mx={cn('btn')}>Subscribe me</A_Button>
         </form>
       </A_Container>
     </section>
