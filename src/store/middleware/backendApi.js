@@ -20,12 +20,7 @@ export default () => next => action => {
 
   promise
     .then(
-    response => {
-      console.log(response)
-      return(
-        next(nextAction(action, {data: {...response, initdata: data}, type: successType}))
-      )
-    },
+    response => next(nextAction(action, {data: {...response, initdata: data}, type: successType})),
     error => {
       next(nextAction(action, {type: failureType}))
       next({type: ERROR, data: error})

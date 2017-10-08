@@ -5,26 +5,6 @@ import {cssClassName} from 'utils'
 const cn = cssClassName('A_InputNumber')
 import {numberWithCommas, cleanNumber} from 'utils'
 
-function getFontSize(value, maxSize, minSize, maxLength = 11){
-
-  const vLength = value.toString().length
-
-  if(vLength < 5){
-    return maxSize
-  } else if(vLength > maxLength - 5){
-    return minSize
-  } else {
-    const sizeDelta = maxSize - minSize
-    const lengthDelta = maxLength - 5
-    console.log(minSize, sizeDelta, (sizeDelta/lengthDelta * vLength), vLength)
-
-    return (
-      minSize + (sizeDelta - (sizeDelta/lengthDelta * vLength))
-    )
-  }
-
-}
-
 class A_InputNumber extends Component {
 
   onChange = (e) => {
@@ -35,16 +15,13 @@ class A_InputNumber extends Component {
   }
 
   render() {
-    const {value, max, mx} = this.props
-    const fontSize = getFontSize(value, 10, 4, max)
-
+    const {value, mx, fontClassSize:size} = this.props
     return (
       <input
-        className={cn([mx])}
+        className={cn({size},[mx])}
         type="text"
         value={numberWithCommas(value)}
         onChange={this.onChange}
-        style={{fontSize: `${fontSize}rem`}}
       />
     )
   }
@@ -56,14 +33,16 @@ A_InputNumber.propTypes = {
   placeHolder: T.string,
   prefix: T.string,
   max: T.number,
-  afterComma: T.number.isRequired
+  afterComma: T.number.isRequired,
+  fontSize: T.number.isRequired
 
 };
 
 A_InputNumber.defaultProps = {
   max: 11,
   value: 0,
-  afterComma: 2
+  afterComma: 2,
+  fontSize: 10
 }
 
 export default A_InputNumber

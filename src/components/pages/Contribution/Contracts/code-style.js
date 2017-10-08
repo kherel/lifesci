@@ -85,7 +85,7 @@ exports.default = {
     "background": "#f5f7ff",
     "color": "#5e6687",
     "padding": "0.5em",
-    "font-size": "12px",
+    "fontSize": "12px",
   },
   "hljs-emphasis": {
     "fontStyle": "italic"

@@ -29,13 +29,14 @@
     code:first-child{
       position: absolute;
       left: 0;
-      padding-left: 3px;
+      padding-left: 6px;
       background-color: rgb(245, 247, 255);
       border-right: 1px solid $interactive;
       text-align: right;
+      width: 20px !important;
     }
     pre{
-        padding-left: 4rem !important;
+        padding-left: 4.5rem !important;
     }
 
   }

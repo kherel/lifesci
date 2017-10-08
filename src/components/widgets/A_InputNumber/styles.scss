@@ -15,4 +15,34 @@
     line-height: 1;
     padding-left: 1.6rem;
   }
+  &_size{
+    &_l{
+      font-size: 10rem;
+    }
+    &_md{
+      font-size: 9rem;
+    }
+    &_sm{
+      font-size: 7.5rem;
+    }
+    &_xs{
+      font-size: 5rem;
+    }
+  }
+  @include media ($mobile) {
+    &_size{
+      &_l{
+        font-size: 10rem;
+      }
+      &_md{
+        font-size: 9rem;
+      }
+      &_sm{
+        font-size: 7.5rem;
+      }
+      &_xs{
+        font-size: 4rem;
+      }
+    }
+  }
 }

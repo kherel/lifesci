@@ -11,6 +11,45 @@ import M_IconSelect from 'src/components/widgets/M_CurrencySelect'
 import A_InputNumber from 'A_InputNumber'
 import Results from './Results'
 
+
+function getFontSizeClass(value, max = 14){
+
+  const classes = ['xs', 'sm', 'md', 'l']
+
+  const vLength = value.toString().length
+
+  console.log(vLength)
+  let size;
+  if(vLength > max-2){
+    size = 0
+  } else if(vLength > max-3){
+    size = 1
+  } else if(vLength > max-7){
+    size = 2
+  } else {
+    size = 3
+  }
+
+  return classes[size]
+}
+
+function _r(value, afterComa) {
+  // const max = 12
+
+  // let stringNumber = value.toString()
+  return Math.round(value * Math.pow(10, afterComa)) / Math.pow(10, afterComa)
+
+  // if(stringNumber.includes('.')){
+  //   stringNumber = stringNumber.split('.')
+  //   afterComa = afterComa > (max - stringNumber[0].length) ?  afterComa : max - stringNumber[0].length
+  //   const rounded = Math.round( +stringNumber[1] * Math.pow(10, afterComa)) / Math.pow(10, afterComa)
+  //
+  //   return stringNumber[0] + '.' + rounded
+  // }else{
+  //   return Math.round(value * Math.pow(10, afterComa)) / Math.pow(10, afterComa)
+  // }
+}
+
 class ContributionCalculator extends Component {
 
   state = {
@@ -26,7 +65,10 @@ class ContributionCalculator extends Component {
     const {currency, mode} = this.state
     const turbo = mode === turbo
     const usdValue = moneyValue / currencies[currency]
-    const tokenValue = Math.floor(usdValue / 5000 * (turbo ? 1.1 : 1) * 100000000) / 100000000
+    const preTokenValue = usdValue / 5000 * (turbo ? 1.1 : 1)
+    const tokenValue = _r(preTokenValue, 8)
+
+    // const tokenValue = Math.floor(usdValue / 5000 * (turbo ? 1.1 : 1) * 100000000) / 100000000
     this.setState({moneyValue, tokenValue})
   }
 
@@ -35,14 +77,21 @@ class ContributionCalculator extends Component {
     const {currency, mode} = this.state
     const turbo = mode === 'turbo'
     const usdValue = tokenValue * 5000 * (turbo ? 1.1 : 1)
-    const moneyValue =  Math.floor(usdValue * currencies[currency] * 100) / 100
+
+    const preMoneyValue = usdValue * currencies[currency]
+    const moneyValue = _r(preMoneyValue, 2)
+
+    //    const moneyValue =  Math.floor(usdValue * currencies[currency] * 100) / 100
+
     this.setState({moneyValue, tokenValue})
   }
 
   onCurrencyChange = (currency) => {
     const {currencies} = this.props
     const {tokenValue} = this.state
-    const moneyValue = Math.floor(tokenValue * 5000 * currencies[currency] * 100) / 100
+    const preMoneyValue = tokenValue * 5000 * currencies[currency]
+    const moneyValue = _r(preMoneyValue, 2)
+    // const moneyValue = Math.floor(tokenValue * 5000 * currencies[currency] * 100) / 100
     this.setState({currency, moneyValue})
   }
 
@@ -51,7 +100,10 @@ class ContributionCalculator extends Component {
     const {currency, moneyValue} = this.state
     const turbo = mode === 'turbo'
     const usdValue = moneyValue / currencies[currency]
-    const tokenValue = Math.floor(usdValue / 5000 * 100000000 * (turbo ? 1.1 : 1)) / 100000000
+    const preTokenValue = usdValue / 5000 * (turbo ? 1.1 : 1)
+    const tokenValue = _r(preTokenValue, 8)
+
+    // const tokenValue = Math.floor(usdValue / 5000 * 100000000 * (turbo ? 1.1 : 1)) / 100000000
     this.setState({tokenValue, mode})
   }
 
@@ -67,6 +119,8 @@ class ContributionCalculator extends Component {
       mx:cn('nav-btn')
     }
 
+    const _longesValue = tokenValue.toString().length > moneyValue.toString().length ? tokenValue : moneyValue
+    const fontClassSize = getFontSizeClass(_longesValue, 11) //value, max size, min size, how many characters
     return (
       <div>
         <A_Container type='equal' mx={cn('header')}>
@@ -91,6 +145,7 @@ class ContributionCalculator extends Component {
               value = {moneyValue.toString()}
               mx={cn('calc-input')}
               afterComma = {2}
+              fontClassSize = {fontClassSize}
             />
           </div>
 
@@ -107,7 +162,7 @@ class ContributionCalculator extends Component {
               value = {tokenValue.toString()}
               afterComma = {8}
               mx={cn('calc-input')}
-
+              fontClassSize = {fontClassSize}
             />
           </div>
         </A_Container>
