@@ -11,8 +11,8 @@
   &__title{
     max-width: 64rem;
     z-index: 1;
+    text-align: center;
   }
-
 
   &__text{
     margin-top: 3.2rem;
@@ -20,6 +20,7 @@
     box-shadow: 0 0 5em white, 0 0 5em white, 0 0 5em white, 0 0 10em white;
     background-color: white;
     position: relative;
+    text-align: center;
   }
   &__circles{
     transform: translate3d(0, -28%, 0);
