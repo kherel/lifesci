@@ -10,23 +10,23 @@
 
   &__title{
     max-width: 64rem;
+    z-index: 1;
   }
 
 
   &__text{
     margin-top: 3.2rem;
     max-width: 82rem;
-    z-index: -1;
     box-shadow: 0 0 5em white, 0 0 5em white, 0 0 5em white, 0 0 10em white;
     background-color: white;
+    position: relative;
   }
   &__circles{
     transform: translate3d(0, -28%, 0);
     left: 50%;
     width: 100%;
     height: auto;
-    //position: absolute;
-    //bottom: 0;
+
     z-index: -2;
   }
   &__container{
@@ -35,10 +35,6 @@
     align-items: center;
     padding-bottom: 0;
     margin-bottom: -3%;
-    @include media ($tablet) {
-      //padding-bottom: 6.4rem;
-
-    }
   }
   &__buttons{
     @include media ($mobile) {

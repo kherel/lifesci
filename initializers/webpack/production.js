@@ -55,7 +55,18 @@ export default {
           }]
         })
       },
-      { test: /\.(eot|png|ttf|svg|woff|woff2)$/, loader: 'url-loader'}
+      // { test: /\.(eot|png|ttf|svg|woff|woff2)$/, loader: 'url-loader'}
+      {
+        test: /\.(png|jpg|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 500000
+            }
+          }
+        ]
+      }
     ]
   },
 

@@ -10,7 +10,7 @@ const TeamCard = ({name, avatar, twitter, text, type}) =>(
     <div className={cn('name')}>{name}</div>
     <div className={cn('twitter')}>{twitter}</div>
     <div className={cn('text')}>{text}</div>
-    <A_Image mx={cn('avatar')} rounded src={`/img/team/${avatar}`}/>
+    <A_Image mx={cn('avatar')} rounded src={`img/team/${avatar}`}/>
   </div>
 )
 

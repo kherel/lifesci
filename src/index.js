@@ -4,6 +4,7 @@ import "babel-polyfill"
 import {AppContainer} from 'react-hot-loader';
 import App from './App';
 const rootEl = document.getElementById('container');
+const loader = document.getElementById('loader');
 
 render(
   <AppContainer>
@@ -12,6 +13,7 @@ render(
   rootEl,
   () => {
     delete window.__INITIAL_STATE__
+    loader.style.display="none"
   }
 );
 

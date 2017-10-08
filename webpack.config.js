@@ -73,6 +73,17 @@ export default {
           }
         }
         ]
+      },
+      {
+        test: /\.(png|jpg|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 500000
+            }
+          }
+        ]
       }
     ]
   }
