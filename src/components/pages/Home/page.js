@@ -9,7 +9,9 @@ import Global from './Global'
 import Press from 'O_Press'
 import Subscribe from './Subscribe'
 import About from "./About";
-import scrollToComponent from 'react-scroll-to-component';
+const scrollToComponent = __CLIENT__ ?
+  require('react-scroll-to-component')
+  : () => {}
 
 class Home extends Component {
   render() {

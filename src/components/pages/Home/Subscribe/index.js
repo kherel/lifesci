@@ -38,6 +38,7 @@ const Subscribe = ({fields, formHasErrors, onFieldChange, handleSubmit}) =>{
             error={fields[fieldName].error}
           />
 
+
           <A_Button btnType='submit' type='button-primary' mx={cn('btn')}>Subscribe me</A_Button>
         </form>
       </A_Container>

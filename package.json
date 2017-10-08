@@ -84,7 +84,6 @@
     "superagent": "^3.5.0",
     "svg-react-loader": "^0.4.4",
     "system-font-css": "^2.0.1",
-    "tween.js": "^16.6.0",
     "uglifyjs-webpack-plugin": "^0.4.3",
     "url-loader": "^0.5.7",
     "webpack": "^2.6.1",
