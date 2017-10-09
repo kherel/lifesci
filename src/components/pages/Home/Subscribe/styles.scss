@@ -2,6 +2,7 @@
 @import "common/utils";
 
 .subscribe{
+  $c : &;
   padding-top: 6.8rem !important;
   padding-bottom: 6.8rem !important;
   background-color: $background-pink;
@@ -11,6 +12,42 @@
     justify-content: center;
     align-items: center;
     flex-flow: column;
+  }
+  &__inner{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    &-success{
+      @extend #{$c}__inner;
+      animation-duration: 3s;
+      animation-name: appear;
+
+      @keyframes appear {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__thanks{
+    &-mob{
+      white-space: nowrap;
+      @include media ($mobile-up) {
+        display: none;
+      }
+    }
+    &-desktop{
+      white-space: nowrap;
+
+      @include media ($mobile) {
+        display: none !important;
+      }
+    }
   }
   &__title{
     margin-bottom: .8rem !important;
@@ -40,5 +77,8 @@
   }
   &__btn{
     flex: 0 0 auto;
+  }
+  &__check-mark{
+    margin-bottom:1.6rem;
   }
 }

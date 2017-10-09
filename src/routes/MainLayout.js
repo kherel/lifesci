@@ -11,13 +11,17 @@ class MainLayoutRoute extends Component {
   static prepareData({dispatch, getState}, query, params, location) {
     dispatch(setRoute(location.pathname))
     if(initialLoad()) return;
-    return(
-      dispatch(fetchExchangeRates())
+
+    const state = getState()
+    if(!state.contracts.loaded){
+      return(
+        dispatch(fetchExchangeRates())
         .then(dispatch(fetchContracts('contract')))
         .then(dispatch(fetchContracts('placeholder')))
         .then(dispatch(fetchContracts('implementation')))
         .then(dispatch(fetchContracts('multisig')))
-    )
+      )
+    }
   }
 
   // const buttons = [
