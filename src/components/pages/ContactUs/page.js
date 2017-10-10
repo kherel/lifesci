@@ -12,6 +12,13 @@ import A_Link from 'A_Link'
 
 class ContactUs extends Component {
 
+  componentDidMount(){
+    window.Intercom("boot", {
+      app_id: "iq8if28i",
+      hide_default_launcher: true
+    });
+  }
+
   render() {
     return (
       <div >
@@ -27,7 +34,7 @@ class ContactUs extends Component {
               <A_Image src={'/img/icons/chat.svg'} mx={cn('icon')} realSize/>
               <A_H type='section' mx={cn('title')}>Live support</A_H>
               <A_P type='section' mx={cn('text')}>If you have questions, chat live with the Lifesci team</A_P>
-              <A_Button type='link-primary' to='#'>Launch chat</A_Button>
+              <A_Button type='button-primary' onClick={() => window.Intercom('show')}>Launch chat</A_Button>
             </section>
           </A_Container>
         </div>
