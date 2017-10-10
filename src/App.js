@@ -7,7 +7,6 @@ import history from 'history'
 import createStore from 'store';
 import prepareData from 'utils/prepareData'
 import {closeMenu} from 'store/entities/navigation/actions'
-import {hashLinkScroll} from 'utils/hashLinkScroll'
 const store = createStore(window.__INITIAL_STATE__)
 
 class App extends PureComponent {
@@ -21,7 +20,6 @@ class App extends PureComponent {
           onUpdate={()=> {
             const state = store.getState()
             state.navigation.isMenuOpened && store.dispatch(closeMenu())
-            hashLinkScroll()
           }}
         >
           {getRoutes(store)}

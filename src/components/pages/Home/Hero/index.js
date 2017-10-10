@@ -6,7 +6,7 @@ import A_Container from 'A_Container'
 import A_Button from 'A_Button'
 import A_H from 'A_H'
 import A_P from 'A_P'
-import Circles from 'O_Timer/Circles'
+import Circles from './Circles'
 
 class Hero extends Component {
 
