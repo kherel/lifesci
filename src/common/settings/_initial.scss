@@ -17,11 +17,15 @@ body {
   color: $text;
 }
 
-button, input, optgroup, select, textarea{
+input, optgroup, select, textarea{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
   color: $text;
   font-weight: 100;
+}
 
+button{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
+  color: $text;
 }
 
 

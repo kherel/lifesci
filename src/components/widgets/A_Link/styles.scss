@@ -9,9 +9,14 @@
     &_nav{
       font-weight: 500;
       font-size: 16px;
-      color: #6d6f7b;
+      color: $black-3;
       height: 1.9rem;
       line-height: 1.9rem;
+      will-change: color;
+      transition: color .3s ease;
+      &:hover, &.disabled{
+        color: $interactive;
+      }
     }
     &_simple{
       width: 100%;
