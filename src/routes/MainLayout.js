@@ -31,12 +31,6 @@ class MainLayoutRoute extends Component {
     )
   }
 
-  // const buttons = [
-  //   {name:'LSCI token contract', slug: 'contract'},
-  //   {name:'Lifesci placeholder', slug: 'placeholder'},
-  //   {name:'Token implementation', slug: 'implementation'},
-  //   {name:'ConsenSys multisig', slug: 'multisig'}
-  // ]
   render() {
     return (
       <MainLayoutContainer>

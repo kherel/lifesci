@@ -27,9 +27,10 @@ class A_Image extends Component {
 
   render() {
     let {rounded, realSize, link, type, mx, ...preProps} = this.props
-    const {onClick, objectFit, ...props} = preProps
+    const {onClick, objectFit, src, ...props} = preProps
     // const complete = !!this.node && this.node.complete
     // const imgReady = complete || this.state.imgReady
+
     rounded = rounded && 'rounded'
     link = link && 'link'
     realSize = realSize && 'real-size'
@@ -41,12 +42,15 @@ class A_Image extends Component {
           className={cn('img', {onClick: !!onClick, objectFit, type}, [rounded, link, realSize, mx])}
           // onLoad = {this.handleLoad}
           onClick={onClick}
+          src = {src}
           {...props}
         />
       </span>
     )
   }
 }
+
+export const i = (imgSrc, base64) => __CLIENT__ ? base64 : imgSrc
 
 A_Image.propTypes = {
   src: T.string.isRequired,
