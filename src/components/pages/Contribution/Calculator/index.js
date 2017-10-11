@@ -18,7 +18,6 @@ function getFontSizeClass(value, max = 14){
 
   const vLength = value.toString().length
 
-  console.log(vLength)
   let size;
   if(vLength > max-2){
     size = 0

@@ -15,7 +15,7 @@ class ContactUs extends Component {
   componentDidMount(){
     window.Intercom("boot", {
       app_id: "iq8if28i",
-      hide_default_launcher: true
+      // hide_default_launcher: true
     });
   }
 

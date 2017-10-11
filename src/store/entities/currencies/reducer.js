@@ -3,7 +3,7 @@ import mapper from './mapper.js'
 
 const initCurrencies = {
   loading: false,
-  loaded: true,
+  loaded: false,
   source: '',
   currencies:{
     usd: 1,

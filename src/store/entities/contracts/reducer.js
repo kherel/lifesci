@@ -2,7 +2,7 @@ import {START, SUCCESS, FETCH, FAIL, CONTRACTS} from 'constants'
 
 const initContracts = {
   loading: false,
-  loaded: true,
+  loaded: false,
   contracts:{
     contract: '',
     placeholder: '',
