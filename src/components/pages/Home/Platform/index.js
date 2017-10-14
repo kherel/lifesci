@@ -10,7 +10,7 @@ import A_Image from 'A_Image'
 
 const Platform = () =>{
   return(
-    <A_Container type='section' mx={cn()}>
+    <A_Container type='equal' mx={cn()}>
       <div className={cn('left')}>
         <A_H type='section' mx={cn('title')}>The Intelligence Platform</A_H>
         <A_P type='section' mx={cn('text')}>

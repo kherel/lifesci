@@ -22,7 +22,7 @@ const Subscribe = ({fields, onFieldChange, handleSubmit, submited}) =>{
   const fieldName = config.fieldNames[0]
 
   const form = (
-    <A_Container type='normal' mx={cn('inner')} >
+    <A_Container type='equal' mx={cn('inner')} >
       <A_H type='second' mx={cn('title')}>Interested in hearing more about Lifesci?</A_H>
       <A_P type='second' mx={cn('text')}>Get a newsletter with all latest news and updates delivered right into your inbox.</A_P>
 
