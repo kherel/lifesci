@@ -23,11 +23,10 @@ const Subscribe = ({fields, onFieldChange, handleSubmit, submited}) =>{
 
   const form = (
     <A_Container type='normal' mx={cn('inner')} >
-      <A_H type='second' mx={cn('second')}>Interested in hearing more about Lifesci?</A_H>
+      <A_H type='second' mx={cn('title')}>Interested in hearing more about Lifesci?</A_H>
       <A_P type='second' mx={cn('text')}>Get a newsletter with all latest news and updates delivered right into your inbox.</A_P>
 
       <form onSubmit={handleSubmit} className={cn('form')}>
-
         <A_InputText
           value = {fields[fieldName].value}
           type = 'text'

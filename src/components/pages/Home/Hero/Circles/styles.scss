@@ -1,13 +1,3 @@
 .home-hero-circles{
-  animation: .5s appear forwards;
-  opacity:0;
 
-  @keyframes appear {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 }

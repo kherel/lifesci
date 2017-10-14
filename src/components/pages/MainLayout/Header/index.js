@@ -39,10 +39,10 @@ class Header extends Component {
     return (
       <div className={cn()}>
         <A_Container type='normal' mx={cn('nav')}>
-          <M_Logo mx={cn('logo')} color={isMenuOpened && 'white'}/>
+          <M_Logo mx={cn('logo')} mobile={isMenuOpened}/>
           {desktopMenu}
           <button className={cn('nav-menu-btn', {open: isMenuOpened})} onClick={toggleMenu}>
-            <MenuSvgBtn color={isMenuOpened ? 'white' : '#6D6F7B'}/>
+            <MenuSvgBtn open={isMenuOpened}/>
           </button>
           {isMenuOpened && <MobMenu {...{openRoute, nav}}/>}
         </A_Container>

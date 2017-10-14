@@ -12,8 +12,6 @@ class MainLayoutRoute extends Component {
     dispatch(setRoute(location.pathname))
     if(initialLoad()) return;
     const state = getState()
-
-    console.log(!state.contracts.loaded)
     return(
       (!state.currencies.loaded ?
         (dispatch(fetchExchangeRates()))

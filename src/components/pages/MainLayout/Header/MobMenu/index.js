@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import './styles.scss';
 import {cssClassName} from 'utils'
 import A_Link from 'A_Link'
-import A_Image, {i} from 'A_Image'
+import A_Image from 'A_Image'
 const cn = cssClassName('MobMenu')
 import {Motion, spring, presets} from 'react-motion'
 import Helmet from 'react-helmet'

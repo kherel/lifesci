@@ -50,8 +50,6 @@ class A_Image extends Component {
   }
 }
 
-export const i = (imgSrc, base64) => __CLIENT__ ? base64 : imgSrc
-
 A_Image.propTypes = {
   src: T.string.isRequired,
   alt: T.string.isRequired,

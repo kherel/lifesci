@@ -3,8 +3,8 @@
 
 .subscribe{
   $c : &;
-  padding-top: 6.8rem !important;
-  padding-bottom: 6.8rem !important;
+  padding-top: 6.4rem !important;
+  padding-bottom: 6.4rem !important;
   background-color: $background-pink;
   &__inner{
     text-align: center;
@@ -54,7 +54,7 @@
     text-align: center;
   }
   &__text{
-    margin-bottom: 3.2rem !important;
+    margin-bottom: 2rem !important;
   }
   &__input{
     flex: 0 1 28.8rem;
@@ -73,6 +73,8 @@
     align-items: baseline;
     @include media ($mobile) {
       flex-flow: column;
+      width: 100%;
+      max-width: none;
     }
   }
   &__btn{

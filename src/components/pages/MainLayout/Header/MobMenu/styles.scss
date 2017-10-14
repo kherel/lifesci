@@ -15,12 +15,7 @@
     z-index: -1;
     top:0;
     left: 0;
-    //width: auto !important;
-    //height: auto !important;
-    //object-fit: fill;
   }
-  //background:url('');
-  //background-size: contain;
   html{
     overflow: hidden !important;
   }
@@ -32,22 +27,24 @@
     content: '';
     display: block;
     width: 100%;
-    height: 65px;
-    border-bottom: 1px solid rgba(#ebebeb, 0.15);
+    height: 68px;
+    border-bottom: 2px solid rgba(#ebebeb, 0.15);
   }
 
   &__nav{
     &-list{
-      margin-top: calc(3vh);
-      margin-left: 2rem;
+      margin-top: 8.3rem;
+      margin-left: 1.6rem;
     }
     &-link{
       user-select: none;
       display: block;
-      padding: 3vh 0;
       color: $white;
-      font-weight: bold;
       position: relative;
+      font-size: 2.4rem;
+      line-height: 2.8rem;
+      font-weight: 500;
+      margin-bottom: 3.2rem;
       &:hover, &:active, &_is-open_true{
         color: darken($white, 30%);
       }
