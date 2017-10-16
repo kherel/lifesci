@@ -11,9 +11,4 @@
       padding-bottom:3.2rem;
     }
   }
-  &__dropdown{
-    @include media ($mobile-up) {
-      display: none;
-    }
-  }
 }

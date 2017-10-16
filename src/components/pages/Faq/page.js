@@ -7,19 +7,17 @@ import A_Container from 'A_Container'
 import Search from './Search'
 import Catalog from './Catalog'
 import Results from './Results'
-import M_Select from 'M_Select'
 
 class Faq extends Component {
 
   state = {
     search: '',
-    scrollTo: data.catalog[0].name,
-    scrollValue: data.catalog[0].name
+    // scrollTo: data.catalog[0].name,
+    // scrollValue: data.catalog[0].name
   }
 
   render() {
     const {search, scrollTo, scrollValue} = this.state
-    const options = data.catalog.map(({name}) => ({value:name, label: name}))
     return (
       <div>
         <A_Container type='normal' mx={cn('hero')}>
@@ -29,18 +27,11 @@ class Faq extends Component {
             value = {this.state.search}
             placeholder={'Have a question? Enter a search term here… '}
           />
-          <M_Select
-            options={options}
-            mx={cn('dropdown')}
-            onChange={scrollTo => this.setState({scrollTo})}
-            value = {scrollValue}
-          />
         </A_Container>
         {
           search === '' ?
             <Catalog catalog={data} scrollTo={scrollTo} setScrollValue={value => this.setState({value})}/>
             : <Results entities={data.entities} search={search}/>
-
         }
       </div>
     )

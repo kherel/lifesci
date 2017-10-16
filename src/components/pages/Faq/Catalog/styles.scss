@@ -87,4 +87,15 @@
   &__section{
     margin-bottom:1.6rem;
   }
+
+  &__dropdown{
+
+    transform: translate3d(1.6rem, -69px, 0);
+    width: calc(100% - 3.2rem);
+    z-index: 1;
+
+    @include media ($mobile-up) {
+      display: none;
+    }
+  }
 }

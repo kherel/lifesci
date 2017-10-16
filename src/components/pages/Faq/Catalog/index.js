@@ -9,6 +9,7 @@ import A_H from 'A_H'
 import A_Link from 'A_Link'
 import { Motion, spring } from 'react-motion'
 import ScrollSync from './ScrollSync'
+import M_Select from 'M_Select'
 
 // const initOffset = 222
 const initOffset = 180
@@ -56,16 +57,11 @@ class FaqCatalog extends Component {
     )
   }
 
-  componentDidUpdate(prevProps){
-
-    if(prevProps.scrollTo !== this.props.scrollTo){
-      const name = this.props.scrollTo
-      const names = this.props.catalog.catalog.map(({name}) => name)
-      const i = names.indexOf(name)
-      this.startScrollMotion(name, i)
-    }
+  mobScroll = (name) =>{
+    const names = this.props.catalog.catalog.map(({name}) => name)
+    const i = names.indexOf(name)
+    this.startScrollMotion(name, i)
   }
-
   getNavigation(catalog, selected){
     return(
       catalog.catalog.map(({name}, i) => {
@@ -141,33 +137,40 @@ class FaqCatalog extends Component {
     const sections = this.getSections(catalog)
     const navigation = this.getNavigation(catalog, selected)
     const hide = selected !== this.props.catalog.catalog[0].name
+    const options = catalog.catalog.map(({name}) => ({value:name, label: name}))
+
     return (
-
-      <A_Container
-        type='normal'
-        mx={cn('container')}
-        onWheel={this._handleMouseWheel}
-
-      >
-        <O_Fixed mx={cn('aside', {media: 'desktop'})} disabled={stickyDisabled}>
-          <div className={cn('aside-menu')}>
-            <A_H type='small-section'>Contents</A_H>
-            {navigation}
+      <div ref={ node => this.scrollContainer = node}>
+        <M_Select
+          options={options}
+          mx={cn('dropdown')}
+          onChange={this.mobScroll}
+          value = {selected}
+        />
+        <A_Container
+          type='normal'
+          mx={cn('container')}
+        >
+          <O_Fixed mx={cn('aside', {media: 'desktop'})} disabled={stickyDisabled}>
+            <div className={cn('aside-menu')}>
+              <A_H type='small-section'>Contents</A_H>
+              {navigation}
+            </div>
+          </O_Fixed>
+          <O_Fixed mx={cn('aside', {media: 'tablet'})} top={65} disabled={stickyDisabled}>
+            <div className={cn('aside-menu')}>
+              <A_H type='small-section'>Contents</A_H>
+              {navigation}
+            </div>
+          </O_Fixed>
+          <div className={cn('main', {hide})}>
+            {sections}
           </div>
-        </O_Fixed>
-        <O_Fixed mx={cn('aside', {media: 'tablet'})} top={65} disabled={stickyDisabled}>
-          <div className={cn('aside-menu')}>
-            <A_H type='small-section'>Contents</A_H>
-            {navigation}
-          </div>
-        </O_Fixed>
-        <div className={cn('main', {hide})}>
-          {sections}
-        </div>
-        {scrollMotionActive &&
+          {scrollMotionActive &&
           <Motion
             defaultStyle={{
-              scrollMotion: currentScrollPosition //from
+              scrollMotion: (this.sections[Object.keys(this.sections)[0]].getBoundingClientRect().top - 350) * -1
+              // scrollMotion: currentScrollPosition //from
             }}
             style={{
               scrollMotion: spring(scrollMotionTo, {stiffness: 100, damping: 20, precision: 10}) //to
@@ -186,8 +189,9 @@ class FaqCatalog extends Component {
               )
             }}
           </Motion>
-        }
-      </A_Container>
+          }
+        </A_Container>
+      </div>
     )
   }
 }
