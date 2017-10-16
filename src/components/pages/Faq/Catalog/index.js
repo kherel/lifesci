@@ -93,7 +93,7 @@ class FaqCatalog extends Component {
 
   _handleUserScroll = () => {
     const keys = Object.keys(this.sections)
-    const top = 80
+    const top = 150
     const selectedIndex = keys.findIndex((key, i, arr) => {
       if(i === 0){
         return(
