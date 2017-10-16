@@ -98,6 +98,11 @@ $icon-size: 20rem;
       transform: translate3d(.7rem, 0, 0);
 
     }
+    &_faq{
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
   }
 
   & + &{

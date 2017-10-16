@@ -23,6 +23,7 @@ const A_H = ({type, children, center, mx}) =>{
     case 'small':
     case 'small-section':
     case 'thead':
+    case 'tbody':
     case 'subtitle':
       tagType = 'h4'
       break;
@@ -61,7 +62,8 @@ A_H.propTypes = {
     'small-section', //black 500/19px/1.47
     'section-subtitle', //bold/15/1.73 rgba(0, 0, 0, 0.65)
     'thead', // bold/15/1.73
-    'tbody' // 500/20/1.4
+    'tbody', // 500/20/1.4 small transform
+    'faq' // 500/20/1.4
 
   ]),
   children: T.any.isRequired,

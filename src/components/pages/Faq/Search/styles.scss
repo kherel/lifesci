@@ -6,7 +6,7 @@
 
 .o-search {
   &__search {
-    width: 90rem;
+    width: 76.8rem;
     margin: 0 auto;
     position: relative;
     @include media($tablet) {
@@ -14,6 +14,7 @@
     }
     @include media($mobile) {
       width: 100%;
+      margin-bottom: 3.2rem;
     }
 
   }
@@ -21,49 +22,65 @@
     width: 100%;
     border: none;
     outline: none;
-    font-size: 1.8rem;
+    font-size: 15px;
     font-weight: 400;
-    line-height: 2;
+    line-height: 1.13;
     border-radius: 100px;
-    color: $black-1;
-    padding: 1.2rem 3rem 1.2rem 6.6rem;
+
+    padding: 2rem 1.2rem 2rem 6.6rem;
     box-sizing: border-box;
     transition: all .5s ease;
     box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
-
+    &::placeholder{
+      color: rgba(0, 0, 0, 0.25);
+    }
+    @include media ($mobile) {
+      padding-left: 5rem;
+    }
   }
   &__submit {
-    background: red;
-    width: 5rem;
-    height: 5rem;
+    padding: 0;
+    width: 3.2rem;
+    height: 3.2rem;
     border: none;
     outline: none;
     position: absolute;
-    left: .6rem;
+    left: 2.8rem;
     cursor: pointer;
-    top: .6rem;
-    //border: 1px solid red;
-  }
-  &__search-icon {
-    position: relative;
-    display: block;
-    width: 2.2rem;
-    height: 2.2rem;
-    //transform: translate(0,-50%);
-    .o-search__icon-path {
-      stroke: $black-1;
-      fill: $black-1;
-      .o-search__search_in-active_true &{
-        stroke: $black-1;
-        fill: $black-1;
-      }
-    }
-    .o-search__icon-circle {
-      stroke: $black-1;
-      .o-search__search_in-active_true &{
-        stroke: $black-1;
-      }
+    top: 1.2rem;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    @include media ($mobile) {
+      left: 1.2rem;
     }
   }
 
+  &__reset{
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 1.6rem;
+    cursor: pointer;
+    top: 2.2rem;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    padding: 1px;
+  }
+
+  &__icon{
+    position: relative;
+    display: block;
+    &_type{
+      &_search{
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+      &_clear{
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
 }

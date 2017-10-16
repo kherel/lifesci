@@ -33,6 +33,22 @@
         font-weight: 500;
       }
     }
+    &_faq{
+      width: 100%;
+      display: block;
+      padding: 0 0 .8rem;
+      will-change: font-weight;
+      transition: all ease-in;
+      font-size: 17px;
+      line-height: 1.53;
+      text-align: left;
+      color: $text-t;
+
+      &:hover{
+        font-weight: 500;
+        color: black;
+      }
+    }
   }
 
 

@@ -2,58 +2,36 @@ import React, {Component} from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils';
-
 const cn = cssClassName('O_Search');
-// import A_Container from 'A_Container';
-// import A_H from 'A_H';
 
 
 class O_Search extends Component {
-  state = {
-    inActive: !!this.props.value,
-    value: this.props.value || ''
-  }
 
-  onSubmit = (e) => {
-    e.preventDefault()
-    const {value} = this.state
-    if (value) {
-      this.props.handleSubmit(value)
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      value: nextProps.value || '',
-      inActive: nextProps.focus ? true : !!nextProps.value
-    })
-  }
 
   render() {
-    const {inActive, value} = this.state;
-    const {placeholder} = this.props
+    const {placeholder, value, handleChange, handleReset} = this.props
     return (
-      <form action="" className={cn('search', {inActive})}
-            onSubmit={this.onSubmit}>
+      <form action="" className={cn('search')} onSubmit={e => e.preventDefault()}>
         <input
           type="text"
-          className={cn('input', {inActive})}
+          className={cn('input')}
           placeholder={placeholder}
           value={value}
-          onChange={e => this.setState({value: e.target.value})}
-          onFocus={() => this.setState({inActive: true})}
-          onBlur={() => this.setState({inActive: false})}
+          onChange={e => handleChange(e.target.value)}
         />
         <button className={cn('submit')} type="submit">
-          <svg className={cn('search-icon')} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
-            <g fill="none" transform="translate(-1 -1)">
-              {/*<path fill="none" d="M0 0h20v20H0z"/>*/}
-              <path className={cn('icon-path')}
-                    d="M13.54 12.2l-1.429 1.4 4.906 4.907a.995.995 0 0 0 1.418.003.997.997 0 0 0 0-1.414L13.539 12.2z"/>
-              <circle className={cn('icon-circle')} cx="8" cy="8" r="6.5"/>
-            </g>
+          <svg className={cn('icon', {type: 'search'})} width="18" height="18" viewBox="0 0 18 18">
+            <path fill="#BFBFBF" d="M17.78 16.72l-4.988-4.988a7.2 7.2 0 1 0-1.06 1.06l4.988 4.988a.75.75 0 1 0 1.06-1.06zM1.502 7.2c0-3.144 2.555-5.7 5.7-5.7 3.143 0 5.698 2.556 5.698 5.7s-2.555 5.7-5.699 5.7a5.705 5.705 0 0 1-5.7-5.7z"/>
           </svg>
         </button>
+        {
+          value &&
+            <button className={cn('reset')} onClick={handleReset} >
+              <svg className={cn('icon', {type: 'clear'})} viewBox="0 0 10 10" strokeWidth="1" fill="#333333">
+                <path d="M1.288,0.227 L9.773,8.712 L8.713,9.773 L0.226,1.288 L1.287,0.227 L1.288,0.227 Z M0.227,8.712 L8.712,0.227 L9.773,1.287 L1.288,9.773 L0.227,8.713 L0.227,8.712 Z" />
+              </svg>
+            </button>
+        }
       </form>
     )
   }
@@ -61,9 +39,7 @@ class O_Search extends Component {
 
 
 O_Search.propTypes = {
-  title: T.string,
-  placeholder: T.string.isRequired,
-  handleSubmit: T.func.isRequired
+  placeholder: T.string.isRequired
 };
 
 export default O_Search

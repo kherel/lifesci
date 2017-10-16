@@ -1,8 +1,5 @@
 import React from 'react';
 // import * as T from "prop-types";
-import './styles.scss';
-import {cssClassName} from 'utils'
-const cn = cssClassName('HomeHeroCircles')
 
 const HomeHeroCircles = ({className}) =>(
   <svg width="150%" className={className} viewBox="-625 -180 1250 360" xmlns="http://www.w3.org/2000/svg"

@@ -19,7 +19,7 @@ class O_Fixed extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
-    window.addEventListener('resize', this.handleScroll);
+    window.removeEventListener('resize', this.handleScroll);
   }
 
   handleScroll = () => {
@@ -32,8 +32,8 @@ class O_Fixed extends Component {
 
   render() {
     const {sticky} = this.state
-    const {children, mx} = this.props
-    const newClassName = cn({sticky}, [children.props.className])
+    const {children, mx, disabled} = this.props
+    const newClassName = cn({sticky: !disabled && sticky}, [children.props.className])
     const _newChild = cloneElement(universalChildrenOnly(children), {className: newClassName})
 
     return (
