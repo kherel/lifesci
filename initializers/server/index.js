@@ -48,11 +48,17 @@ if (__DEVELOPMENT__) {
   application.use(webpackHot(compiler))
 }
 
+application.get('/robots.txt', function (req, res) {
+  res.type('text/plain');
+  res.send("User-agent: *\nDisallow: /");
+});
+
 if(process.env.NO_SSR){
   application.get('*', require('./noSSR').default)
 }else{
   application.get('*', require('./render').default)
 }
+
 
 
 application.listen(port, (err) => {
