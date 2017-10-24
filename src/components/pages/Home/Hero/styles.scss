@@ -19,16 +19,12 @@
     max-width: 82rem;
     position: relative;
   }
-  &__circles{
-    transform: translate3d(0, -50%, 0);
-    z-index: -1;
-  }
+
   &__container{
     display: flex;
     flex-flow: column;
     align-items: center;
     padding-bottom: 0;
-    margin-bottom: -15%;
   }
   &__buttons{
     text-align: center;

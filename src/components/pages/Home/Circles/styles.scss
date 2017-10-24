@@ -1,0 +1,9 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.home-circles{
+  padding: 2rem;
+  transform: translate3d(0, -40%, 0);
+  z-index: -1;
+  margin-bottom: -12%;
+}
