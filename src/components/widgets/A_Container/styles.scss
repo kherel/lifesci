@@ -35,9 +35,9 @@
     &_hero{
       padding-top: 9.2rem;
       padding-bottom: 6.4rem;
-      @include media ($tablet) {
-        padding-top: 3.4rem;
-      }
+      //@include media ($tablet) {
+      //  padding-top: 3.4rem;
+      //}
     }
     &_smart{
       padding-top: 6rem;

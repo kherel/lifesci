@@ -21,8 +21,7 @@ class Home extends Component {
     return (
       <div className={cn()}>
         <Hero handleClick={() => scrollToComponent(this.subscribe, { offset: 0, align: 'top', duration: 1500})}/>
-        <Circles />
-
+        {/*<Circles />*/}
         <About />
         <Subscribe handleSubmit={v => console.log(v)} ref={node => this.subscribe = node}/>
         <Platform />
