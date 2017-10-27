@@ -17,7 +17,7 @@ class Hero extends Component {
     const ctx = this.canvas.getContext('2d');
 
     const center = [250, 250];
-    const iterations = 50;
+    const iterations = 70;
 
     const angleForIteration = (i) => {
       return i / iterations * Math.PI * 2;
@@ -144,7 +144,7 @@ class Hero extends Component {
         const brightness = i / layersCount;
         drawLayer({
           radius: radius + (1 - i / layersCount) * 200,
-          hue: baseHue + (i / layersCount) * 100 * 1,
+          hue: baseHue + (i / layersCount) * 100,
           alpha: alpha,
           brightness: brightness * 50,
         });
