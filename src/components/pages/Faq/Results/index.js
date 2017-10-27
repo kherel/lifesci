@@ -4,12 +4,12 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 import A_Container from 'A_Container'
 const cn = cssClassName('FaqCatalog')
-import O_Fixed from 'O_Fixed'
+// import O_Fixed from 'O_Fixed'
 import A_H from 'A_H'
 import A_P from 'A_P'
-import A_Link from 'A_Link'
+// import A_Link from 'A_Link'
 
-const initOffset = 222
+// const initOffset = 222
 
 class FaqResults extends Component {
 

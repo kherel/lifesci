@@ -8,6 +8,10 @@
   border-bottom: solid 2px $black-4;
   background-color: $white;
 
+  &_theme_dark{
+    background-color: black;
+  }
+
   @include media($tablet){
     width: 100%;
     position: fixed;
@@ -44,6 +48,12 @@
 
       &_is-open_true{
         color: darken(white, 40%);
+      }
+      &_theme_dark{
+        color: white;
+        &:hover{
+          color: darken(white, 40%);
+        }
       }
     }
     &-menu-btn{

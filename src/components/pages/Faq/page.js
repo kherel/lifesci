@@ -17,7 +17,7 @@ class Faq extends Component {
   }
 
   render() {
-    const {search, scrollTo, scrollValue} = this.state
+    const {search, scrollTo} = this.state
     return (
       <div>
         <A_Container type='normal' mx={cn('hero')}>

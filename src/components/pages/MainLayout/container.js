@@ -6,7 +6,9 @@ import {toggleMenu} from 'store/entities/navigation/actions'
 
 function mapStateToProps(state) {
   const {isMenuOpened, openRoute} = state.navigation
-  return {isMenuOpened, openRoute}
+  const theme = openRoute.length === 0 ? 'dark' : 'white'
+
+  return {isMenuOpened, openRoute, theme}
 }
 
 function mapDispatchToProps(dispatch) {

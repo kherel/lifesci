@@ -9,7 +9,6 @@ import Global from './Global'
 import Press from 'O_Press'
 import Subscribe from './Subscribe'
 import About from "./About";
-import Circles from './Circles'
 
 const scrollToComponent = __CLIENT__ ?
   require('react-scroll-to-component')

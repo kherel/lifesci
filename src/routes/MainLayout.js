@@ -12,21 +12,21 @@ class MainLayoutRoute extends Component {
     dispatch(setRoute(location.pathname))
     if(initialLoad()) return;
     const state = getState()
-    // return(
-    //   (!state.currencies.loaded ?
-    //     (dispatch(fetchExchangeRates()))
-    //       : Promise.resolve())
-    //     .then(
-    //       !state.contracts.loaded ?
-    //         (
-    //           dispatch(fetchContracts('contract'))
-    //           .then(dispatch(fetchContracts('placeholder')))
-    //           .then(dispatch(fetchContracts('implementation')))
-    //           .then(dispatch(fetchContracts('multisig')))
-    //         )
-    //         : Promise.resolve()
-    //     )
-    // )
+    return(
+      (!state.currencies.loaded ?
+        (dispatch(fetchExchangeRates()))
+          : Promise.resolve())
+        .then(
+          !state.contracts.loaded ?
+            (
+              dispatch(fetchContracts('contract'))
+              .then(dispatch(fetchContracts('placeholder')))
+              .then(dispatch(fetchContracts('implementation')))
+              .then(dispatch(fetchContracts('multisig')))
+            )
+            : Promise.resolve()
+        )
+    )
   }
 
   render() {

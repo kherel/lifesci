@@ -133,7 +133,7 @@ class FaqCatalog extends Component {
   render() {
 
     const {catalog} = this.props
-    const { currentScrollPosition, scrollMotionTo, scrollMotionActive, offSets, selected, stickyDisabled } = this.state;
+    const { scrollMotionTo, scrollMotionActive, selected, stickyDisabled } = this.state;
     const sections = this.getSections(catalog)
     const navigation = this.getNavigation(catalog, selected)
     const hide = selected !== this.props.catalog.catalog[0].name
