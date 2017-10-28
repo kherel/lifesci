@@ -1,4 +1,4 @@
-var request = require('superagent')
+var request = require('superagent');
 
 var mailchimpInstance = 'us17';
 var listUniqueId = '44e8a9b9be';
@@ -14,7 +14,7 @@ function handleSubscribe(req, res) {
       'status': 'subscribed',
     })
     .end(function(err, response) {
-      console.log(response.body)
+      console.log("response", response.body)
 
       if (response.status < 300 || (response.status === 400 && response.body.title === "Member Exists")) {
         res.send({ message: 'Signed Up!' }).status(200);
