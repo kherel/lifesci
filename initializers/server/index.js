@@ -3,7 +3,9 @@ require('app-module-path').addPath(path.join(process.cwd(), 'src'));
 require('./globals')
 const compression = require('compression')
 const mime = require('mime');
-const initRoutes = require('./routes')
+const handleSubscribe = require('./utils/subscribe')
+const bodyParser = require('body-parser')
+
 // const serveStatic = require('serve-static')
 // const fs = require('fs.extra');
 
@@ -17,7 +19,8 @@ const express = require('express')
 const application = express();
 application.use(compression());
 
-initRoutes(application)
+application.use(bodyParser.json())
+application.post('/subscribe', handleSubscribe)
 
 application.use(express.static('static', {
   setHeaders: function (res, path) {

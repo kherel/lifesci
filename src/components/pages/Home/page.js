@@ -23,7 +23,7 @@ class Home extends Component {
         <Hero handleClick={() => scrollToComponent(this.subscribe, { offset: 0, align: 'top', duration: 1500})}/>
         {/*<Circles />*/}
         <About />
-        <Subscribe handleSubmit={handleSubscribe} ref={node => this.subscribe = node}/>
+        <Subscribe handleSubmit={options => handleSubscribe(options)} ref={node => this.subscribe = node}/>
         <Platform />
         <Tweets />
         <Global />
