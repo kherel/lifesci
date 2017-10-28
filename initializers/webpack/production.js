@@ -108,8 +108,8 @@ export default {
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: 'source-map'
     }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static'
-    })
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: 'static'
+    // })
   ]
 };
