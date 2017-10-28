@@ -10,6 +10,7 @@ import A_H from 'A_H'
 import A_P from 'A_P'
 import A_InputText from 'A_InputText'
 import A_Image from 'A_Image'
+
 const config = {
   fieldNames: ['email'],
   validations: {
