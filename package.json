@@ -17,6 +17,7 @@
   "dependencies": {
     "app-module-path": "^2.2.0",
     "autoprefixer": "^7.1.2",
+    "body-parser": "^1.18.2",
     "compression": "^1.7.0",
     "cors": "^2.8.4",
     "d3-shape": "^1.2.0",
