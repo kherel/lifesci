@@ -3,6 +3,7 @@ require('app-module-path').addPath(path.join(process.cwd(), 'src'));
 require('./globals')
 const compression = require('compression')
 const mime = require('mime');
+const initRoutes = require('./routes')
 // const serveStatic = require('serve-static')
 // const fs = require('fs.extra');
 
@@ -15,6 +16,8 @@ const port = process.env.PORT || 8080;
 const express = require('express')
 const application = express();
 application.use(compression());
+
+initRoutes(application)
 
 application.use(express.static('static', {
   setHeaders: function (res, path) {
@@ -58,8 +61,6 @@ if(process.env.NO_SSR){
 }else{
   application.get('*', require('./render').default)
 }
-
-
 
 application.listen(port, (err) => {
   if (err) console.log(err);
