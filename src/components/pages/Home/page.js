@@ -20,7 +20,6 @@ class Home extends Component {
 
     return (
       <div className={cn()}>
-        <Global />
         <Press />
       </div>
     )
