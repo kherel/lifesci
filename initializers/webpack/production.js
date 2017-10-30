@@ -97,7 +97,7 @@ export default {
       __DEVELOPMENT__: false,
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    // new ExtractTextPlugin('[name].[chunkhash].css'),
+    new ExtractTextPlugin('[name].[chunkhash].css'),
     new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
