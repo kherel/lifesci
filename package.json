@@ -13,7 +13,7 @@
     "dev": "NODE_ENV=development nodemon --watch initializers --watch webpack.config.js ./initializers/server/index.js",
     "dev2": "NODE_ENV=development NO_SSR=true nodemon --watch ./initializers --watch webpack.config.js ./initializers/server/index.js",
     "tests": "jest --config jest.config.json",
-    "deploy": "npm install && npm run build && npm run start"
+    "rebuild": "npm install && npm run build"
   },
   "dependencies": {
     "app-module-path": "^2.2.0",
@@ -68,7 +68,7 @@
     "lodash": "^4.17.4",
     "moment": "^2.17.1",
     "nightmare": "^2.10.0",
-    "node-sass": "^3.10.0",
+    "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
     "qs": "^6.4.0",
     "react-hot-loader": "^3.0.0-beta.6",
