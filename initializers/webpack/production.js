@@ -78,26 +78,26 @@ export default {
   },
 
   plugins: [
-    // new webpack.LoaderOptionsPlugin({
-    //   options: {
-    //     postcss: [
-    //       autoprefixer({
-    //         browsers: [
-    //           'last 3 version'
-    //         ],
-    //       }),
-    //     ],
-    //     context: sourcePath,
-    //   },
-    // }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [
+          autoprefixer({
+            browsers: [
+              'last 3 version'
+            ],
+          }),
+        ],
+        context: sourcePath,
+      },
+    }),
     // new ProgressBarPlugin(),
-    // new webpack.DefinePlugin({
-    //   __SERVER__: false,
-    //   __CLIENT__: true,
-    //   __DEVELOPMENT__: false,
-    //   'process.env.NODE_ENV': JSON.stringify('production')
-    // }),
-    // new ExtractTextPlugin('[name].[chunkhash].css'),
+    new webpack.DefinePlugin({
+      __SERVER__: false,
+      __CLIENT__: true,
+      __DEVELOPMENT__: false,
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new ExtractTextPlugin('[name].[chunkhash].css'),
     // new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/),
     // new webpack.optimize.CommonsChunkPlugin({
     //   name: 'vendor',
