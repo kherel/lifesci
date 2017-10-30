@@ -78,36 +78,36 @@ export default {
   },
 
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        postcss: [
-          autoprefixer({
-            browsers: [
-              'last 3 version'
-            ],
-          }),
-        ],
-        context: sourcePath,
-      },
-    }),
-    new ProgressBarPlugin(),
-    new webpack.DefinePlugin({
-      __SERVER__: false,
-      __CLIENT__: true,
-      __DEVELOPMENT__: false,
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-    new ExtractTextPlugin('[name].[chunkhash].css'),
-    new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: function (module) {
-        return module.context && module.context.indexOf('node_modules') !== -1;
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: 'source-map'
-    }),
+    // new webpack.LoaderOptionsPlugin({
+    //   options: {
+    //     postcss: [
+    //       autoprefixer({
+    //         browsers: [
+    //           'last 3 version'
+    //         ],
+    //       }),
+    //     ],
+    //     context: sourcePath,
+    //   },
+    // }),
+    // new ProgressBarPlugin(),
+    // new webpack.DefinePlugin({
+    //   __SERVER__: false,
+    //   __CLIENT__: true,
+    //   __DEVELOPMENT__: false,
+    //   'process.env.NODE_ENV': JSON.stringify('production')
+    // }),
+    // new ExtractTextPlugin('[name].[chunkhash].css'),
+    // new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    //   minChunks: function (module) {
+    //     return module.context && module.context.indexOf('node_modules') !== -1;
+    //   }
+    // }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   sourceMap: 'source-map'
+    // }),
     // new BundleAnalyzerPlugin({
     //   analyzerMode: 'static'
     // })
