@@ -91,12 +91,12 @@ export default {
       },
     }),
     new ProgressBarPlugin(),
-    // new webpack.DefinePlugin({
-    //   __SERVER__: false,
-    //   __CLIENT__: true,
-    //   __DEVELOPMENT__: false,
-    //   'process.env.NODE_ENV': JSON.stringify('production')
-    // }),
+    new webpack.DefinePlugin({
+      __SERVER__: false,
+      __CLIENT__: true,
+      __DEVELOPMENT__: false,
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
     // new ExtractTextPlugin('[name].[chunkhash].css'),
     new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/),
     new webpack.optimize.CommonsChunkPlugin({
