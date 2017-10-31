@@ -14,7 +14,7 @@ class MainLayout extends Component {
       <div className={cn()}>
         <Header {...otherProps}/>
         { children }
-        <Footer />
+        {/*<Footer />*/}
       </div>
     )
   }
