@@ -8,10 +8,10 @@
     "node": "6.11.0"
   },
   "scripts": {
-    "build": "NODE_ENV=production node ./initializers/webpack/build.js",
-    "start": "NODE_ENV=production node ./initializers/server/index.js",
-    "dev": "NODE_ENV=development nodemon --watch initializers --watch webpack.config.js ./initializers/server/index.js",
-    "dev2": "NODE_ENV=development NO_SSR=true nodemon --watch ./initializers --watch webpack.config.js ./initializers/server/index.js",
+    "build": "cross-env NODE_ENV=production node ./initializers/webpack/build.js",
+    "start": "cross-env NODE_ENV=production node ./initializers/server/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon --watch initializers --watch webpack.config.js ./initializers/server/index.js",
+    "dev2": "cross-env NODE_ENV=development cross-env NO_SSR=true nodemon --watch ./initializers --watch webpack.config.js ./initializers/server/index.js",
     "tests": "jest --config jest.config.json",
     "rebuild": "npm install && npm run build"
   },
@@ -21,6 +21,7 @@
     "body-parser": "^1.18.2",
     "compression": "^1.7.0",
     "cors": "^2.8.4",
+    "cross-env": "^5.1.1",
     "d3-shape": "^1.2.0",
     "ejs": "^2.5.6",
     "express": "^4.15.3",
@@ -86,7 +87,7 @@
     "style-loader": "^0.19.0",
     "superagent": "^3.5.0",
     "svg-react-loader": "^0.4.4",
-    "system-font-css": "^2.0.1",
+    "system-font-css": "^1.1.0",
     "uglifyjs-webpack-plugin": "^1.0.1",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",

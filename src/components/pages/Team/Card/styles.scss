@@ -10,7 +10,6 @@
   box-shadow: $card-shadow;
   background-color: $white;
 
-
   @include media($tablet) {
     justify-content: space-around;
   }
