@@ -35,7 +35,7 @@ const Legal = ({openRoute}) =>{
     <div className={cn()}>
       <A_Container type='hero' mx={cn('hero')}>
         <A_H type="hero">Legal Agreements</A_H>
-        <A_P type="hero">Lifesci offers access to valuable licence fee income and a blockchain AI driven platform that gives investor access to the latest insights, news in the healthcare industry.</A_P>
+        <A_P type="hero">Ensuring the security of our users’ data is our most important responsibility and we believe in transparency and openness. Here we set out in full the steps that we take to maintain your privacy and keep your data safe and secure at all times.</A_P>
         <M_Select
           options={options}
           mx={cn('dropdown')}

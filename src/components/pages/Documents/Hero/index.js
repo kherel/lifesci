@@ -10,7 +10,7 @@ import A_P from 'A_P'
 const DocumentHero = () =>(
   <A_Container type='hero' mx={cn()}>
     <A_H type="hero">Relevant Documents</A_H>
-    <A_P type="hero">Lifesci offers access to valuable licence fee income and a blockchain AI driven platform that gives investor access to the latest insights, news in the healthcare industry.</A_P>
+    <A_P type="hero">Following the spirit of transparency, we try to keep all our thoughts on the paper shared with our life science community. We also try to maintain the latest version of the documents live and updated. </A_P>
   </A_Container>
 )
 

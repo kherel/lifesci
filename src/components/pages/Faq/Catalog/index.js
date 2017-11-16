@@ -57,11 +57,12 @@ class FaqCatalog extends Component {
     )
   }
 
-  mobScroll = (name) =>{
+  mobScroll = (name) => {
     const names = this.props.catalog.catalog.map(({name}) => name)
     const i = names.indexOf(name)
     this.startScrollMotion(name, i)
   }
+
   getNavigation(catalog, selected){
     return(
       catalog.catalog.map(({name}, i) => {

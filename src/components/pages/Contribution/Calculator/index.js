@@ -124,7 +124,7 @@ class ContributionCalculator extends Component {
       <div>
         <A_Container type='equal' mx={cn('header')}>
           <A_H type='section' mx={cn('section')}>Contribution Simulator</A_H>
-          <A_P type='section' mx={cn('section')}>The platform includes the latest industry reports and specific data analytics in order to understand and apprehend the health sector. </A_P>
+          <A_P type='section' mx={cn('section')}>The simulator allows you to directly convert your current contribution into the possible effect that the global life science platform can bring. Of course, this is only a simulator, but the numbers allow us to visualise the ultimate goal - solving the life science problems of today.</A_P>
         </A_Container>
         <A_Container type='normal' mx={cn('nav')}>
           <A_RadioBtn {...navBtnProps}>standard</A_RadioBtn>

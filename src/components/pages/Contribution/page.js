@@ -35,7 +35,7 @@ class Contribution extends Component {
       <div>
         <A_Container type='hero' mx={cn('hero')}>
           <A_H type="hero">LSCI token launch</A_H>
-          <A_P type="hero">Lifesci offers access to valuable licence fee income and a blockchain AI driven platform that gives investor access to the latest insights, news in the healthcare industry.</A_P>
+          <A_P type="hero">The role of project token is twofold: it is both a usage token on the Lifesci network and a payment token on the Lifesci marketplace. </A_P>
           <footer className={cn('hero-footer')}>
             <A_Button type='link-primary' mx={cn('contribute')}>Contribute</A_Button>
             <A_P type='micro' mx={cn('hero-footer-text')}>Bitcoin Suisse is a regulated financial entity based in Switzerland. They handle the KYC (know your customer) and AML (anti-money laundering) compliance for the contributions.</A_P>
@@ -48,7 +48,7 @@ class Contribution extends Component {
           <A_Container type='equal' mx={cn('allocation')}>
             <aside className={cn('allocation-info')}>
               <A_H type='section' mx={cn('allocation-title')}>Token Allocation</A_H>
-              <A_P type='section' mx={cn('allocation-subtile')}>We’re here for those who refuse to settle. Who never stop moving forwards. Who continue to search for new ideas.</A_P>
+              <A_P type='section' mx={cn('allocation-subtile')}>Proper breakdown of the LSCI token distribution will allow the Lifesci platform to focus on the growth and development.</A_P>
               <div className={cn('allocation-line')}>
                 <div className={cn('allocation-color')} style={{backgroundColor: color[2]}}/>
                   <A_P type='section' mx={cn('allocation-text')}>{dataArray[2]}%</A_P>

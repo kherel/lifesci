@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 // import * as T from "prop-types";
-import './styles.scss';
-import {cssClassName} from 'utils'
+import './styles.scss'
+import { cssClassName } from 'utils'
 const cn = cssClassName('Faq')
 import A_Container from 'A_Container'
 import Search from './Search'
@@ -9,7 +9,6 @@ import Catalog from './Catalog'
 import Results from './Results'
 
 class Faq extends Component {
-
   state = {
     search: '',
     // scrollTo: data.catalog[0].name,
@@ -17,84 +16,110 @@ class Faq extends Component {
   }
 
   render() {
-    const {search, scrollTo} = this.state
+    const { search, scrollTo } = this.state
     return (
       <div>
-        <A_Container type='normal' mx={cn('hero')}>
+        <A_Container type="normal" mx={cn('hero')}>
           <Search
-            handleChange={search => this.setState({search})}
-            handleReset={() => this.setState({search: ''})}
-            value = {this.state.search}
+            handleChange={search => this.setState({ search })}
+            handleReset={() => this.setState({ search: '' })}
+            value={this.state.search}
             placeholder={'Have a question? Enter a search term here… '}
           />
         </A_Container>
-        {
-          search === '' ?
-            <Catalog catalog={data} scrollTo={scrollTo} setScrollValue={value => this.setState({value})}/>
-            : <Results entities={data.entities} search={search}/>
-        }
+        {search === '' ? (
+          <Catalog
+            catalog={data}
+            scrollTo={scrollTo}
+            setScrollValue={value => this.setState({ value })}
+          />
+        ) : (
+          <Results entities={data.entities} search={search} />
+        )}
       </div>
     )
   }
 }
 
-Faq.propTypes = {
-};
+Faq.propTypes = {}
 
-Faq.defaultProps = {
-}
+Faq.defaultProps = {}
 
 const data = {
   catalog: [
     {
-      name: "Common FAQ’s",
+      name: 'Common FAQ’s',
       slugs: [
-        'What is Lifesci made for?',
-        'Who is behind Lifesci team?',
-        'What is Lifesci\'s ultimate goal?'
-      ]
+        'What is Lifesci?',
+        'What stage is the product in?',
+        'Where is the project roadmap?',
+        'Which blockchains the Lifesci compatible with?',
+        "Won't the limited scalability of current-day blockchains prevent Lifesci from working?",
+        'How can I get involved?',
+      ],
     },
     {
-      name: "Pre-contribution period",
+      name: 'Regulation',
       slugs: [
-        'title1',
-        'title2',
-        'title3',
-      ]
+        'Are Lifesci tokens securities?',
+        'Why do you exclude citizens of the USA and China?',
+      ],
     },
     {
-      name: "Contribution period",
-      slugs: [
-        'title4',
-        'title5',
-      ]
+      name: 'Funds',
+      slugs: ['What is the role of LSCI token?', 'Can I mine LSCI tokens?'],
     },
     {
-      name: "Investments",
+      name: 'Crowdsale',
       slugs: [
-        'title6',
-        'title7',
-      ]
-    }
+        'How do I participate in the pre-crowdsale period?',
+        'Who has access to the contributions and manages the project?',
+        'Which currencies are accepted?',
+        'What is the name and symbol of the project token?',
+        'Will there be a lockdown period for Tokens created?',
+        'Why is there a 5,000 EUR minimum contribution?',
+        'Why maximum token supply is only 23M LSCI?',
+      ],
+    },
   ],
-  entities:{
-    'Who is behind Lifesci team?': '<p>1.2 These Terms incorporate the Website Terms, the Cookie Policy, the Privacy Policy, the Website Acceptable Use Policy and any Supplements by this reference.</p>\n' +
-      '<p>1.3 Once you have completed the above and you have passed our internal checks, we shall make the Revolut Dashboard available to the Revolut Dashboard Users you selected when agreeing to these terms.</p>\n' +
-      '<p>1.4 You confirm that you have provided the correct Information during the process of creating a Revolut Account and that the person(s) you have selected as Revolut Dashboard Users and Revolut Cardholders have your full authority to act on your behalf in accordance with these Terms. You undertake that, if your details change, you will notify us immediately. You shall bear any losses that occur due to the submission of invalid, incorrect or inaccurate Information and the actions of Revolut Dashboard Users and Revolut Cardholders subject to any limits which have been imposed upon them on the Revolut Dashboard.</p>\n' +
-      '<h4>Regulatory Information</h4>' +
-      '<p>2.1 These Terms are between you (the “User”, “you” or “your”) and Revolut Ltd. (“Revolut”, “we”, “us” or “our”). Revolut is a company incorporated in England and Wales with company number 08804411 and whose registered office and head office is at Level 39 1 Canada Square E14 5AB London UK. Revolut is the issuer of Electronic Money in your Revolut Electronic Money Account and performs the payment services related to your Revolut Electronic Money Account. Revolut is authorised by the Financial Conduct Authority as an Electronic Money Institution under the Electronic Money Regulations 2011 for the issuing of electronic money. We are included in the FCA’s Register of Electronic Money Institution firms (Form Reference Number 900562) which can be found on the FCA website.</p>\n' +
-      '<p>2.2 The Revolut Cards are issued by Wirecard Card Solutions Limited (the “Revolut Card Issuer”).  being a company incorporated in England &amp; Wales, with company number 07875693, whose registered office is at Third Floor, Grainger Chambers, 3-5 Hood Street, Newcastle-upon-Tyne, NE1 6JQ. Wirecard Card Solutions Limited is also authorised by the Financial Conduct Authority as an Electronic Money Institution under the Electronic Money Regulations 2011 for the issuing of electronic money. Wirecard Card Solutions Limited is included in the FCA’s Register of Electronic Money Institution firms (Form Reference Number 900051) which can be found on the FCA website. A Revolut Cardholder will have to agree to the prior to being able to use his/her Revolut Card.</p>\n' +
-      '<p>2.3 We are also subject to the Payment Services Regulations 2009 (the “Regulations”) which regulate how payments must be transmitted and provide protection when you send money to an account within the European Economic Area (EEA) and the payment is in Euros, Sterling or another EEA-State currency.</p>',
-    'title1': 'text1',
-    'title2': 'text2',
-    'title3': 'text3',
-    'title4': 'text4',
-    'title5': 'text5',
-    'title6': 'text6',
-    'title7': 'text7',
-    'What is Lifesci made for?': 'text8',
-    'What is Lifesci\'s ultimate goal?': 'text9',
-
-  }
+  entities: {
+    'What is Lifesci?': `
+      <p>Lifesci will be designed as an Artificial Intelligence powered, Blockchain platform that creates new healthcare solutions by enabling and connecting innovation, ideas, services and capital from online communities, scientists, startups and investors. Thereby creating a unique platform that combines integrated data science (machine learning + life science experts) with capital.</p></br>
+      <p>Lifesci is led by an experienced  team from across Healthcare, Blockchain, AI, Big data and Digital sectors. The scientific project is partnered with Celixir plc - a leading regenerative medicine company led by Sir Martin Evans Nobel Laureate in Medicine in 2007.</p>`,
+    'What stage is the product in?':
+      'The project initially started after the SEC announcement with a clear statement to make sure that new projects and platforms will not fall under regulatory problems. Lifesci platform has been entirely self-funded by the Team and is 100% owned by the team. Please check our roadmap, to review the current stage of the development process.',
+    'Where is the project roadmap?': `
+      <p>The project roadmap is described in the dedicated section on our website - <a href="/roadmap" target="_blank ">Project Roadmap</a></p>
+    `,
+    'Which blockchains the Lifesci compatible with?':
+      'Lifesci will blockchain agnostic, and will be able to operate alongside any smart contract platform in the future. We will begin by supporting Ethereum, because it is available and production-ready.',
+    "Won't the limited scalability of current-day blockchains prevent Lifesci from working?": `
+      <p>Lifesci will be designed as an Artificial Intelligence powered, Blockchain platform that creates new healthcare solutions by enabling and connecting innovation, ideas, services and capital from online communities, scientists, startups and investors. Thereby creating a unique platform that combines integrated data science (machine learning + life science experts) with capital.</p></br>
+      <p>Lifesci is led by an experienced  team from across Healthcare, Blockchain, AI, Big data and Digital sectors. The scientific project is partnered with Celixir plc - a leading regenerative medicine company led by Sir Martin Evans Nobel Laureate in Medicine in 2007.</p>`,
+    'How can I get involved?':
+      'Lifesci will be an open source project which will benefit from proposals and code from passionate developers worldwide, moreover the community will be fully involved on the Lifesci platform.',
+    'Are Lifesci tokens securities?':
+      'Based on legal advice and opinions we gathered during the preparation process, LSCI tokens would  be deemed as securities by SEC based on the famous Howey test. We pay a lot of attention to that matter and are in continuous communications with US attorneys while formalising our position.',
+    'Why do you exclude citizens of the USA and China?':
+      'China citizens are excluded due to China’s central bank regulation, while the USA residents are excluded due to the SEC regulatory warnings.',
+    'Can I mine LSCI tokens?':
+      'No. LSCI token will not be minable, it will be distributed through the model described during the 4 phases of the crowdsale process.',
+    'How do I participate in the pre-crowdsale period?': `
+      <p>For transparency, in the following section we would like to disclose some information about the private pre-contribution period. Private contributions include early contributions and strategic contributions. Both are important for the project, but for different reasons. Early contributions guarantee that the project has enough early funding to make it as far as the public contribution periods. Strategic contributions ensure that the project has long-term supporters whose interests are aligned with the project. This includes, for example, funds, partners, and well-connected individuals.</p></br>
+      <p>Around half of the funding target comes from large contributors and early supporters, and they are onboarded separately outside the public contribution periods. This way we prevent them from eating up all tokens during the public contribution periods, allowing smaller contributors a better chance to participate in them. Doing so also allows us to set a stricter contribution cap on the public periods, which helps maximize token distribution. Last but not least, this way we know who the biggest token holders are, and get to select who we want to work with, making sure they are long-term supporters of the project. Most of the private contributors have been introduced to us by people we trust.</p>,`,
+    'Who has access to the contributions and manages the project?':
+      'Lifesci Foundation, a public foundation incorporated in the Gibraltar, will control the funds and coordinate and manage the implementation of the project.',
+    'Which currencies are accepted?': 'BTC, ETH, and the main fiat currencies.',
+    'What is the name and symbol of the project token?': `
+      <p>The project token is the Lifesci LSCI token, and its symbol is LSCI. The token is an ERC20 standard token on the Ethereum blockchain. It is already deployed here, and should appear automatically in at least <a href="https://www.myetherwallet.com/" target="_blank">MyEtherWallet</a> and <a href="https://parity.io/" target="_blank">Parity</a> wallets.</p>    
+    `,
+    'Will there be a lockdown period for Tokens created?':
+      'LSCI tokens will be transferable a few weeks after the end of the crowd contribution period. Tokens reserved for the team are subject to a vesting contract.',
+    'Why is there a 5,000 EUR minimum contribution?':
+      'KYC and AML processes are very expensive and require time, that is why to comply with all regulatory requirements, Lifesci has limited minimum contributions to a 5,000 EUR.',
+    'Why maximum token supply is only 23M LSCI?':
+      'Lifesci is all about life science, and life stands for the DNA. Human beings have 23 DNA pairs, that is why the team has decided to tie LSCI tokens to the base of everything - the number of DNA pairs.',
+  },
 }
+
 export default Faq
