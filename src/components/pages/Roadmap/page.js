@@ -103,7 +103,7 @@ const listData = [
     title: 'Q4 2017',
     subtitle: 'OCTOBER - DECEMBER, 2017',
     type: 'Digital Identity Directory',
-    description: 'Lifesci Brand awareness and Token Sale Phase #1',
+    description: '',
     list: [
       'Dynamic page with comprehensive local and global listings of Medtech, life science organisations and foundations, with search filters',
       'Infographics and data on organisations',
@@ -118,7 +118,7 @@ const listData = [
     title: 'Q1 2018',
     subtitle: 'JANUARY - MARCH, 2018',
     type: 'Data Rankings',
-    description: 'Lifesci Alpha, Token Sale Phase #2, Tokens emission, Lifesci Token listing',
+    description: '',
     list: [
       'Private and public profile',
       'B2B community based in P2P insights',
@@ -133,7 +133,7 @@ const listData = [
     title: 'Q2 2018',
     subtitle: 'APRIL - JUNE, 2018',
     type: 'Resource Center',
-    description: 'Lifesci security audit and product launch',
+    description: '',
     list: [
       'CRM & Data Science Analytics',
       'Match organisations & E Commerce features',
@@ -148,7 +148,7 @@ const listData = [
     title: 'Q3 2018',
     subtitle: 'APRIL - JUNE, 2018',
     type: 'Global Marketplace',
-    description: 'API integration in 10 medical institutions, in-platform items value exceeding $200M',
+    description: '',
     list: [
       'Global supply chain network and DBs accessibility by community',
       'Crowdfunding campaigns to support new Medtech projects',
