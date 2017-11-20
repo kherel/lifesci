@@ -39,21 +39,21 @@ const files = [
   {
     name: 'Whitepaper',
     type: 'pdf',
-    url: '/pdf/sample.pdf'
+    url: '/pdf/Lifesci Whitepaper.pdf'
   },
-  {
-    name: 'Crowdsale Document',
-    type: 'pdf',
-    url: '/pdf/sample.pdf'
-  },
-  {
-    name: 'Explanatory Note and Governance Term',
-    type: 'pdf',
-    url: '/pdf/sample.pdf'
-  },
+  // {
+  //   name: 'Crowdsale Document',
+  //   type: 'pdf',
+  //   url: '/pdf/sample.pdf'
+  // },
+  // {
+  //   name: 'Explanatory Note and Governance Term',
+  //   type: 'pdf',
+  //   url: '/pdf/sample.pdf'
+  // },
   {
     name: 'SEC Howey Test',
     type: 'pdf',
-    url: '/pdf/sample.pdf'
+    url: '/pdf/A Securities Law Framework for Blockchain Tokens.pdf'
   },
 ]
