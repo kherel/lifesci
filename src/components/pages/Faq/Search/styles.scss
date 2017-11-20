@@ -48,7 +48,6 @@
     left: 2.8rem;
     cursor: pointer;
     top: 1.2rem;
-    display: inline-block;
     display: flex;
     justify-content: center;
     @include media ($mobile) {
@@ -63,7 +62,6 @@
     right: 1.6rem;
     cursor: pointer;
     top: 2.2rem;
-    display: inline-block;
     display: flex;
     justify-content: center;
     padding: 1px;

@@ -1,24 +1,30 @@
-import { Component } from 'react';
+import { Component } from 'react'
 
 class ScrollSync extends Component {
-  componentDidUpdate () {
+  componentDidUpdate() {
     // console.log('scrollSync updated, props: ', this.props);
-    const {scrollContainer, scrollMotionTo, scrollMotion, scrollMotionActive, finishScrollMotion, setCurrentScrollPosition} = this.props;
+    const {
+      scrollContainer,
+      scrollMotionTo,
+      scrollMotion,
+      scrollMotionActive,
+      finishScrollMotion,
+      setCurrentScrollPosition,
+    } = this.props
 
-    if(scrollMotionActive) {
-      if(scrollMotionTo !== scrollMotion) {
+    if (scrollMotionActive) {
+      if (scrollMotionTo !== scrollMotion) {
         scrollContainer.scrollTo(0, scrollMotion)
-      }
-      else {
-        finishScrollMotion();
-        setCurrentScrollPosition(scrollMotion);
+      } else {
+        finishScrollMotion()
+        setCurrentScrollPosition(scrollMotion)
       }
     }
   }
 
-  render () {
+  render() {
     return null
   }
 }
 
-export default ScrollSync;
+export default ScrollSync

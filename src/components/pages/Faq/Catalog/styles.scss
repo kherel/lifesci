@@ -1,95 +1,82 @@
-@import "common/settings/variables";
-@import "common/utils";
+@import 'common/settings/variables';
+@import 'common/utils';
 
-.faq-catalog{
-  &__container{
+.faq-catalog {
+  &__container {
     display: flex;
     justify-content: center;
     @include hl();
-
   }
 
-  &__aside{
+  &__aside {
     flex: 0 0 23.2rem;
-    display: none;
     border-right: 1px solid $black-4;
-    &-menu{
-      padding-top:6.4rem;
-      padding-bottom:6.4rem;
-
+    &-menu {
+      padding-top: 6.4rem;
+      padding-bottom: 6.4rem;
     }
-    &_media {
-      @include media ($desktop) {
-        &_desktop {
-          display: block;
-        }
-      }
-      @include media ($tablet) {
-        &_tablet {
-          display: block;
-          & > .o-fixed_sticky_true {
-            padding-top: 12.5rem !important;
-          }
-        }
+
+    @include media ($tablet) {
+      & > .o-fixed_sticky_true {
+        padding-top: 12.5rem !important;
       }
     }
   }
-  &__main{
+  &__main {
     flex: 1 1 auto;
-    padding-top:6.4rem;
-    padding-bottom:6.4rem;
-    padding-left:3.2rem;
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+    padding-left: 3.2rem;
 
     @include media ($mobile) {
-      padding-top:3.2rem;
-      padding-left:0;
+      padding-top: 3.2rem;
+      padding-left: 0;
     }
   }
-  &__nav-link{
+  &__nav-link {
     cursor: default;
-    &_selected_true{
+    &_selected_true {
       color: black;
       font-weight: 500;
     }
   }
 
-  &__item{
-    &-header{
+  &__item {
+    &-header {
       width: 100%;
       display: flex;
       justify-content: space-between;
       cursor: default;
-      margin-bottom:3.2rem;
-      &:after{
-        content: url("/img/icons/plus.svg");
+      margin-bottom: 3.2rem;
+      &:after {
+        content: url('/img/icons/plus.svg');
       }
-      &_is-opened_true{
-        &:after{
-          content: url("/img/icons/minus.svg");
+      &_is-opened_true {
+        &:after {
+          content: url('/img/icons/minus.svg');
           display: inline-flex;
         }
       }
     }
-    &-article{
+    &-article {
       max-height: 0;
       transition: none;
       overflow: hidden;
       will-change: max-height, margin-bottom;
       transform: translate3d(0, -2rem, 0);
-      &_is-opened_true{
-        margin-bottom:6.4rem;
+      &_is-opened_true {
+        margin-bottom: 6.4rem;
         max-height: 1000rem;
-        transition:  transform 0.1s ease-in, max-width 1s ease-in;
+        transition: transform 0.1s ease-in, max-width 1s ease-in;
         transform: translate3d(0, 0, 0);
       }
     }
   }
-  &__section{
-    margin-bottom:1.6rem;
+  &__section {
+    margin-bottom: 1.6rem;
   }
 
-  &__dropdown{
-
+  &__dropdown {
     transform: translate3d(1.6rem, -69px, 0);
     width: calc(100% - 3.2rem);
     z-index: 1;
