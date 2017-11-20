@@ -52,7 +52,7 @@ function _r(value, afterComa) {
 class ContributionCalculator extends Component {
 
   state = {
-    mode: 'standard',
+    mode: 'contribution',
     currency: 'gbp',
     token: 'lsci',
     tokenValue: 0,
@@ -127,8 +127,8 @@ class ContributionCalculator extends Component {
           <A_P type='section' mx={cn('section')}>The simulator allows you to directly convert your current contribution into the possible effect that the global life science platform can bring. Of course, this is only a simulator, but the numbers allow us to visualise the ultimate goal - solving the life science problems of today.</A_P>
         </A_Container>
         <A_Container type='normal' mx={cn('nav')}>
-          <A_RadioBtn {...navBtnProps}>standard</A_RadioBtn>
-          <A_RadioBtn {...navBtnProps}>turbo</A_RadioBtn>
+          <A_RadioBtn {...navBtnProps}>contribution</A_RadioBtn>
+          <A_RadioBtn {...navBtnProps}>pre-contribution</A_RadioBtn>
         </A_Container>
         <A_Container type='normal' mx={cn('calc')}>
           <div className={cn('calc-side')}>
@@ -192,6 +192,6 @@ const tokensOptions = [
 ]
 
 const infoText = {
-  standard: 'The platform includes the latest industry reports and specific data analytics in order to understand and apprehend the health sector. The platform includes the latest industry reports and specific data.',
-  turbo: 'turbo mode text'
+  contribution: 'For the public contribution period, all prices are fixed and will not change, thus allowing all willing participants to become a part of life science global community.',
+  'pre-contribution': 'We want to reward Lifesci early adopters, that is why there is a 10% bonus that is applied to pre-contributions, meaning that for each LSCI you would receive at the base price, you get a bonus 0.1 LSCI.'
 }
