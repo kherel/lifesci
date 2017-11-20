@@ -40,7 +40,7 @@ export default {
         }
       },
       {
-        test: /\.(woff|woff2|eot|ttf|svg)$/,
+        test: /\.(woff|woff2|eot|ttf)$/,
         exclude: /node_modules/,
         loader: 'url-loader'
       },
