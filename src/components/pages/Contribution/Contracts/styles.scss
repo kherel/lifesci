@@ -14,8 +14,8 @@
 
   &__code {
     position: relative;
-    width: 600px;
     height: 32rem;
+    flex-grow: 1;
     background-color: white;
     overflow: auto;
     box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
@@ -44,7 +44,7 @@
   }
   &__menu{
     align-self: stretch;
-    padding-left: 8rem;
+    padding-left: 4rem;
     @include media ($tablet) {
       margin-bottom: 3.2rem;
       padding-left: 0;
