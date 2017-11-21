@@ -1,18 +1,24 @@
 @import "common/settings/variables";
 @import "common/utils";
 
+$menu-height: 70px;
+
 .home-hero{
   background-color: black;
   position: relative;
   display: flex;
   justify-items: center;
   justify-content: center;
+
   &__canvas{
     width: 500px;
     height: 500px;
     position: absolute;
+    top: calc(50% - #{$menu-height} / 2);
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-  @include media ($tablet) {
+  @include media ($mobile-up) {
     //padding-bottom: 3.2rem;
   }
 
@@ -20,10 +26,13 @@
     z-index: 0;
     max-width: 64rem;
     text-align: center;
-    margin-bottom: 3.2rem;
     color: white;
     @include media ($mobile) {
       text-align: left;
+    }
+
+    @include media ($mobile-up) {
+      margin-top: -4rem;
     }
   }
 
@@ -32,6 +41,7 @@
     max-width: 82rem;
     position: relative;
     color: white;
+
     @include media ($mobile) {
       margin-top:0 !important;
       text-align: left;
@@ -39,13 +49,18 @@
   }
 
   &__container{
+    position: relative;
     display: flex;
     flex-flow: column;
     align-items: center;
+    justify-content: space-around;
     padding-bottom: 0;
-    height: calc(100vh - 70px);
-    min-height: 60rem;
+    height: calc(100vh - #{$menu-height});
+    padding-top: 0;
+
   }
+
+
   &__buttons{
     text-align: center;
     &-contribute{
