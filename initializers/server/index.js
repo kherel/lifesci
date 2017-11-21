@@ -10,7 +10,7 @@ const bodyParser = require('body-parser')
 // const fs = require('fs.extra');
 
 require('babel-core/register');
-['.css', '.less', '.sass', '.ttf', '.woff', '.woff2', '.scss'].forEach((ext) => require.extensions[ext] = () => {
+['.css', '.less', '.sass', '.ttf', '.woff', '.woff2', '.scss', '.svg'].forEach((ext) => require.extensions[ext] = () => {
 });
 
 const port = process.env.PORT || 8080;
