@@ -7,4 +7,13 @@
     top: 0;
     z-index: 99;
   }
+
+  &_bottom_true {
+    position: absolute;
+    bottom: 0;
+
+    @include media ($desktop) {
+      bottom: 55px;
+    }
+  }
 }

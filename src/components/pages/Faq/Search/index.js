@@ -7,7 +7,6 @@ const cn = cssClassName('O_Search');
 
 class O_Search extends Component {
 
-
   render() {
     const {placeholder, value, handleChange, handleReset} = this.props
     return (

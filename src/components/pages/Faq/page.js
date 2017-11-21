@@ -11,12 +11,10 @@ import Results from './Results'
 class Faq extends Component {
   state = {
     search: '',
-    // scrollTo: data.catalog[0].name,
-    // scrollValue: data.catalog[0].name
   }
 
   render() {
-    const { search, scrollTo } = this.state
+    const { search } = this.state
     return (
       <div>
         <A_Container type="normal" mx={cn('hero')}>
@@ -28,11 +26,7 @@ class Faq extends Component {
           />
         </A_Container>
         {search === '' ? (
-          <Catalog
-            catalog={data}
-            scrollTo={scrollTo}
-            setScrollValue={value => this.setState({ value })}
-          />
+          <Catalog catalog={data} />
         ) : (
           <Results entities={data.entities} search={search} />
         )}
@@ -106,7 +100,7 @@ const data = {
       'No. LSCI token will not be minable, it will be distributed through the model described during the 4 phases of the crowdsale process.',
     'How do I participate in the pre-crowdsale period?': `
       <p>For transparency, in the following section we would like to disclose some information about the private pre-contribution period. Private contributions include early contributions and strategic contributions. Both are important for the project, but for different reasons. Early contributions guarantee that the project has enough early funding to make it as far as the public contribution periods. Strategic contributions ensure that the project has long-term supporters whose interests are aligned with the project. This includes, for example, funds, partners, and well-connected individuals.</p></br>
-      <p>Around half of the funding target comes from large contributors and early supporters, and they are onboarded separately outside the public contribution periods. This way we prevent them from eating up all tokens during the public contribution periods, allowing smaller contributors a better chance to participate in them. Doing so also allows us to set a stricter contribution cap on the public periods, which helps maximize token distribution. Last but not least, this way we know who the biggest token holders are, and get to select who we want to work with, making sure they are long-term supporters of the project. Most of the private contributors have been introduced to us by people we trust.</p>,`,
+      <p>Around half of the funding target comes from large contributors and early supporters, and they are onboarded separately outside the public contribution periods. This way we prevent them from eating up all tokens during the public contribution periods, allowing smaller contributors a better chance to participate in them. Doing so also allows us to set a stricter contribution cap on the public periods, which helps maximize token distribution. Last but not least, this way we know who the biggest token holders are, and get to select who we want to work with, making sure they are long-term supporters of the project. Most of the private contributors have been introduced to us by people we trust.</p>`,
     'Who has access to the contributions and manages the project?':
       'Lifesci Foundation, a public foundation incorporated in the Gibraltar, will control the funds and coordinate and manage the implementation of the project.',
     'Which currencies are accepted?': 'BTC, ETH, and the main fiat currencies.',
