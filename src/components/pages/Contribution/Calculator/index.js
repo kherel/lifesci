@@ -62,7 +62,7 @@ class ContributionCalculator extends Component {
   onChangeMoneyInput = (moneyValue) => {
     const {currencies} = this.props
     const {currency, mode} = this.state
-    const turbo = mode === turbo
+    const turbo = mode === 'pre-contribution'
     const usdValue = moneyValue / currencies[currency]
     const preTokenValue = usdValue / 5000 * (turbo ? 1.1 : 1)
     const tokenValue = _r(preTokenValue, 8)
@@ -74,7 +74,7 @@ class ContributionCalculator extends Component {
   onChangeTokenInput = (tokenValue) => {
     const {currencies} = this.props
     const {currency, mode} = this.state
-    const turbo = mode === 'turbo'
+    const turbo = mode === 'pre-contribution'
     const usdValue = tokenValue * 5000 * (turbo ? 1.1 : 1)
 
     const preMoneyValue = usdValue * currencies[currency]
@@ -97,7 +97,7 @@ class ContributionCalculator extends Component {
   onChangeMode = (mode) => {
     const {currencies} = this.props
     const {currency, moneyValue} = this.state
-    const turbo = mode === 'turbo'
+    const turbo = mode === 'pre-contribution'
     const usdValue = moneyValue / currencies[currency]
     const preTokenValue = usdValue / 5000 * (turbo ? 1.1 : 1)
     const tokenValue = _r(preTokenValue, 8)
