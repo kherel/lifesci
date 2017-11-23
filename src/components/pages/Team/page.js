@@ -18,7 +18,7 @@ class Team extends Component {
 
   renderHero = () => (
     <A_Container type="hero" mx={cn('hero')}>
-      <A_H type="hero">Lifesci launched in 2016</A_H>
+      <A_H type="hero">Lifesci launched in 2017</A_H>
       <A_P type="hero">
         Today’s hyper-connected world deserves a life science partner just as progressive. One that
         adapts to your needs, gives you control and constantly pushes you into new exciting spaces.
