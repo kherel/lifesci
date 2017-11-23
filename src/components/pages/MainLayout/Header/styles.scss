@@ -10,6 +10,7 @@
 
   &_theme_dark{
     background-color: black;
+    border-bottom-color: transparent;
   }
 
   @include media($tablet){

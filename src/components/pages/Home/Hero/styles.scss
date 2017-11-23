@@ -11,15 +11,12 @@ $menu-height: 70px;
   justify-content: center;
 
   &__canvas{
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
     position: absolute;
-    top: calc(50% - #{$menu-height} / 2);
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-  @include media ($mobile-up) {
-    //padding-bottom: 3.2rem;
   }
 
   &__title{
@@ -31,9 +28,7 @@ $menu-height: 70px;
       text-align: left;
     }
 
-    @include media ($mobile-up) {
-      margin-top: -4rem;
-    }
+
   }
 
   &__text{
@@ -53,9 +48,9 @@ $menu-height: 70px;
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: space-around;
-    padding-bottom: 0;
+    justify-content: center;
     height: calc(100vh - #{$menu-height});
+    padding-bottom: $menu-height;
     padding-top: 0;
 
   }
