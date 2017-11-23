@@ -48,7 +48,7 @@ const Global = () => {
         />
         <div className={cn('label')}>
           <A_P type="name">Sir Martin Evans</A_P>
-          <A_P type="title">Lifesci’s chief advisor</A_P>
+          <A_P type="title">Lifesci's chief scientific advisor</A_P>
         </div>
       </div>
     </A_Container>
