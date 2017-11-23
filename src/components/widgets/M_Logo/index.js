@@ -15,7 +15,13 @@ const A_Logo = ({ mobile, mx, color }) => (
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="Page-1" stroke="none" strokeWidth="1" fill={color} fillRule="evenodd">
+      <g
+        id="Page-1"
+        stroke="none"
+        strokeWidth="1"
+        fill={mobile ? '#FFFFFF' : color}
+        fillRule="evenodd"
+      >
         <g id="48" transform="translate(-531.000000, -12.000000)">
           <g id="logo_black" transform="translate(531.000000, 12.000000)">
             <g id="Group">
