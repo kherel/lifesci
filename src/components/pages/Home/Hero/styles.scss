@@ -50,6 +50,7 @@ $menu-height: 70px;
     align-items: center;
     justify-content: center;
     height: calc(100vh - #{$menu-height});
+    min-height: 700px;
     padding-bottom: $menu-height;
     padding-top: 0;
 
