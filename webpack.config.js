@@ -1,9 +1,10 @@
 import path from 'path'
 import webpack from 'webpack'
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 process.noDeprecation = true
-const sourcePath = path.join(__dirname, './src');
+const sourcePath = path.join(__dirname, './src')
 
 export default {
   plugins: [
@@ -11,68 +12,77 @@ export default {
     new webpack.DefinePlugin({
       __SERVER__: false,
       __CLIENT__: true,
-      __DEVELOPMENT__: true
+      __DEVELOPMENT__: true,
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: 'static'
+    // })
   ],
   devtool: 'cheap-module-eval-source-map',
-  entry:  [
+  entry: [
     'babel-polyfill',
     'react-hot-loader/patch',
     'webpack-hot-middleware/client',
-    './src/index.js'
+    './src/index.js',
   ],
   output: {
     path: path.join(process.cwd(), 'static', 'assets'),
     filename: 'bundle.js',
-    publicPath: '/assets/'
+    publicPath: '/assets/',
   },
   module: {
     rules: [
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "eslint-loader",
+        loader: 'eslint-loader',
         options: {
           failOnWarning: false,
-          failOnError: true
-        }
+          failOnError: true,
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf)$/,
         exclude: /node_modules/,
-        loader: 'url-loader'
+        loader: 'url-loader',
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
         test: /\.scss$/,
-        use: [{
-          loader: "style-loader"
-        }, {
-          loader: "css-loader"
-        }, {
-          loader: "sass-loader",
-          options: {
-            includePaths: path.resolve(process.cwd(), "./src"),
-          }
-        }]
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: path.resolve(process.cwd(), './src'),
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
-        use: [{
-          loader: "style-loader"
-        }, {
-          loader: "css-loader",
-          options: {
-            includePaths: path.resolve(__dirname, "./src"),
-          }
-        }
-        ]
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              includePaths: path.resolve(__dirname, './src'),
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|svg)$/,
@@ -80,11 +90,11 @@ export default {
           {
             loader: 'url-loader',
             options: {
-              limit: 500000
-            }
-          }
-        ]
-      }
-    ]
-  }
+              limit: 500000,
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
