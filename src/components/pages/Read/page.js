@@ -3,10 +3,6 @@ import './styles.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('Read')
 import A_Container from 'A_Container'
-const { Document, Page } = require(__CLIENT__
-  ? 'react-pdf/build/entry.webpack'
-  : 'react-pdf/build/entry.noworker')
-
 
 class Read extends Component {
   state = {
@@ -17,22 +13,27 @@ class Read extends Component {
     this.setState({ numPages })
   }
 
-  render() {
-    const { numPages } = this.state
+  renderDocument = () => {
+    const { Document, Page } = require('react-pdf/build/entry.noworker')
+    return (
+      <Document file="pdf/Lifesci Whitepaper.pdf" onLoadSuccess={this.onDocumentLoad}>
+        {Array.from(new Array(this.state.numPages), (el, index) => (
+          <Page
+            className="read__page"
+            key={`page_${index + 1}`}
+            renderTextLayer={false}
+            pageNumber={index + 1}
+          />
+        ))}
+      </Document>
+    )
+  }
 
+  render() {
     return (
       <div className={cn()}>
         <A_Container type="normal" mx={cn('main')}>
-          <Document file="pdf/Lifesci Whitepaper.pdf" onLoadSuccess={this.onDocumentLoad}>
-            {Array.from(new Array(numPages), (el, index) => (
-              <Page
-                className="read__page"
-                key={`page_${index + 1}`}
-                renderTextLayer={false}
-                pageNumber={index + 1}
-              />
-            ))}
-          </Document>
+          {__CLIENT__ ? this.renderDocument() : ''}
         </A_Container>
       </div>
     )

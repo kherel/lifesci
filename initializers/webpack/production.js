@@ -1,59 +1,65 @@
 /* eslint-disable */
 
-import path from 'path';
-import webpack from 'webpack';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import path from 'path'
+import webpack from 'webpack'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
-const autoprefixer = require('autoprefixer');
-const sourcePath = path.join(__dirname, './src');
+const autoprefixer = require('autoprefixer')
+const sourcePath = path.join(__dirname, './src')
 
-const root = path.join(process.cwd());
+const root = path.join(process.cwd())
 
 process.noDeprecation = true
 export default {
   devtool: 'source-map',
   entry: {
-    bundle: './src/index.js'
+    bundle: './src/index.js',
   },
   output: {
     path: path.join(process.cwd(), 'static', 'assets'),
-    filename: '[name].[chunkhash].js'
+    filename: '[name].[chunkhash].js',
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [{
-            loader: "css-loader"
-          }, {
-            loader: "postcss-loader"
-          }, {
-            loader: "sass-loader",
-            options: {
-              includePaths: path.resolve(process.cwd(), "./src"),
-            }
-          }]
-        })
+          use: [
+            {
+              loader: 'css-loader',
+            },
+            {
+              loader: 'postcss-loader',
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                includePaths: path.resolve(process.cwd(), './src'),
+              },
+            },
+          ],
+        }),
       },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [{
-            loader: "css-loader",
-            options: {
-              includePaths: path.resolve(root, "src"),
-            }
-          }]
-        })
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                includePaths: path.resolve(root, 'src'),
+              },
+            },
+          ],
+        }),
       },
       // { test: /\.(eot|png|ttf|svg|woff|woff2)$/, loader: 'url-loader'}
       {
@@ -62,19 +68,16 @@ export default {
           {
             loader: 'url-loader',
             options: {
-              limit: 500000
-            }
-          }
-        ]
-      }
-    ]
+              limit: 500000,
+            },
+          },
+        ],
+      },
+    ],
   },
 
   resolve: {
-    modules: [
-      path.resolve(process.cwd(), 'src'),
-      'node_modules'
-    ]
+    modules: [path.resolve(process.cwd(), 'src'), 'node_modules'],
   },
 
   plugins: [
@@ -82,9 +85,7 @@ export default {
       options: {
         postcss: [
           autoprefixer({
-            browsers: [
-              'last 3 version'
-            ],
+            browsers: ['last 3 version'],
           }),
         ],
         context: sourcePath,
@@ -95,21 +96,21 @@ export default {
       __SERVER__: false,
       __CLIENT__: true,
       __DEVELOPMENT__: false,
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new ExtractTextPlugin('[name].[chunkhash].css'),
     new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: function (module) {
-        return module.context && module.context.indexOf('node_modules') !== -1;
-      }
+      minChunks: function(module) {
+        return module.context && module.context.indexOf('node_modules') !== -1
+      },
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: 'source-map'
+      sourceMap: 'source-map',
     }),
     // new BundleAnalyzerPlugin({
     //   analyzerMode: 'static'
     // })
-  ]
-};
+  ],
+}
