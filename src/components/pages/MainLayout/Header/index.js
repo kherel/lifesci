@@ -5,8 +5,8 @@ const cn = cssClassName('Header')
 import A_Container from 'A_Container'
 import M_Logo from 'M_Logo'
 import A_Link from 'A_Link'
-import MobMenu from "./MobMenu";
-import MenuSvgBtn from "./MenuSvgBtn";
+// import MobMenu from "./MobMenu";
+// import MenuSvgBtn from "./MenuSvgBtn";
 
 class Header extends Component {
 
