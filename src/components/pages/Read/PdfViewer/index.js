@@ -6,7 +6,9 @@ import { PDFJS } from 'pdfjs-dist'
 
 class PdfViewer extends Component {
   componentDidMount() {
-    PDFJS.workerSrc = `/pdf.worker.js`
+    // PDFJS.workerSrc = `/pdf.worker.js`
+
+    PDFJS.disableWorker = true
     const loadingTask = PDFJS.getDocument('/pdf/Lifesci Whitepaper.pdf')
 
     loadingTask.promise.then(pdf => {
