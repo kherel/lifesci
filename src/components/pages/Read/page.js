@@ -16,10 +16,10 @@ class Read extends Component {
   renderDocument = () => {
     const { Document, Page } = require('react-pdf/build/entry.noworker')
     return (
-      <Document file="pdf/Lifesci Whitepaper.pdf" onLoadSuccess={this.onDocumentLoad}>
+      <Document file="pdf/Lifesci Whitepaper.pdf" onLoadSuccess={this.onDocumentLoad} loading="Document is loading...">
         {Array.from(new Array(this.state.numPages), (el, index) => (
           <Page
-            className="read__page"
+            className={cn('page')}
             key={`page_${index + 1}`}
             renderTextLayer={false}
             pageNumber={index + 1}
