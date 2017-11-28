@@ -41,11 +41,11 @@ class Header extends Component {
       <div className={cn({theme})}>
         <A_Container type='normal' mx={cn('nav')}>
           <M_Logo mx={cn('logo')} mobile={isMenuOpened} color={color}/>
-          {desktopMenu}
-          <button className={cn('nav-menu-btn', {open: isMenuOpened})} onClick={toggleMenu}>
-            <MenuSvgBtn open={isMenuOpened} color={color}/>
-          </button>
-          {isMenuOpened && <MobMenu {...{openRoute, nav}}/>}
+          {/*{desktopMenu}*/}
+          {/*<button className={cn('nav-menu-btn', {open: isMenuOpened})} onClick={toggleMenu}>*/}
+            {/*<MenuSvgBtn open={isMenuOpened} color={color}/>*/}
+          {/*</button>*/}
+          {/*{isMenuOpened && <MobMenu {...{openRoute, nav}}/>}*/}
         </A_Container>
       </div>
     )

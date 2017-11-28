@@ -6,6 +6,12 @@
     display: none;
   }
 
+  &__object {
+    width: 100vw;
+    height: calc(100vh - 80px);
+    //height: auto;
+  }
+
   &__main {
     padding-top: 20px;
 
