@@ -10,7 +10,7 @@ class Read extends Component {
     return (
       <div className={cn()}>
         <A_Container type="normal" mx={cn('main')}>
-          <PDFViewer />
+          {__CLIENT__ && <PDFViewer />}
         </A_Container>
       </div>
     )
