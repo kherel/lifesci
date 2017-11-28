@@ -5,6 +5,10 @@ const cn = cssClassName('PdfViewer')
 import { PDFJS } from 'pdfjs-dist'
 
 class PdfViewer extends Component {
+  state = {
+    loading: true,
+  }
+
   componentDidMount() {
     PDFJS.workerSrc = `/pdf.worker.js`
 
@@ -14,6 +18,8 @@ class PdfViewer extends Component {
     loadingTask.promise.then(pdf => {
       const pagesArr = [...Array(pdf.numPages + 1).keys()].slice(1)
       const promises = pagesArr.map(page => pdf.getPage(page))
+
+      this.setState({ loading: false })
 
       promises.forEach(promise => {
         promise.then(page => {
@@ -42,7 +48,12 @@ class PdfViewer extends Component {
   }
 
   render() {
-    return <div className={cn()} ref={node => (this.node = node)} />
+    const { loading } = this.state
+    return (
+      <div className={cn()} ref={node => (this.node = node)}>
+        {loading && <p>PDF is loading...</p>}
+      </div>
+    )
   }
 }
 
