@@ -6,6 +6,7 @@ import A_Container from 'A_Container'
 import PDFViewer from './PdfViewer/index'
 
 class Read extends Component {
+
   render() {
     return (
       <div className={cn()}>

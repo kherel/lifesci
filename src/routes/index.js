@@ -17,7 +17,6 @@ const getRoutes = () => {
     <Route path="/" component={MainLayout} prepareData={MainLayout.prepareData}>
       <IndexRoute component={Home} />
       <Route path="/whitepaper" component={Documents} />
-      <Route path="/read" component={Read} />
       <Route path="/contact-us" component={ContactUs} />
       <Route path="/team" component={Team} />
       <Route path="contribution" component={Contribution} />
@@ -25,6 +24,7 @@ const getRoutes = () => {
       {getLegal()}
       <Route path="/test" component={Test} />
       <Route path="/roadmap" component={Roadmap} />
+      <Route path=":hash" component={Read} />
     </Route>
   )
 }
@@ -34,7 +34,6 @@ export default getRoutes
 const getLegal = () => (
   <Route path="/legal">
     <IndexRedirect to="business-terms-of-service" />
-
     <Route path="business-terms-of-service" component={Legal} />
     <Route path="supplements" component={Legal} />
     <Route path="complaints-policy" component={Legal} />
