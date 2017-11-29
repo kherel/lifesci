@@ -30,6 +30,9 @@ class PdfViewer extends Component {
   }
 
   renderPage = page => {
+    if (this.state.loading) {
+      this.setState({ loading: false })
+    }
     const viewport = page.getViewport(1)
     const canvas = document.createElement('canvas')
     canvas.className = cn('canvas')
