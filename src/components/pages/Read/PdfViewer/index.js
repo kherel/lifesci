@@ -10,7 +10,7 @@ class PdfViewer extends Component {
   }
 
   componentDidMount() {
-    PDFJS.workerSrc = `/pdf.worker.js`
+    PDFJS.workerSrc = `/assets/pdf.worker.js`
 
     // PDFJS.disableWorker = true
     const loadingTask = PDFJS.getDocument('/pdf/Lifesci Whitepaper.pdf')

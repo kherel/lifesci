@@ -20,6 +20,7 @@
     "autoprefixer": "^7.1.2",
     "body-parser": "^1.18.2",
     "compression": "^1.7.0",
+    "copy-webpack-plugin": "^4.2.3",
     "cors": "^2.8.4",
     "cross-env": "^5.1.1",
     "d3-shape": "^1.2.0",

@@ -7,7 +7,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
 const autoprefixer = require('autoprefixer')
 const sourcePath = path.join(__dirname, './src')
-
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const root = path.join(process.cwd())
 
 process.noDeprecation = true
@@ -109,6 +109,7 @@ export default {
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: 'source-map',
     }),
+    new CopyWebpackPlugin(['node_modules/pdfjs-dist/build/pdf.worker.js']),
     // new BundleAnalyzerPlugin({
     //   analyzerMode: 'static'
     // })
