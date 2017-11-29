@@ -2,6 +2,8 @@
 @import "common/utils";
 
 .read {
+  min-height: 200px;
+
   @media print {
     display: none;
   }

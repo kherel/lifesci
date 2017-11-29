@@ -1,6 +1,7 @@
 import path from 'path'
 import webpack from 'webpack'
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 // import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 process.noDeprecation = true
@@ -14,6 +15,7 @@ export default {
       __CLIENT__: true,
       __DEVELOPMENT__: true,
     }),
+    new CopyWebpackPlugin(['node_modules/pdfjs-dist/build/pdf.worker.js']),
     new webpack.HotModuleReplacementPlugin(),
     // new BundleAnalyzerPlugin({
     //   analyzerMode: 'static'

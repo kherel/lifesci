@@ -1,6 +1,12 @@
 .pdf-viewer {
+  overflow: visible;
+
   &__canvas {
     width: 100%;
     height: auto;
+  }
+
+  &__loader {
+    box-shadow: none;
   }
 }

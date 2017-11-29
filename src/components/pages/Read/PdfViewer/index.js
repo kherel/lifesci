@@ -3,6 +3,7 @@ import './styles.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('PdfViewer')
 import { PDFJS } from 'pdfjs-dist'
+import Loader from 'react-loader'
 
 class PdfViewer extends Component {
   state = {
@@ -53,9 +54,7 @@ class PdfViewer extends Component {
   render() {
     const { loading } = this.state
     return (
-      <div className={cn()} ref={node => (this.node = node)}>
-        {loading && <p>PDF is loading...</p>}
-      </div>
+      <Loader scale={2} loaded={loading}><div className={cn()} ref={node => (this.node = node)} /></Loader>
     )
   }
 }
