@@ -20,9 +20,7 @@ class PdfViewer extends Component {
       const promises = pagesArr.map(page => pdf.getPage(page))
 
       promises.forEach(promise => {
-        promise.then(page => {
-          this.renderPage(page)
-        })
+        promise.then(this.renderPage)
       })
     })
   }
