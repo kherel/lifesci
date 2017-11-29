@@ -28,12 +28,6 @@ class PdfViewer extends Component {
   }
 
   renderPage = page => {
-    if (this.state.loading) {
-      setTimeout(() => {
-        this.setState({ loading: false })
-      }, 500)
-
-    }
     const viewport = page.getViewport(1)
     const canvas = document.createElement('canvas')
     canvas.className = cn('canvas')
@@ -48,7 +42,11 @@ class PdfViewer extends Component {
       viewport: viewport,
     }
     const renderTask = page.render(renderContext)
-    renderTask.then(function() {})
+    renderTask.then(() => {
+      if (this.state.loading) {
+        this.setState({ loading: false })
+      }
+    })
   }
 
   render() {
