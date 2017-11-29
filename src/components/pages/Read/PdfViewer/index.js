@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './styles.scss'
+import T from 'prop-types'
 import { cssClassName } from 'utils'
 const cn = cssClassName('PdfViewer')
 import { PDFJS } from 'pdfjs-dist'
@@ -12,8 +13,7 @@ class PdfViewer extends Component {
   componentDidMount() {
     PDFJS.workerSrc = `/assets/pdf.worker.js`
 
-    // PDFJS.disableWorker = true
-    const loadingTask = PDFJS.getDocument('/pdf/Lifesci Whitepaper.pdf')
+    const loadingTask = PDFJS.getDocument(this.props.fileName)
 
     loadingTask.promise.then(pdf => {
       const pagesArr = [...Array(pdf.numPages + 1).keys()].slice(1)
@@ -61,7 +61,9 @@ class PdfViewer extends Component {
   }
 }
 
-PdfViewer.propTypes = {}
+PdfViewer.propTypes = {
+  fileName: T.string.isRequired,
+}
 
 PdfViewer.defaultProps = {}
 

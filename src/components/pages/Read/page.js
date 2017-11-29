@@ -11,7 +11,7 @@ class Read extends Component {
     return (
       <div className={cn()}>
         <A_Container type="normal" mx={cn('main')}>
-          {__CLIENT__ && <PDFViewer />}
+          {__CLIENT__ && <PDFViewer fileName={this.props.fileName} />}
         </A_Container>
       </div>
     )

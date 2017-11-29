@@ -4,8 +4,9 @@ import FourOhFour from 'FourOhFour/page'
 
 class HomeRoute extends Component {
   render() {
-    if (lookup[this.props.params.hash] !== undefined) {
-      return <ReadContainer />
+    const fileName = lookup[this.props.params.hash]
+    if (fileName !== undefined) {
+      return <ReadContainer fileName={fileName} />
     } else {
       return <FourOhFour />
     }
