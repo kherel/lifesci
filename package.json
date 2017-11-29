@@ -8,7 +8,8 @@
     "node": "6.11.0"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production node ./initializers/webpack/build.js",
+    "clean": "rimraf ./static/assets && mkdir \"static/assets\"",
+    "build": "cross-env NODE_ENV=production npm run clean && node ./initializers/webpack/build.js",
     "start": "cross-env NODE_ENV=production node ./initializers/server/index.js",
     "dev": "cross-env NODE_ENV=development nodemon --watch initializers --watch webpack.config.js ./initializers/server/index.js",
     "dev2": "cross-env NODE_ENV=development cross-env NO_SSR=true nodemon --watch ./initializers --watch webpack.config.js ./initializers/server/index.js",
@@ -35,6 +36,7 @@
     "react-helmet": "^5.0.3",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
+    "rimraf": "^2.6.2",
     "serve-static": "^1.12.4",
     "superagent-retry": "^0.6.0",
     "webpack-dev-middleware": "^1.10.2",

@@ -54,7 +54,7 @@ class PdfViewer extends Component {
   render() {
     const { loading } = this.state
     return (
-      <Loader scale={2} loaded={loading}><div className={cn()} ref={node => (this.node = node)} /></Loader>
+      <Loader className={cn('loader')} scale={2} loaded={!loading}><div className={cn()} ref={node => (this.node = node)} /></Loader>
     )
   }
 }
