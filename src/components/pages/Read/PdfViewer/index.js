@@ -31,7 +31,6 @@ class PdfViewer extends Component {
   }
 
   renderPage = page => {
-    console.log(page)
     const viewport = page.getViewport(1)
     const canvas = document.createElement('canvas')
     canvas.className = cn('canvas')
