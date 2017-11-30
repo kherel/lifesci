@@ -20,13 +20,18 @@ class PdfViewer extends Component {
       const pagesArr = [...Array(pdf.numPages + 1).keys()].slice(1)
       const promises = pagesArr.map(page => pdf.getPage(page))
 
-      promises.forEach(promise => {
-        promise.then(this.renderPage)
-      })
+      this.readPage(promises).then(() => {})
     })
   }
 
+  async readPage(promises) {
+    for (const promise of promises) {
+      await promise.then(this.renderPage)
+    }
+  }
+
   renderPage = page => {
+    console.log(page)
     const viewport = page.getViewport(1)
     const canvas = document.createElement('canvas')
     canvas.className = cn('canvas')
