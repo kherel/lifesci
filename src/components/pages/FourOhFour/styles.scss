@@ -1,15 +1,51 @@
+@import "common/settings/variables";
+@import "common/utils";
+
 .four-oh-four {
+  padding-bottom: 64px;
+  border-bottom: 1px solid #ebebeb;
+
+  &__error {
+    margin-top: 34px;
+    font-size: 1.5rem;
+    line-height: 1.73;
+    color: $black-2;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &__title {
+    font-size: 4rem;
+    line-height: 1.25;
+    margin-top: 16px;
+    text-align: left;
+    font-family: Georgia, serif;
+    color: $black-5;
+  }
+
   &__message {
-    font-size: 2.4rem;
-    text-align: center;
-    margin-top: 80px;
+    font-size: 2rem;
+    line-height: 1.4;
+    color: $black-5;
+    text-align: left;
+    margin-top: 32px;
+    max-width: 470px;
   }
 
   &__link {
-    display: block;
-    margin-top: 30px;
-    text-align: center;
-    text-decoration: underline;
-    font-size: 2.6rem;
+    width: auto;
+    margin-top: 32px;
+  }
+
+  @include media($desktop) {
+    &__error {
+      margin-top: 92px;
+    }
+
+    &__title {
+      font-size: 54px;
+      line-height: 1.19;
+    }
+
   }
 }

@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
-import './styles.scss'
+import React, {Component} from 'react'
 import T from 'prop-types'
-import { cssClassName } from 'utils'
+import {cssClassName} from 'utils'
+import {PDFJS} from 'pdfjs-dist'
+import './styles.scss'
+
 const cn = cssClassName('PdfViewer')
-import { PDFJS } from 'pdfjs-dist'
 
 class PdfViewer extends Component {
   state = {
