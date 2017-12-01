@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // import * as T from "prop-types";
 import './styles.scss';
-import Footer from './Footer'
+// import Footer from './Footer'
 import Header from './Header'
 import {cssClassName} from 'utils'
 const cn = cssClassName('MainLayout')
@@ -14,7 +14,7 @@ class MainLayout extends Component {
       <div className={cn()}>
         <Header {...otherProps}/>
         { children }
-        <Footer />
+        {/*<Footer />*/}
       </div>
     )
   }

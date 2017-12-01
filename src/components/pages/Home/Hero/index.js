@@ -169,10 +169,10 @@ class Hero extends Component {
 
           <A_H type="hero" mx={cn('title')}>Solving life sciences real problems of today.</A_H>
           <A_P type="hero" mx={cn('text')}>Lifesci offers access to valuable licence fee income and a blockchain AI driven platform that gives investor access to the latest insights, news in the healthcare industry.</A_P>
-          <div className={cn('buttons')}>
-            <A_Button type='button-secondary' mx={cn('buttons-subscribe')} onClick={handleClick}>Subscribe me</A_Button>
-            <A_Button type='link-primary' mx={'buttons-contribute'} to='/contribution'>How to Contribute</A_Button>
-          </div>
+          {/*<div className={cn('buttons')}>*/}
+            {/*<A_Button type='button-secondary' mx={cn('buttons-subscribe')} onClick={handleClick}>Subscribe me</A_Button>*/}
+            {/*<A_Button type='link-primary' mx={'buttons-contribute'} to='/contribution'>How to Contribute</A_Button>*/}
+          {/*</div>*/}
 
         </A_Container>
       </div>

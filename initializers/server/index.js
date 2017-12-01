@@ -10,6 +10,7 @@ const bodyParser = require('body-parser')
 // const fs = require('fs.extra');
 
 require('babel-core/register');
+require('babel-polyfill');
 ['.css', '.less', '.sass', '.ttf', '.woff', '.woff2', '.scss', '.svg'].forEach((ext) => require.extensions[ext] = () => {
 });
 

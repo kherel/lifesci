@@ -2,6 +2,7 @@ import { Route, IndexRoute, IndexRedirect } from 'react-router'
 import React from 'react'
 import MainLayout from './MainLayout'
 import Documents from './Documents'
+import Read from './Read'
 import Home from './Home'
 import ContactUs from './ContactUs'
 import Team from './Team'
@@ -23,6 +24,7 @@ const getRoutes = () => {
       {getLegal()}
       <Route path="/test" component={Test} />
       <Route path="/roadmap" component={Roadmap} />
+      <Route path=":hash" component={Read} />
     </Route>
   )
 }
@@ -32,7 +34,6 @@ export default getRoutes
 const getLegal = () => (
   <Route path="/legal">
     <IndexRedirect to="business-terms-of-service" />
-
     <Route path="business-terms-of-service" component={Legal} />
     <Route path="supplements" component={Legal} />
     <Route path="complaints-policy" component={Legal} />

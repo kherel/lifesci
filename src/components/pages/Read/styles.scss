@@ -1,0 +1,22 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.read {
+  min-height: 200px;
+
+  @media print {
+    display: none;
+  }
+
+  &__main {
+    padding-top: 20px;
+
+    @include media($mobile-up) {
+      padding-top: 40px;
+    }
+
+    @include media($desktop) {
+      padding-top: 50px;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 //default helpers
 import catnip from 'catnip';
-import camelcaseKeys from 'camelcase-keys';
+// import camelcaseKeys from 'camelcase-keys';
 
 function cssDecamelize(string) {
   let newString = string.split('_').filter(n => n !== '').join('-')
@@ -40,9 +40,9 @@ export const convert = {
         .replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
     )},
   toPhone: toPhone,
-  obj:{
-    toCamel: str => camelcaseKeys(str, {deep: true}),
-  }
+  // obj:{
+  //   toCamel: str => camelcaseKeys(str, {deep: true}),
+  // }
 }
 
 export function isServer() {

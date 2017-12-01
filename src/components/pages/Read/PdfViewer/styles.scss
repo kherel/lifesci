@@ -1,0 +1,19 @@
+.pdf-viewer {
+  overflow: visible;
+
+  &__canvas {
+    width: 100%;
+    height: auto;
+  }
+
+  &__loader {
+    width: 100%;
+    height: 100vh;
+    background-color: #6d6f7b;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+}
